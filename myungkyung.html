@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>명경 (MyungKyung) - AI 사주 분석 서비스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Top Navigation Bar -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="text-primary">
+                        <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-black tracking-tight text-slate-900 dark:text-white font-display"><a
+                            href="index.html">Lumiora Inc.</a></h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#services">서비스</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#myungkyung">명경</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="#about">회사소개</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.location.href='en/myungkyung.html'"
+                        class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">language</span>
+                        KO/EN
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <section class="relative w-full overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 md:px-20 py-16 md:py-28 flex flex-col items-center text-center">
+                    <div class="absolute inset-0 -z-10 opacity-20 dark:opacity-10 pointer-events-none">
+                        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/30 blur-3xl rounded-full"></div>
+                        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 blur-3xl rounded-full"></div>
+                    </div>
+                    <div
+                        class="mb-6 flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                        <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        <span class="text-xs font-bold tracking-wider uppercase">Lumiora Inc. AI Platform</span>
+                    </div>
+                    <h2
+                        class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6 max-w-4xl">
+                        명경: AI로 읽는 <br class="md:hidden" />당신의 푸른 운명
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                        자연의 지혜와 첨단 인공지능이 만났습니다.
+                        Lumiora Inc.의 독자적인 AI 엔진이 당신의 사주와 기운을 분석하여 더 나은 내일을 제안합니다.
+                    </p>
+                    <div
+                        class="mt-16 w-full max-w-5xl aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative border border-white/20">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-light/80 dark:from-background-dark/80 to-transparent z-10">
+                        </div>
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="Peaceful forest canopy with sunlight streaming through leaves"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAdmRMcvbGkbMrXjU-kP56aTWqKmo0xmOTbXHJGH5yKaHgIYTA-61VUdtwiZBY9c892FQSSrBXswOwkuId-VlSDa56MVwX_ES9iKZ6YDNPbFlEtGqJh8gJPNHmhuo_GA-NjZyaKs8AknKU3LFzTBaMxoud0FqQxbCyrpB4mBxwsRykUBurXW2llqgRdEDJr0dBEG0EJB4JcsU6guRGXCMGFa-PhWEzdkCWG91yt_lxbgvW_k_tE3gpvye1XgiPqsDrrsgHTp-7Wos');">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Services Grid Section -->
+            <section class="bg-white dark:bg-slate-900/50 py-24 px-6 md:px-20">
+                <div class="max-w-7xl mx-auto">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                        <div class="max-w-2xl">
+                            <h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Core Intelligence
+                            </h3>
+                            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">15가지 프리미엄 AI 서비스
+                            </h2>
+                            <p class="mt-4 text-slate-600 dark:text-slate-400">명경은 정교한 알고리즘을 통해 삶의 다양한 영역을 통찰합니다. 자연의
+                                흐름에 따른 당신만의 정답을 찾아보세요.</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-primary/10 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">chevron_left</span>
+                            </button>
+                            <button
+                                class="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-primary/10 hover:text-primary transition-colors">
+                                <span class="material-symbols-outlined">chevron_right</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                        <!-- Service 1 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">fingerprint</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">나의 아키타입</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                타고난 본질과 당신의 페르소나를 AI가 심층 분석합니다.</p>
+                        </div>
+                        <!-- Service 2 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">diversity_1</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">사주 MBTI</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                전통 명리학의 오행 기운을 현대적 성격 유형으로 재해석합니다.</p>
+                        </div>
+                        <!-- Service 3 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">wb_sunny</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">오늘의 운세</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                매일 변하는 하늘의 기운과 당신의 일진을 매칭해 드립니다.</p>
+                        </div>
+                        <!-- Service 4 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">trending_up</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">대운 분석</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                10년 주기의 거대한 운의 흐름 속에서 당신의 기회를 포착합니다.</p>
+                        </div>
+                        <!-- Service 5 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">workspace_premium</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">전문가 사주 분석</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                명리학 대가들의 논리를 학습한 AI의 가장 정밀한 개인 리포트.</p>
+                        </div>
+                        <!-- Service 6 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">diamond</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">프리미엄 사주</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                최고급 데이터셋을 기반으로 한 인생 전반의 마스터 플랜.</p>
+                        </div>
+                        <!-- Service 7 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">auto_stories</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">2024 토정비결</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                한 해의 흐름을 월별로 상세히 짚어주는 고전적 지혜.</p>
+                        </div>
+                        <!-- Service 8 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">auto_awesome_motion</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">별자리 운세</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                서양 점성술의 데이터를 AI가 분석한 우주의 메시지.</p>
+                        </div>
+                        <!-- Service 9 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">monitoring</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">바이오리듬</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                신체, 감성, 지성 리듬을 통해 본 최적의 활동 시기 측정.</p>
+                        </div>
+                        <!-- Service 10 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">favorite</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">정밀 궁합</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                두 사람의 에너지 파동을 분석하여 관계의 조화를 진단합니다.</p>
+                        </div>
+                        <!-- Service 11 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">water_drop</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">혈액형 운세</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                가벼운 재미와 통찰을 더한 혈액형별 성격 및 궁합 가이드.</p>
+                        </div>
+                        <!-- Service 12 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">draw</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">작명/개명/태명</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                좋은 기운을 불러오는 이름의 소리값과 한자를 AI가 추천.</p>
+                        </div>
+                        <!-- Service 13 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">stars</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">로또 행운 번호</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                당신의 재물운이 가장 왕성한 시간대의 행운 숫자를 조합.</p>
+                        </div>
+                        <!-- Service 14 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">schema</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">진로·직업 분석</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                본인에게 내재된 재능과 시장의 흐름을 분석한 천직 가이드.</p>
+                        </div>
+                        <!-- Service 15 -->
+                        <div
+                            class="group flex flex-col bg-background-light dark:bg-slate-800/50 p-6 rounded-2xl hover:bg-primary hover:scale-[1.02] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 bg-white dark:bg-slate-700 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-white/20 group-hover:text-white">
+                                <span class="material-symbols-outlined text-2xl">calendar_month</span>
+                            </div>
+                            <h4 class="text-lg font-bold mb-2 group-hover:text-white">길일 캘린더</h4>
+                            <p
+                                class="text-sm text-slate-600 dark:text-slate-400 group-hover:text-white/80 leading-relaxed">
+                                이사, 계약, 개업 등 중대사에 가장 적합한 길일을 정밀 계산.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Nature Visualization Section (Alternative Content) -->
+            <section class="py-24 px-6 md:px-20 overflow-hidden">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="relative z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
+                            <img class="w-full h-[500px] object-cover"
+                                data-alt="Sunbeams filtering through a lush green forest canopy"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVIA4z2vxdjoffNWgwbqubRBwTgM205KWGddVeRdjTDNgPWmRh-YhNGbaT4Un_BlZitVT7U8h1-B5lDZ5ZQOzlpq3WUhy4EY-kHAW4qHQjkIja24NKj8K0hXBzLvbmMNajE4nsNZxUUsuRnW6ig58Qjx56XZfqFYVdi_lhcjvdG9IhieHut_yWQMPd4JooIxi9Qw5_1pzxs4xB3r5dUQe41dd3gaCjVU7w8qS_PgF45s4w87vh4kqt7vwa0Xr0fm564uJUdniBgFo" />
+                        </div>
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10">
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 w-60 h-60 bg-green-500/10 rounded-full blur-3xl -z-10">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white leading-snug">자연의
+                            리듬을 거스르지 않는 <br />지혜로운 삶</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                            명경은 단순히 미래를 예언하지 않습니다. 우리는 당신이 가진 기운의 패턴을 읽어내고, 계절이 바뀌듯 자연스럽게 다가오는 기회를 포착하도록 돕습니다. 인공지능이
+                            제공하는 정교한 데이터는 당신의 직관을 깨우는 도구가 될 것입니다.
+                        </p>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">Lumiora Inc.의 고성능 신경망 연산 엔진 탑재</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">수만 건의 실제 사주 데이터 기반 정밀 학습</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">개인정보 보호를 위한 강력한 암호화 프로토콜</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact & Inquiry Section -->
+        </main>
+        <!-- Footer -->
+        <footer class="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="text-primary">
+                                <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-black tracking-tight font-display">Lumiora Inc.</h2>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                            루미오라는 AI 기술과 데이터 기반의 디지털 솔루션을 통해 더 나은 내일을 설계합니다. 기술의 따뜻한 혁신을 지향합니다.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg">public</span>
+                            </a>
+                            <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg">alternate_email</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 dark:text-white mb-6">서비스</h5>
+                        <ul class="space-y-4 text-slate-500 dark:text-slate-400 text-sm">
+                            <li><a class="hover:text-primary" href="#">모바일 앱 개발</a></li>
+                            <li><a class="hover:text-primary" href="#">웹사이트 구축</a></li>
+                            <li><a class="hover:text-primary" href="#">명경 서비스</a></li>
+                            <li><a class="hover:text-primary" href="#">디지털 컨설팅</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-12 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-8 text-xs text-slate-500 dark:text-slate-400"
+                    id="about">
+                    <div class="space-y-2">
+                        <p><span class="font-bold">주식회사 루미오라 (Lumiora Inc.)</span></p>
+                        <p>대표자: 박성진</p>
+                        <p>사업자 등록번호: 376-09-03284 | 통신판매업 신고번호: 제2026-서울성북-0319호</p>
+                        <p>주소: 서울특별시 성북구 길음로 119</p>
+                        <p>Tel: 010-3262-8946 | Email: nalsil.dev@gmail.com</p>
+                    </div>
+                    <div class="flex flex-col md:items-end justify-end">
+                        <p>© 2026 Lumiora Inc. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
