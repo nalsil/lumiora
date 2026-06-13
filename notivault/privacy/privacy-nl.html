@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Privacybeleid</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Taal"></select>
+</header>
+<main>
+  <h1>Privacybeleid</h1>
+  <div class="eff">Van kracht op 12 juni 2026 · Laatst bijgewerkt: 12 juni 2026</div>
+  <p>Lumiora (het «Bedrijf») respecteert je privacy en voldoet aan de toepasselijke wetgeving inzake gegevensbescherming. Dit beleid geldt voor de mobiele app <b>NotiVault</b> (de «App»). NotiVault is een <b>local-first</b>-app die je apparaatmeldingen <b>volledig op je apparaat</b> verzamelt, classificeert, doorzoekt, samenvat en bewaart.</p>
+  <div class="principle"><strong>Kernprincipe</strong> — De <b>inhoud van je meldingen (afzender, titel, tekst, afbeeldingen enz.) wordt nooit naar servers van het Bedrijf of naar derden verzonden</b>. Alle classificatie, zoekopdrachten, samenvatting en AI-inferentie gebeuren op je apparaat. Alleen bepaalde niet-meldingsgegevens worden naar de externe diensten in Sectie 5 verzonden, voor advertenties, gebruiksstatistieken, integriteitscontrole, in-app-aankopen en het downloaden van AI-modellen.</div>
+
+  <h2>1. Informatie die we verwerken</h2>
+  <h3>1.1 Alleen op je apparaat verwerkt (nooit naar onze servers gestuurd)</h3>
+  <p class="small muted">De App verzamelt meldingen pas nadat je <b>Meldingstoegang</b> hebt verleend en bewaart ze in een versleutelde database op het apparaat (SQLCipher).</p>
+  <div class="tw"><table>
+    <thead><tr><th>Categorie</th><th>Items</th></tr></thead>
+    <tbody>
+      <tr><td>Meldingsinhoud</td><td class="wrap">Tekst, titel, afzender (zoals getoond door de bron-app), ontvangsttijd, pakketnaam van de bron-app, afbeeldingen en originele payload. <b>De tekst wordt letterlijk bewaard</b> en kan gevoelige gegevens bevatten zoals eenmalige codes of financiële gegevens.</td></tr>
+      <tr><td>Geëxtraheerde gegevens</td><td class="wrap">Op regels gebaseerde items (bedrag, datum, bestelnummer, links). <b>Eenmalige codes (OTP) worden niet als waarde opgeslagen; alleen de detectie wordt vastgelegd (gemaskeerd als <code>******</code>)</b>.</td></tr>
+      <tr><td>Analysemetadata</td><td class="wrap">Categorie, belang, leesstatus, taal, inhoudshash voor ontdubbeling.</td></tr>
+      <tr><td>Zoekgegevens</td><td class="wrap">Embeddingvectoren voor semantisch (natuurlijke taal) zoeken, samenvattingscache.</td></tr>
+      <tr><td>Je instellingen</td><td class="wrap">Eigen categorieën, handmatige regels, toegestane/geblokkeerde spamafzenders, geleerde afzenders, geblokkeerde apps, herinneringen.</td></tr>
+      <tr><td>Lokale identificator</td><td class="wrap">Een willekeurige installatie-identificator die op het apparaat wordt gegenereerd (nooit verzonden).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 Kan via externe diensten worden verwerkt/verzonden</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Doel</th><th>Gegevens</th><th>Opmerkingen</th></tr></thead>
+    <tbody>
+      <tr><td>Advertenties (optioneel)</td><td class="wrap">Advertentie-ID, apparaat- en netwerkinfo</td><td class="wrap">Google AdMob. <b>Momenteel uitgeschakeld bij lancering.</b> Indien ingeschakeld geldt UMP-toestemming; standaard niet-gepersonaliseerd.</td></tr>
+      <tr><td>Gebruiksstatistieken (optioneel)</td><td class="wrap">App-gebeurtenissen (scherm-/knopnamen), instantie-ID, apparaat-/gebeurtenisinfo</td><td class="wrap">Firebase Analytics. Je kunt je <b>afmelden</b> in Instellingen. Inhoud/afzenders worden nooit verzonden.</td></tr>
+      <tr><td>Integriteitscontrole</td><td class="wrap">Integriteitstoken van app/apparaat</td><td class="wrap">Google Play Integrity. Geen persoonlijke inhoud.</td></tr>
+      <tr><td>In-app-aankoop (optioneel)</td><td class="wrap">Aankooptoken en -status</td><td class="wrap">Google Play Billing. Betaalgegevens worden door Google verwerkt.</td></tr>
+      <tr><td>AI-model</td><td class="wrap">Netwerkinfo bij download (bijv. IP)</td><td class="wrap"><b>Alleen download</b> van het model bij Hugging Face. Geen gebruikersgegevens geüpload.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">De App heeft geen registratie, login of account en verzamelt niet rechtstreeks je naam, telefoon of e-mail (behalve het e-mailadres dat je opgeeft bij contact).</p>
+
+  <h2>2. Doeleinden van de verwerking</h2>
+  <ol>
+    <li>Opslag en beheer van meldingen: automatische opname, versleutelde opslag, ontdubbeling, overzicht</li>
+    <li>Classificatie en zoeken: automatische/handmatige classificatie, zoeken op trefwoord en natuurlijke taal</li>
+    <li>Samenvattingen, inzichten en herinneringen: AI-samenvattingen op het apparaat, categorie-/vermoeidheidsinzichten, herhaalde meldingen voor ongelezen belangrijke items</li>
+    <li>Spambeheer: classificatie op trefwoorden/geleerde afzenders en toestaan/blokkeren</li>
+    <li>Gegevenscontrole: export (overdraagbaarheid), bewaarbeheer, verwijdering</li>
+    <li>Kwaliteit en beveiliging: optionele verbetering op basis van statistieken, root-/manipulatiedetectie</li>
+    <li>Monetisatie (optioneel): advertenties en aankoop om ze te verwijderen</li>
+  </ol>
+
+  <h2>3. Bewaring en verwijdering</h2>
+  <ol>
+    <li><b>Meldingsgegevens op het apparaat</b> staan alleen op je apparaat en worden verwijderd wanneer je ze wist (afzonderlijk, per periode of volledig), wanneer de bewaartermijn per categorie verloopt, of bij <b>het verwijderen van de App</b> (de sleutel wordt vernietigd, gegevens zijn onherstelbaar).</li>
+    <li><b>Gebruiksstatistieken (optioneel)</b> stoppen direct bij afmelding; eerdere gegevens volgen het beleid van de verwerker (Google).</li>
+    <li>Een e-mail die je voor support opgeeft, wordt na afhandeling onverwijld verwijderd.</li>
+    <li>Het Bedrijf beheert geen server met toegang tot meldingsinhoud, dus er is geen serverkopie.</li>
+  </ol>
+
+  <h2>4. Delen met derden</h2>
+  <p>We delen geen persoonsgegevens met derden buiten de genoemde doeleinden, behalve (i) met je voorafgaande toestemming of (ii) indien wettelijk vereist of op rechtmatig verzoek van autoriteiten. Omdat meldingsinhoud nooit wordt verzonden, wordt deze nooit gedeeld.</p>
+
+  <h2>5. Dienstverleners (verwerkers)</h2>
+  <p>Voor de werking van de dienst wordt een deel van de verwerking uitbesteed aan de onderstaande externe SDK's. Elke aanbieder verwerkt gegevens volgens zijn eigen beleid.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Aanbieder</th><th>Taak</th><th>Gegevens</th><th>Beleid</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Advertenties tonen</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Toestemmingsbeheer</td><td class="wrap">Toestemmingsstatus</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Gebruiksstatistieken</td><td class="wrap">Gebeurtenissen, instantie-ID, apparaat-/gebeurtenisinfo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Integriteitscontrole</td><td class="wrap">Integriteitstoken</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-app-aankoop</td><td class="wrap">Aankooptoken en -status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>Distributie AI-modellen</td><td class="wrap">Netwerkinfo bij download (IP enz.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. Internationale doorgifte</h2>
+  <p>De bovengenoemde aanbieders bevinden zich in het buitenland, dus sommige gegevens kunnen internationaal worden doorgegeven wanneer je die functies gebruikt.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Ontvanger</th><th>Land</th><th>Items</th><th>Wanneer/Hoe</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">VS enz.</td><td class="wrap">Advertentie-ID en apparaatinfo, statistieken, integriteitstoken, aankoopinfo</td><td class="wrap">Via het netwerk wanneer de functie wordt uitgevoerd</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>VS</td><td class="wrap">Netwerkinfo van het downloadverzoek</td><td class="wrap">Bij de eerste modeldownload</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Je kunt een deel van de verwerking met doorgifte weigeren of stoppen door statistieken uit te schakelen, advertentietoestemming in te trekken of advertentieverwijdering te kopen.</p>
+
+  <h2>7. Je rechten</h2>
+  <p>De meeste rechten kun je direct in de App uitoefenen.</p>
+  <ol>
+    <li>Inzage en zoeken: opgeslagen meldingen in de App bekijken en doorzoeken</li>
+    <li>Rectificatie en verwijdering: afzonderlijk, per periode of volledig verwijderen (incl. afbeeldingen)</li>
+    <li>Overdraagbaarheid (export): je gegevens exporteren als JSON of CSV</li>
+    <li>Verwerking stoppen / toestemming intrekken: verzameling per app blokkeren, statistieken uitschakelen, advertentietoestemming intrekken</li>
+    <li>Activiteitenlogboek: het privacy-(audit)logboek in de App bekijken</li>
+  </ol>
+  <p class="small muted">Voor uitoefening van rechten of contact: App-instellingen of het contact in Sectie 12. We reageren binnen de wettelijke termijnen.</p>
+
+  <h2>8. Geautomatiseerde verzameling en afmelden</h2>
+  <ul>
+    <li><b>Advertenties</b>: standaard niet-gepersonaliseerd; UMP-toestemming in de EER/VK en bepaalde Amerikaanse staten. Beperk tracking via «advertentie-ID resetten/verwijderen» van het apparaat.</li>
+    <li><b>Statistieken</b>: schakel ze altijd uit via Instellingen → Gebruiksstatistieken (standaard aan).</li>
+    <li><b>Advertenties verwijderen</b>: verwijder ze via een in-app-aankoop.</li>
+  </ul>
+
+  <h2>9. Beveiligingsmaatregelen</h2>
+  <ol>
+    <li>Volledige versleuteling van opgeslagen gegevens (SQLCipher); de sleutel wordt beschermd door Android Keystore (StrongBox indien beschikbaar).</li>
+    <li>Bij verwijderen/herinstalleren wordt de sleutel vernietigd, waardoor eerdere gegevens onherstelbaar zijn.</li>
+    <li>Bij root-/manipulatiedetectie wordt de kluis vergrendeld; Play Integrity verifieert de integriteit.</li>
+    <li>In productie-builds worden schermafbeeldingen/opnamen van gevoelige schermen geblokkeerd.</li>
+    <li>Er wordt geen meldingsinhoud op servers van het Bedrijf bewaard; instellingen worden apart opgeslagen.</li>
+  </ol>
+
+  <h2>10. Apparaatmachtigingen</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Machtiging</th><th>Doel</th><th>Type</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Meldingstoegang</td><td class="wrap">Opname en opslag (essentieel)</td><td>Vereist je toestemming</td></tr>
+      <tr><td class="wrap">Meldingen tonen</td><td class="wrap">Herinneringen, overzicht, statusbalkpaneel</td><td>Optioneel</td></tr>
+      <tr><td class="wrap">Internet en netwerkstatus</td><td class="wrap">Advertenties, statistieken, integriteit, modeldownload</td><td>Optioneel</td></tr>
+      <tr><td class="wrap">Voorgrondservice (speciaal gebruik)</td><td class="wrap">Betrouwbare opname zonder verlies</td><td>Vereist</td></tr>
+      <tr><td class="wrap">Opstarten voltooid</td><td class="wrap">Herinneringen na herstart opnieuw plannen</td><td>Optioneel</td></tr>
+      <tr><td class="wrap">Wake lock / taken herordenen</td><td class="wrap">Stabiele achtergrondopname/-planning</td><td>Optioneel</td></tr>
+      <tr><td class="wrap">Advertentie-ID / facturering</td><td class="wrap">Advertenties en aankoop om ze te verwijderen</td><td>Optioneel</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Je kunt machtigingen altijd intrekken in de apparaatinstellingen; gerelateerde functies kunnen dan beperkt zijn.</p>
+
+  <h2>11. Kinderen jonger dan 18</h2>
+  <p>NotiVault is bedoeld voor personen van 18 jaar en ouder. We richten ons niet op kinderen en verzamelen niet bewust hun gegevens. Als we dit ontdekken, verwijderen we ze onverwijld.</p>
+
+  <h2>12. Functionaris voor gegevensbescherming en contact</h2>
+  <div class="contact">
+    <div><b>Bedrijf</b> Lumiora</div>
+    <div><b>Functionaris / Vertegenwoordiger</b> Sungjin Park</div>
+    <div><b>E-mail</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Telefoon</b> +82 10-3262-8946</div>
+    <div><b>Adres</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republiek Korea</div>
+    <div><b>Handelsreg.</b> 376-09-03284 · <b>E-commerce-reg.</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Website</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Verhaalsmogelijkheden (Republiek Korea)</h2>
+  <ul>
+    <li>Bemiddelingscommissie geschillen persoonsgegevens: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Meldpunt privacy (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Hooggerechtshof, cybercriminaliteit: 1301 (spo.go.kr)</li>
+    <li>Nationale politie, cyber: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. Internationale gebruikers — AVG/CCPA</h2>
+  <ul>
+    <li><b>EER/VK (AVG/UK GDPR)</b>: je hebt recht op inzage, rectificatie, wissing, beperking, overdraagbaarheid en bezwaar. Advertentietoestemming wordt via UMP beheerd en is altijd intrekbaar. Rechtsgronden zijn toestemming en gerechtvaardigd belang.</li>
+    <li><b>Californië (CCPA/CPRA)</b>: we «verkopen» geen persoonsgegevens voor geld. Je kunt statistieken uitschakelen en advertentietracking beperken.</li>
+  </ul>
+
+  <h2>15. Wijzigingen</h2>
+  <p>We kunnen dit beleid bijwerken bij wijziging van wetgeving of dienst. We melden wijzigingen en de ingangsdatum in de App en op de gepubliceerde URL.</p>
+  <p><b>Ingangsdatum: 12 juni 2026</b></p>
+</main>
+<footer>Dit document komt overeen met het beleid in NotiVault onder Instellingen → Over → Privacybeleid. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="nl",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

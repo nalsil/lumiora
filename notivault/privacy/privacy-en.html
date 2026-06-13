@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Privacy Policy</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Language"></select>
+</header>
+<main>
+  <h1>Privacy Policy</h1>
+  <div class="eff">Effective 12 June 2026 · Last updated 12 June 2026</div>
+  <p>Lumiora (the “Company”) respects your privacy and complies with applicable data-protection laws. This Privacy Policy applies to the mobile application <b>NotiVault</b> (the “App”). NotiVault is a <b>local-first</b> app that collects, classifies, searches, summarizes, and stores your device notifications <b>entirely on your device</b>.</p>
+  <div class="principle"><strong>Core principle</strong> — The <b>content of your notifications (sender, title, body, images, etc.) is never sent to the Company's servers or to any external party</b>. All classification, search, summarization, and AI inference happen on your device. Only certain non-notification data is sent to the third-party services in Section 5, for ads, usage analytics, app-integrity checks, in-app purchases, and AI-model downloads.</div>
+
+  <h2>1. Information We Process</h2>
+  <h3>1.1 Processed only on your device (never sent to our servers)</h3>
+  <p class="small muted">The App collects notifications only after you grant <b>Notification Access</b>, and stores them in an encrypted on-device database (SQLCipher).</p>
+  <div class="tw"><table>
+    <thead><tr><th>Category</th><th>Items</th></tr></thead>
+    <tbody>
+      <tr><td>Notification content</td><td class="wrap">Body, title, sender (as shown by the source app), received time, source app package, notification images, raw notification payload. <b>The body is stored verbatim</b> and may contain sensitive data such as one-time codes or financial details.</td></tr>
+      <tr><td>Extracted data</td><td class="wrap">Rule-based items (amount, date, order number, links). <b>One-time passcodes (OTP) are not stored as values — only the fact of detection is recorded (masked as <code>******</code>)</b>.</td></tr>
+      <tr><td>Analysis metadata</td><td class="wrap">Category, importance, read state, language, content hash for de-duplication.</td></tr>
+      <tr><td>Search data</td><td class="wrap">Embedding vectors for semantic (natural-language) search, summary cache.</td></tr>
+      <tr><td>Your settings</td><td class="wrap">Custom categories, manual rules, spam allow/block senders, learned senders, blocked apps, reminder settings.</td></tr>
+      <tr><td>Local identifier</td><td class="wrap">A random install identifier generated on-device (never transmitted).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 May be processed/transmitted via third-party services</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Purpose</th><th>Data</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Ads (optional)</td><td class="wrap">Advertising ID, device &amp; network info</td><td class="wrap">Google AdMob. <b>Currently disabled at production launch.</b> When enabled, UMP consent applies; non-personalized by default.</td></tr>
+      <tr><td>Usage analytics (optional)</td><td class="wrap">App events (screen/button labels), app-instance ID, device/event info</td><td class="wrap">Firebase Analytics. You can <b>opt out</b> in Settings. Notification content/senders are never sent.</td></tr>
+      <tr><td>Integrity check</td><td class="wrap">App/device integrity token</td><td class="wrap">Google Play Integrity. No personal content.</td></tr>
+      <tr><td>In-app purchase (optional)</td><td class="wrap">Purchase token &amp; state</td><td class="wrap">Google Play Billing. Payment details are handled by Google.</td></tr>
+      <tr><td>AI model</td><td class="wrap">Network info on download (e.g., IP)</td><td class="wrap">Model <b>download only</b> from Hugging Face. No user data uploaded.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">The App has no sign-up, login, or account, and does not directly collect your name, phone number, or email (except an email you provide when contacting us).</p>
+
+  <h2>2. Purposes of Processing</h2>
+  <ol>
+    <li>Notification storage &amp; management: automatic capture, encrypted storage, de-duplication, status overview</li>
+    <li>Classification &amp; search: automatic/manual classification, keyword and natural-language search</li>
+    <li>Summaries, insights &amp; reminders: on-device AI summaries, category/fatigue insights, re-alerts for unread important notifications</li>
+    <li>Spam control: keyword/learned-sender classification and allow/block</li>
+    <li>Data control: export (portability), retention management, deletion</li>
+    <li>Quality &amp; security: optional analytics-based improvement, root/tamper detection</li>
+    <li>Monetization (optional): ads and an ad-removal in-app purchase</li>
+  </ol>
+
+  <h2>3. Retention &amp; Deletion</h2>
+  <ol>
+    <li><b>On-device notification data</b> is stored only on your device and is deleted when you delete it (individually, by period, or entirely), when category-based retention expires, or when you <b>uninstall the App</b> (the encryption key is destroyed, making data unrecoverable).</li>
+    <li><b>Usage analytics (optional)</b> stops immediately when you opt out; previously collected data follows the processor's (Google's) policy.</li>
+    <li>Any email you provide for support is deleted without delay once handled.</li>
+    <li>The Company operates no server that can access notification content, so there is no server-side copy.</li>
+  </ol>
+
+  <h2>4. Sharing with Third Parties</h2>
+  <p>We do not share personal data with third parties beyond the stated purposes, except (i) with your prior consent, or (ii) where required by law or a lawful request from authorities. Because notification content is never transmitted, it is never shared with third parties.</p>
+
+  <h2>5. Service Providers (Processors)</h2>
+  <p>To operate the service, certain processing is delegated to the third-party SDKs below. Each provider processes data under its own policy.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Provider</th><th>Task</th><th>Data</th><th>Policy</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Serving ads</td><td class="wrap">Advertising ID, device &amp; network info</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Ad-consent management</td><td class="wrap">Consent state</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Usage analytics</td><td class="wrap">App events, instance ID, device/event info</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Integrity check</td><td class="wrap">Integrity token</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-app purchase</td><td class="wrap">Purchase token &amp; state</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>AI-model distribution</td><td class="wrap">Network info on download (IP, etc.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. International Transfers</h2>
+  <p>The providers above are located abroad, so some data may be transferred internationally when you use those features.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Recipient</th><th>Country</th><th>Items</th><th>When/How</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">United States, etc.</td><td class="wrap">Advertising ID &amp; device info, analytics, integrity token, purchase info</td><td class="wrap">Sent over the network when the feature runs</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>United States</td><td class="wrap">Network info of model download request</td><td class="wrap">On first model download</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">You can refuse or stop some transfer-related processing by opting out of analytics, withdrawing ad consent, or purchasing ad removal.</p>
+
+  <h2>7. Your Rights</h2>
+  <p>Most rights can be exercised instantly within the App.</p>
+  <ol>
+    <li>Access &amp; search: view and search stored notifications in the App</li>
+    <li>Correct &amp; delete: delete individually, by period, or entirely (including images)</li>
+    <li>Portability (export): export your data as JSON or CSV</li>
+    <li>Stop processing / withdraw consent: block collection per app, opt out of analytics, withdraw ad consent</li>
+    <li>Activity log: review the in-app privacy (audit) log</li>
+  </ol>
+  <p class="small muted">To exercise rights or contact us: App settings or the contact in Section 12. We respond within the periods required by law.</p>
+
+  <h2>8. Automated Collection &amp; Opt-out</h2>
+  <ul>
+    <li><b>Ads</b>: non-personalized by default; UMP consent in the EEA/UK and certain US states. Limit tracking via your device's “reset/delete advertising ID”.</li>
+    <li><b>Analytics</b>: turn off any time via Settings → Usage Statistics (on by default).</li>
+    <li><b>Ad removal</b>: remove ads via in-app purchase.</li>
+  </ul>
+
+  <h2>9. Security Measures</h2>
+  <ol>
+    <li>Full encryption of stored data (SQLCipher); the key is protected by the Android Keystore (StrongBox where available).</li>
+    <li>On uninstall/reinstall the key is destroyed, making prior data unrecoverable.</li>
+    <li>On root/tamper detection the vault is locked; Play Integrity verifies app/device integrity.</li>
+    <li>Screenshot/recording of sensitive screens is blocked in production builds.</li>
+    <li>No notification content is stored on Company servers; settings are stored separately from notification data.</li>
+  </ol>
+
+  <h2>10. Device Permissions</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Permission</th><th>Purpose</th><th>Type</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Notification access</td><td class="wrap">Notification capture &amp; storage (core)</td><td>Requires your consent</td></tr>
+      <tr><td class="wrap">Post notifications</td><td class="wrap">Reminders, status overview, status-bar panel</td><td>Optional</td></tr>
+      <tr><td class="wrap">Internet &amp; network state</td><td class="wrap">Ads, analytics, integrity, model download</td><td>Optional</td></tr>
+      <tr><td class="wrap">Foreground service (special use)</td><td class="wrap">Reliable capture without loss</td><td>Required</td></tr>
+      <tr><td class="wrap">Boot completed</td><td class="wrap">Re-schedule reminders after reboot</td><td>Optional</td></tr>
+      <tr><td class="wrap">Wake lock / reorder tasks</td><td class="wrap">Stable background capture/scheduling</td><td>Optional</td></tr>
+      <tr><td class="wrap">Advertising ID / billing</td><td class="wrap">Ads and ad-removal purchase</td><td>Optional</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">You may revoke permissions in device settings at any time; related features may then be limited.</p>
+
+  <h2>11. Children Under 18</h2>
+  <p>NotiVault is intended for users aged 18 and over. We do not target children or knowingly collect children's personal data. If we learn we have, we delete it without delay.</p>
+
+  <h2>12. Data Protection Officer &amp; Contact</h2>
+  <div class="contact">
+    <div><b>Company</b> Lumiora</div>
+    <div><b>Officer / Representative</b> Sungjin Park</div>
+    <div><b>Email</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Phone</b> +82 10-3262-8946</div>
+    <div><b>Address</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republic of Korea</div>
+    <div><b>Business reg. no.</b> 376-09-03284 · <b>E-commerce reg.</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Website</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Remedies (Republic of Korea)</h2>
+  <ul>
+    <li>Personal Information Dispute Mediation Committee: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Privacy Report Center (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Supreme Prosecutors' Office Cybercrime: 1301 (spo.go.kr)</li>
+    <li>National Police Agency Cyber Bureau: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. International Users — GDPR/CCPA</h2>
+  <ul>
+    <li><b>EEA/UK (GDPR/UK GDPR)</b>: you have rights of access, rectification, erasure, restriction, portability, and objection. Ad consent is managed via UMP and can be withdrawn at any time. Legal bases are consent and legitimate interests.</li>
+    <li><b>California (CCPA/CPRA)</b>: we do not “sell” personal information for money. You may opt out of analytics and limit ad tracking.</li>
+  </ul>
+
+  <h2>15. Changes</h2>
+  <p>We may update this Policy as laws or the service change. We will give prior notice of changes and the effective date in the App and at the published URL.</p>
+  <p><b>Effective date: 12 June 2026</b></p>
+</main>
+<footer>This document mirrors the policy shown in NotiVault under Settings → About → Privacy Policy. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="en",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

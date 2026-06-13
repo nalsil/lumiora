@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fil" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Patakaran sa Privacy</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Wika"></select>
+</header>
+<main>
+  <h1>Patakaran sa Privacy</h1>
+  <div class="eff">Epektibo simula 12 Hunyo 2026 · Huling na-update: 12 Hunyo 2026</div>
+  <p>Iginagalang ng Lumiora («Kompanya») ang iyong privacy at sumusunod sa mga naaangkop na batas sa proteksyon ng data. Nalalapat ang Patakarang ito sa mobile app na <b>NotiVault</b> («App»). Ang NotiVault ay isang <b>local-first</b> na app na nangongolekta, nag-uuri, naghahanap, nagbubuod, at nag-iimbak ng mga notification ng iyong device <b>nang buo sa iyong device</b>.</p>
+  <div class="principle"><strong>Pangunahing prinsipyo</strong> — Ang <b>nilalaman ng iyong mga notification (nagpadala, pamagat, katawan, larawan, atbp.) ay hindi kailanman ipinapadala sa mga server ng Kompanya o sa anumang panlabas na partido</b>. Lahat ng pag-uuri, paghahanap, pagbubuod, at AI inference ay nangyayari sa iyong device. Tanging ilang hindi-notification na data lang ang ipinapadala sa mga third-party na serbisyo sa Seksyon 5, para sa mga ad, istatistika ng paggamit, pagsusuri ng integridad, in-app purchase, at pag-download ng AI model.</div>
+
+  <h2>1. Impormasyong Pinoproseso Namin</h2>
+  <h3>1.1 Pinoproseso lamang sa iyong device (hindi kailanman ipinapadala sa aming mga server)</h3>
+  <p class="small muted">Nangongolekta lang ang App ng mga notification pagkatapos mong magbigay ng <b>Access sa Notification</b>, at iniimbak ang mga ito sa naka-encrypt na database sa device (SQLCipher).</p>
+  <div class="tw"><table>
+    <thead><tr><th>Kategorya</th><th>Mga item</th></tr></thead>
+    <tbody>
+      <tr><td>Nilalaman ng notification</td><td class="wrap">Katawan, pamagat, nagpadala (ayon sa ipinapakita ng pinagmulang app), oras ng pagtanggap, package name ng pinagmulang app, mga larawan, at orihinal na payload. <b>Iniimbak ang katawan nang buo</b> at maaaring maglaman ng sensitibong data gaya ng one-time code o impormasyong pampinansyal.</td></tr>
+      <tr><td>Na-extract na data</td><td class="wrap">Mga item na batay sa panuntunan (halaga, petsa, order number, mga link). <b>Ang mga one-time code (OTP) ay hindi iniimbak bilang halaga; ang katotohanan lamang ng pagkatuklas ang naitatala (nakamaskara bilang <code>******</code>)</b>.</td></tr>
+      <tr><td>Metadata ng pagsusuri</td><td class="wrap">Kategorya, kahalagahan, status ng pagkabasa, wika, content hash para sa deduplication.</td></tr>
+      <tr><td>Data sa paghahanap</td><td class="wrap">Mga embedding vector para sa semantic (natural na wika) na paghahanap, cache ng buod.</td></tr>
+      <tr><td>Iyong mga setting</td><td class="wrap">Mga custom na kategorya, manu-manong panuntunan, pinapayagan/hinaharang na spam sender, natutunang sender, hinaharang na app, mga paalala.</td></tr>
+      <tr><td>Lokal na identifier</td><td class="wrap">Random na install identifier na nililikha sa device (hindi kailanman ipinapadala).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 Maaaring iproseso/ipadala sa pamamagitan ng third-party na serbisyo</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Layunin</th><th>Data</th><th>Mga tala</th></tr></thead>
+    <tbody>
+      <tr><td>Mga ad (opsyonal)</td><td class="wrap">Advertising ID, impormasyon ng device at network</td><td class="wrap">Google AdMob. <b>Kasalukuyang naka-disable sa paglunsad.</b> Kapag pinagana, nalalapat ang UMP consent; hindi personalized bilang default.</td></tr>
+      <tr><td>Istatistika ng paggamit (opsyonal)</td><td class="wrap">Mga event ng app (pangalan ng screen/button), instance ID, impormasyon ng device/event</td><td class="wrap">Firebase Analytics. Maaari kang <b>mag-opt out</b> sa Mga Setting. Hindi kailanman ipinapadala ang nilalaman/nagpadala.</td></tr>
+      <tr><td>Pagsusuri ng integridad</td><td class="wrap">Integrity token ng app/device</td><td class="wrap">Google Play Integrity. Walang personal na nilalaman.</td></tr>
+      <tr><td>In-app purchase (opsyonal)</td><td class="wrap">Purchase token at status</td><td class="wrap">Google Play Billing. Pinangangasiwaan ng Google ang detalye ng pagbabayad.</td></tr>
+      <tr><td>AI model</td><td class="wrap">Impormasyon ng network sa pag-download (hal. IP)</td><td class="wrap"><b>Pag-download lamang</b> ng model mula sa Hugging Face. Walang data ng user na ina-upload.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Walang pagpaparehistro, login, o account ang App, at hindi nito direktang kinokolekta ang iyong pangalan, telepono, o email (maliban sa email na ibibigay mo kapag nakikipag-ugnayan).</p>
+
+  <h2>2. Mga Layunin ng Pagproseso</h2>
+  <ol>
+    <li>Pag-iimbak at pamamahala ng notification: awtomatikong pagkuha, naka-encrypt na imbakan, deduplication, pangkalahatang-tanaw</li>
+    <li>Pag-uuri at paghahanap: awtomatiko/manu-manong pag-uuri, paghahanap sa keyword at natural na wika</li>
+    <li>Mga buod, insight, at paalala: AI na buod sa device, insight ayon sa kategorya/pagkapagod, muling pagpapaalala para sa mahahalagang hindi pa nababasa</li>
+    <li>Kontrol sa spam: pag-uuri ayon sa keyword/natutunang sender at pagpayag/pagharang</li>
+    <li>Kontrol sa data: pag-export (portability), pamamahala ng pagpapanatili, pagbura</li>
+    <li>Kalidad at seguridad: opsyonal na pagpapabuti batay sa istatistika, pagtuklas ng root/pakikialam</li>
+    <li>Monetisasyon (opsyonal): mga ad at pagbili upang alisin ang mga ito</li>
+  </ol>
+
+  <h2>3. Pagpapanatili at Pagbura</h2>
+  <ol>
+    <li>Ang <b>data ng notification sa device</b> ay iniimbak lamang sa iyong device at binubura kapag binura mo ito (isa-isa, ayon sa panahon, o buo), kapag nag-expire ang pagpapanatili ayon sa kategorya, o kapag <b>na-uninstall ang App</b> (winawasak ang encryption key kaya hindi na mababawi ang data).</li>
+    <li>Ang <b>istatistika ng paggamit (opsyonal)</b> ay agad na huminto kapag nag-opt out ka; ang nakaraang data ay sumusunod sa patakaran ng processor (Google).</li>
+    <li>Anumang email na ibinigay mo para sa suporta ay binubura nang walang pagkaantala matapos itong matugunan.</li>
+    <li>Walang pinapatakbong server ang Kompanya na may access sa nilalaman ng notification, kaya walang kopya sa server.</li>
+  </ol>
+
+  <h2>4. Pagbabahagi sa Third Party</h2>
+  <p>Hindi namin ibinabahagi ang personal na data sa third party nang lampas sa mga nabanggit na layunin, maliban (i) sa iyong paunang pahintulot, o (ii) kung iniaatas ng batas o legal na kahilingan ng mga awtoridad. Dahil hindi kailanman ipinapadala ang nilalaman ng notification, hindi ito kailanman ibinabahagi.</p>
+
+  <h2>5. Mga Service Provider (Processor)</h2>
+  <p>Upang patakbuhin ang serbisyo, ang ilang pagproseso ay ipinapaubaya sa mga third-party SDK sa ibaba. Pinoproseso ng bawat provider ang data ayon sa sariling patakaran nito.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Provider</th><th>Gawain</th><th>Data</th><th>Patakaran</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Paghahatid ng ad</td><td class="wrap">Advertising ID, impo ng device/network</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Pamamahala ng pahintulot</td><td class="wrap">Status ng pahintulot</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Istatistika ng paggamit</td><td class="wrap">Mga event, instance ID, impo ng device/event</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Pagsusuri ng integridad</td><td class="wrap">Integrity token</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-app purchase</td><td class="wrap">Purchase token at status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>Distribusyon ng AI model</td><td class="wrap">Impo ng network sa pag-download (IP, atbp.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. Mga Internasyonal na Paglilipat</h2>
+  <p>Nasa ibang bansa ang mga provider sa itaas, kaya maaaring ilipat nang internasyonal ang ilang data kapag ginamit mo ang mga feature na iyon.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Tatanggap</th><th>Bansa</th><th>Mga item</th><th>Kailan/Paano</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">Estados Unidos, atbp.</td><td class="wrap">Advertising ID at impo ng device, istatistika, integrity token, impo ng pagbili</td><td class="wrap">Sa pamamagitan ng network kapag tumakbo ang feature</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>Estados Unidos</td><td class="wrap">Impo ng network ng kahilingan sa pag-download</td><td class="wrap">Sa unang pag-download ng model</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Maaari mong tanggihan o ihinto ang ilang pagproseso na may paglilipat sa pamamagitan ng pag-off ng istatistika, pag-withdraw ng pahintulot sa ad, o pagbili ng pag-alis ng ad.</p>
+
+  <h2>7. Iyong mga Karapatan</h2>
+  <p>Karamihan sa mga karapatan ay maaaring gamitin agad sa loob ng App.</p>
+  <ol>
+    <li>Access at paghahanap: tingnan at hanapin ang mga naka-save na notification sa App</li>
+    <li>Pagwawasto at pagbura: magbura isa-isa, ayon sa panahon, o buo (kasama ang mga larawan)</li>
+    <li>Portability (export): i-export ang iyong data bilang JSON o CSV</li>
+    <li>Ihinto ang pagproseso / bawiin ang pahintulot: harangin ang pangongolekta bawat app, i-off ang istatistika, bawiin ang pahintulot sa ad</li>
+    <li>Activity log: suriin ang privacy (audit) log sa App</li>
+  </ol>
+  <p class="small muted">Para gamitin ang mga karapatan o makipag-ugnayan: mga setting ng App o ang contact sa Seksyon 12. Tumutugon kami sa loob ng mga panahong itinakda ng batas.</p>
+
+  <h2>8. Awtomatikong Pangongolekta at Pag-opt Out</h2>
+  <ul>
+    <li><b>Mga ad</b>: hindi personalized bilang default; UMP consent sa EEA/UK at ilang estado ng US. Limitahan ang pagsubaybay sa pamamagitan ng «i-reset/burahin ang advertising ID» ng device.</li>
+    <li><b>Istatistika</b>: i-off anumang oras sa Mga Setting → Istatistika ng Paggamit (naka-on bilang default).</li>
+    <li><b>Pag-alis ng ad</b>: alisin ang mga ito sa pamamagitan ng in-app purchase.</li>
+  </ul>
+
+  <h2>9. Mga Hakbang sa Seguridad</h2>
+  <ol>
+    <li>Buong pag-encrypt ng naka-imbak na data (SQLCipher); pinoprotektahan ang key ng Android Keystore (StrongBox kung available).</li>
+    <li>Sa pag-uninstall/muling pag-install, winawasak ang key kaya hindi na mababawi ang nakaraang data.</li>
+    <li>Kapag may natuklasang root/pakikialam, nilo-lock ang vault; bina-verify ng Play Integrity ang integridad.</li>
+    <li>Sa mga production build, hinaharang ang screenshot/recording ng mga sensitibong screen.</li>
+    <li>Walang nilalaman ng notification na iniimbak sa server ng Kompanya; hiwalay na iniimbak ang mga setting.</li>
+  </ol>
+
+  <h2>10. Mga Pahintulot ng Device</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Pahintulot</th><th>Layunin</th><th>Uri</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Access sa notification</td><td class="wrap">Pagkuha at pag-iimbak (pangunahin)</td><td>Kailangan ang iyong pahintulot</td></tr>
+      <tr><td class="wrap">Magpakita ng notification</td><td class="wrap">Mga paalala, pangkalahatang-tanaw, status bar panel</td><td>Opsyonal</td></tr>
+      <tr><td class="wrap">Internet at status ng network</td><td class="wrap">Mga ad, istatistika, integridad, pag-download ng model</td><td>Opsyonal</td></tr>
+      <tr><td class="wrap">Foreground service (espesyal na gamit)</td><td class="wrap">Maaasahang pagkuha nang walang mawala</td><td>Kailangan</td></tr>
+      <tr><td class="wrap">Tapos ang boot</td><td class="wrap">Muling i-iskedyul ang mga paalala pagkatapos mag-restart</td><td>Opsyonal</td></tr>
+      <tr><td class="wrap">Wake lock / muling pagsasaayos ng task</td><td class="wrap">Matatag na pagkuha/iskedyul sa background</td><td>Opsyonal</td></tr>
+      <tr><td class="wrap">Advertising ID / billing</td><td class="wrap">Mga ad at pagbili upang alisin ang mga ito</td><td>Opsyonal</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Maaari mong bawiin ang mga pahintulot sa settings ng device anumang oras; maaaring malimitahan ang mga kaugnay na feature.</p>
+
+  <h2>11. Mga Batang Wala Pang 18</h2>
+  <p>Ang NotiVault ay para sa mga 18 taong gulang pataas. Hindi kami nagta-target sa mga bata at hindi kami sadyang nangongolekta ng kanilang data. Kung malaman namin, agad namin itong buburahin.</p>
+
+  <h2>12. Data Protection Officer at Contact</h2>
+  <div class="contact">
+    <div><b>Kompanya</b> Lumiora</div>
+    <div><b>Officer / Kinatawan</b> Sungjin Park</div>
+    <div><b>Email</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Telepono</b> +82 10-3262-8946</div>
+    <div><b>Address</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republika ng Korea</div>
+    <div><b>Business reg. no.</b> 376-09-03284 · <b>E-commerce reg.</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Website</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Mga Paraan ng Remedyo (Republika ng Korea)</h2>
+  <ul>
+    <li>Personal Information Dispute Mediation Committee: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Privacy Report Center (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Supreme Prosecutors' Office, Cybercrime: 1301 (spo.go.kr)</li>
+    <li>National Police Agency, Cyber Bureau: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. Mga Internasyonal na User — GDPR/CCPA</h2>
+  <ul>
+    <li><b>EEA/UK (GDPR/UK GDPR)</b>: mayroon kang karapatan sa access, pagwawasto, pagbura, paghihigpit, portability, at pagtutol. Pinangangasiwaan ang pahintulot sa ad sa pamamagitan ng UMP at maaaring bawiin anumang oras. Ang legal na batayan ay pahintulot at lehitimong interes.</li>
+    <li><b>California (CCPA/CPRA)</b>: hindi kami «nagbebenta» ng personal na impormasyon para sa pera. Maaari mong i-off ang istatistika at limitahan ang pagsubaybay ng ad.</li>
+  </ul>
+
+  <h2>15. Mga Pagbabago</h2>
+  <p>Maaari naming i-update ang Patakarang ito kapag nagbago ang batas o serbisyo. Magbibigay kami ng paunang abiso sa mga pagbabago at petsa ng bisa sa App at sa nai-publish na URL.</p>
+  <p><b>Petsa ng bisa: 12 Hunyo 2026</b></p>
+</main>
+<footer>Tumutugma ang dokumentong ito sa patakarang ipinapakita sa NotiVault sa ilalim ng Mga Setting → Tungkol → Patakaran sa Privacy. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="fil",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

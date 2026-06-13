@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-TW" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — 隱私權政策</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="語言"></select>
+</header>
+<main>
+  <h1>隱私權政策</h1>
+  <div class="eff">生效日 2026年6月12日 · 最近更新 2026年6月12日</div>
+  <p>Lumiora(「本公司」)尊重您的隱私並遵守適用之資料保護法律。本政策適用於行動應用程式 <b>NotiVault</b>(「本應用」)。NotiVault 為<b>在地優先</b>應用,<b>於您的裝置本機</b>收集、分類、搜尋、摘要並保存裝置通知。</p>
+  <div class="principle"><strong>核心原則</strong> — 通知<b>原文(寄件者、標題、內文、圖片等)絕不會傳送至本公司伺服器或任何外部方</b>。所有分類、搜尋、摘要與 AI 推論皆於裝置本機完成。僅有部分非通知資料會傳送給第 5 條所列第三方服務,用於廣告、使用統計、應用完整性驗證、應用程式內購買及 AI 模型下載。</div>
+
+  <h2>1. 我們處理的資訊</h2>
+  <h3>1.1 僅於裝置本機處理(不傳送至我們的伺服器)</h3>
+  <p class="small muted">僅在您授予<b>通知存取權限</b>後,本應用才會收集通知,並保存於裝置本機之加密資料庫(SQLCipher)。</p>
+  <div class="tw"><table>
+    <thead><tr><th>類別</th><th>項目</th></tr></thead>
+    <tbody>
+      <tr><td>通知原文</td><td class="wrap">內文、標題、寄件者(來源應用所顯示)、接收時間、來源應用套件名、通知圖片、原始通知酬載。<b>內文按原樣保存</b>,可能包含一次性驗證碼或金融資訊等敏感內容。</td></tr>
+      <tr><td>擷取資料</td><td class="wrap">規則式項目(金額、日期、訂單編號、連結)。<b>一次性驗證碼(OTP)不保存其值,僅記錄偵測事實(以 <code>******</code> 遮罩)</b>。</td></tr>
+      <tr><td>分析中繼資料</td><td class="wrap">類別、重要性、已讀狀態、語言、用於去重的內容雜湊。</td></tr>
+      <tr><td>搜尋資料</td><td class="wrap">用於語意(自然語言)搜尋的嵌入向量、摘要快取。</td></tr>
+      <tr><td>您的設定</td><td class="wrap">自訂分類、手動規則、垃圾訊息允許/封鎖寄件者、已學習寄件者、已封鎖應用、提醒設定。</td></tr>
+      <tr><td>本機識別碼</td><td class="wrap">於裝置本機產生的隨機安裝識別碼(不會傳輸)。</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 可能透過第三方服務處理/傳輸的資訊</h3>
+  <div class="tw"><table>
+    <thead><tr><th>目的</th><th>資料</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>廣告(選用)</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td class="wrap">Google AdMob。<b>正式發布階段目前為停用</b>。啟用時適用 UMP 同意,預設非個人化。</td></tr>
+      <tr><td>使用統計(選用)</td><td class="wrap">應用事件(畫面/按鈕名稱)、應用執行個體 ID、裝置/事件資訊</td><td class="wrap">Firebase Analytics。可於設定中<b>選擇退出</b>。絕不傳送通知內文/寄件者。</td></tr>
+      <tr><td>完整性驗證</td><td class="wrap">應用/裝置完整性權杖</td><td class="wrap">Google Play Integrity。不含個人內容。</td></tr>
+      <tr><td>應用程式內購買(選用)</td><td class="wrap">購買權杖與狀態</td><td class="wrap">Google Play 付款。付款資訊由 Google 處理。</td></tr>
+      <tr><td>AI 模型</td><td class="wrap">下載時的網路資訊(如 IP)</td><td class="wrap">僅自 Hugging Face <b>下載</b>。不上傳使用者資料。</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">本應用沒有註冊、登入或帳號,不直接收集您的姓名、電話或電子郵件(您聯絡我們時提供的電子郵件除外)。</p>
+
+  <h2>2. 處理目的</h2>
+  <ol>
+    <li>通知保存與管理:自動收集、加密保存、去重、保存概覽</li>
+    <li>分類與搜尋:自動/手動分類,關鍵字與自然語言搜尋</li>
+    <li>摘要、洞察與提醒:裝置端 AI 摘要,類別/疲勞度洞察,未讀重要通知再提醒</li>
+    <li>垃圾訊息整理:依關鍵字/已學習寄件者分類並允許/封鎖</li>
+    <li>資料掌控:匯出(可攜)、保存期限管理、刪除</li>
+    <li>品質與安全:選用的統計改進、root/竄改偵測</li>
+    <li>營利(選用):廣告及移除廣告的應用程式內購買</li>
+  </ol>
+
+  <h2>3. 保存與刪除</h2>
+  <ol>
+    <li><b>裝置端通知資料</b>僅保存於您的裝置,並於您刪除(單筆/依期間/全部)、類別保存期限到期或<b>解除安裝應用</b>(加密金鑰遭銷毀,無法解密)時刪除。</li>
+    <li><b>使用統計(選用)</b>於退出後立即停止;先前資料依處理方(Google)政策辦理。</li>
+    <li>您為支援而提供的電子郵件,於處理完畢後立即刪除。</li>
+    <li>本公司不營運可存取通知原文之伺服器,故無伺服器端副本。</li>
+  </ol>
+
+  <h2>4. 第三方共享</h2>
+  <p>除既定目的外,我們不會與第三方共享個人資料,但(i)經您事先同意,或(ii)法律要求或主管機關合法請求之情形除外。由於通知原文從不傳輸,故絕不會被共享。</p>
+
+  <h2>5. 受託服務商(處理者)</h2>
+  <p>為營運服務,部分處理委託予下列第三方 SDK。各服務商依其自有政策處理資料。</p>
+  <div class="tw"><table>
+    <thead><tr><th>服務商</th><th>事項</th><th>資料</th><th>政策</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>投放廣告</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>廣告同意管理</td><td class="wrap">同意狀態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>使用統計</td><td class="wrap">應用事件、執行個體 ID、裝置/事件資訊</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>完整性驗證</td><td class="wrap">完整性權杖</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play 付款)</td><td>應用程式內購買</td><td class="wrap">購買權杖與狀態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>AI 模型散布</td><td class="wrap">下載時的網路資訊(IP 等)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. 跨境傳輸</h2>
+  <p>上述服務商位於境外,使用相關功能時部分資料可能被傳輸至境外。</p>
+  <div class="tw"><table>
+    <thead><tr><th>接收方</th><th>國家</th><th>項目</th><th>時點/方式</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">美國等</td><td class="wrap">廣告 ID 與裝置資訊、統計、完整性權杖、購買資訊</td><td class="wrap">功能運作時經網路傳輸</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>美國</td><td class="wrap">模型下載請求之網路資訊</td><td class="wrap">首次下載模型時</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">您可透過退出統計、撤回廣告同意或購買移除廣告,拒絕或停止涉及跨境傳輸之部分處理。</p>
+
+  <h2>7. 您的權利</h2>
+  <p>多數權利可於應用內即時行使。</p>
+  <ol>
+    <li>存取與搜尋:於應用內檢視與搜尋已保存的通知</li>
+    <li>更正與刪除:單筆/依期間/全部刪除(含圖片)</li>
+    <li>可攜(匯出):以 JSON 或 CSV 匯出資料</li>
+    <li>停止處理/撤回同意:依應用封鎖收集、退出統計、撤回廣告同意</li>
+    <li>活動紀錄:檢視應用內隱私(稽核)紀錄</li>
+  </ol>
+  <p class="small muted">行使權利或聯絡我們:應用設定或第 12 條聯絡方式。我們將於法律規定期限內處理。</p>
+
+  <h2>8. 自動收集與退出</h2>
+  <ul>
+    <li><b>廣告</b>:預設非個人化;EEA/英國及部分美國州適用 UMP 同意。可透過裝置「重設/刪除廣告 ID」限制追蹤。</li>
+    <li><b>統計</b>:可隨時於「設定 → 使用統計」關閉(預設開啟)。</li>
+    <li><b>移除廣告</b>:可透過應用程式內購買移除廣告。</li>
+  </ul>
+
+  <h2>9. 安全措施</h2>
+  <ol>
+    <li>對已保存資料整體加密(SQLCipher),金鑰由 Android Keystore(可用時使用 StrongBox)保護。</li>
+    <li>解除安裝/重新安裝時銷毀金鑰,既有資料無法解密。</li>
+    <li>偵測到 root/竄改時鎖定保險庫,以 Play Integrity 驗證完整性。</li>
+    <li>正式版本中阻擋對敏感畫面截圖/錄影。</li>
+    <li>通知原文不存於本公司伺服器;設定等與通知資料分開儲存。</li>
+  </ol>
+
+  <h2>10. 裝置權限</h2>
+  <div class="tw"><table>
+    <thead><tr><th>權限</th><th>目的</th><th>類型</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">通知存取</td><td class="wrap">通知收集與保存(核心)</td><td>需您授權</td></tr>
+      <tr><td class="wrap">發佈通知</td><td class="wrap">提醒、保存概覽、狀態列面板</td><td>選用</td></tr>
+      <tr><td class="wrap">網際網路與網路狀態</td><td class="wrap">廣告、統計、完整性、模型下載</td><td>選用</td></tr>
+      <tr><td class="wrap">前景服務(特殊用途)</td><td class="wrap">穩定無遺漏收集</td><td>必要</td></tr>
+      <tr><td class="wrap">開機完成接收</td><td class="wrap">重新開機後重排提醒</td><td>選用</td></tr>
+      <tr><td class="wrap">喚醒鎖/工作重排</td><td class="wrap">穩定的背景收集/排程</td><td>選用</td></tr>
+      <tr><td class="wrap">廣告 ID/付款</td><td class="wrap">廣告及移除廣告購買</td><td>選用</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">您可隨時於裝置設定撤銷權限,撤銷後相關功能可能受限。</p>
+
+  <h2>11. 未滿 18 歲之兒童</h2>
+  <p>NotiVault 面向 18 歲以上使用者。我們不面向兒童,亦不會有意收集兒童之個人資料。如經發現,將立即刪除。</p>
+
+  <h2>12. 資料保護負責人與聯絡方式</h2>
+  <div class="contact">
+    <div><b>公司</b> Lumiora</div>
+    <div><b>負責人/代表</b> Sungjin Park</div>
+    <div><b>電子郵件</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>電話</b> +82 10-3262-8946</div>
+    <div><b>地址</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republic of Korea</div>
+    <div><b>營業登記號</b> 376-09-03284 · <b>電商登記</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>網站</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. 救濟途徑(韓國)</h2>
+  <ul>
+    <li>個人資料爭議調解委員會:+82-1833-6972 (kopico.go.kr)</li>
+    <li>隱私檢舉中心(KISA):118 (privacy.kisa.or.kr)</li>
+    <li>最高檢察署網路犯罪:1301 (spo.go.kr)</li>
+    <li>國家警察廳網路局:182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. 國際使用者 — GDPR/CCPA</h2>
+  <ul>
+    <li><b>EEA/英國(GDPR/UK GDPR)</b>:您享有存取、更正、刪除、限制、可攜與反對之權利。廣告同意經 UMP 管理,可隨時撤回。法律依據為同意及正當利益。</li>
+    <li><b>加州(CCPA/CPRA)</b>:我們不為金錢對價「出售」個人資訊。您可退出統計並限制廣告追蹤。</li>
+  </ul>
+
+  <h2>15. 變更</h2>
+  <p>我們可能隨法律或服務變化更新本政策,並將於應用內與公開 URL 提前告知變更內容與生效日。</p>
+  <p><b>生效日:2026年6月12日</b></p>
+</main>
+<footer>本頁面與 NotiVault 應用中「設定 → 關於 → 隱私權政策」內容一致。© Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="zh-TW",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Gizlilik Politikası</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Dil"></select>
+</header>
+<main>
+  <h1>Gizlilik Politikası</h1>
+  <div class="eff">Yürürlük: 12 Haziran 2026 · Son güncelleme: 12 Haziran 2026</div>
+  <p>Lumiora («Şirket») gizliliğinize saygı duyar ve geçerli veri koruma yasalarına uyar. Bu Politika, mobil uygulama <b>NotiVault</b> («Uygulama») için geçerlidir. NotiVault, cihazınıza gelen bildirimleri <b>tamamen cihazınızda</b> toplayan, sınıflandıran, arayan, özetleyen ve saklayan bir <b>local-first</b> uygulamadır.</p>
+  <div class="principle"><strong>Temel ilke</strong> — Bildirimlerinizin <b>içeriği (gönderen, başlık, gövde, görseller vb.) asla Şirket sunucularına veya üçüncü taraflara gönderilmez</b>. Tüm sınıflandırma, arama, özetleme ve yapay zekâ çıkarımı cihazınızda gerçekleşir. Yalnızca bildirimle ilgili olmayan bazı veriler, reklam, kullanım istatistikleri, bütünlük denetimi, uygulama içi satın alma ve yapay zekâ modeli indirme için Bölüm 5'teki üçüncü taraf hizmetlerine gönderilir.</div>
+
+  <h2>1. İşlediğimiz bilgiler</h2>
+  <h3>1.1 Yalnızca cihazınızda işlenir (sunucularımıza asla gönderilmez)</h3>
+  <p class="small muted">Uygulama yalnızca siz <b>Bildirim Erişimi</b> verdikten sonra bildirim toplar ve bunları cihazdaki şifreli bir veritabanında (SQLCipher) saklar.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Kategori</th><th>Öğeler</th></tr></thead>
+    <tbody>
+      <tr><td>Bildirim içeriği</td><td class="wrap">Gövde, başlık, gönderen (kaynak uygulamanın gösterdiği şekilde), alınma zamanı, kaynak uygulama paket adı, görseller ve ham bildirim yükü. <b>Gövde olduğu gibi saklanır</b> ve tek kullanımlık kodlar veya finansal bilgiler gibi hassas veriler içerebilir.</td></tr>
+      <tr><td>Çıkarılan veriler</td><td class="wrap">Kurallara dayalı öğeler (tutar, tarih, sipariş no, bağlantılar). <b>Tek kullanımlık kodlar (OTP) değer olarak saklanmaz; yalnızca algılandığı kaydedilir (<code>******</code> ile maskelenir)</b>.</td></tr>
+      <tr><td>Analiz meta verileri</td><td class="wrap">Kategori, önem, okundu durumu, dil, yinelenenleri ayıklamak için içerik özeti (hash).</td></tr>
+      <tr><td>Arama verileri</td><td class="wrap">Anlamsal (doğal dil) arama için gömme vektörleri, özet önbelleği.</td></tr>
+      <tr><td>Ayarlarınız</td><td class="wrap">Özel kategoriler, manuel kurallar, izin verilen/engellenen spam gönderenler, öğrenilmiş gönderenler, engellenen uygulamalar, hatırlatıcılar.</td></tr>
+      <tr><td>Yerel tanımlayıcı</td><td class="wrap">Cihazda oluşturulan rastgele bir kurulum tanımlayıcısı (asla iletilmez).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 Üçüncü taraf hizmetler aracılığıyla işlenebilir/iletilebilir</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Amaç</th><th>Veri</th><th>Notlar</th></tr></thead>
+    <tbody>
+      <tr><td>Reklam (isteğe bağlı)</td><td class="wrap">Reklam kimliği, cihaz ve ağ bilgileri</td><td class="wrap">Google AdMob. <b>Yayın aşamasında şu an devre dışı.</b> Etkinleştirilirse UMP onayı uygulanır; varsayılan olarak kişiselleştirilmemiş.</td></tr>
+      <tr><td>Kullanım istatistikleri (isteğe bağlı)</td><td class="wrap">Uygulama olayları (ekran/düğme adları), örnek kimliği, cihaz/olay bilgileri</td><td class="wrap">Firebase Analytics. Ayarlar'dan <b>devre dışı bırakabilirsiniz</b>. İçerik/gönderenler asla gönderilmez.</td></tr>
+      <tr><td>Bütünlük denetimi</td><td class="wrap">Uygulama/cihaz bütünlük belirteci</td><td class="wrap">Google Play Integrity. Kişisel içerik yok.</td></tr>
+      <tr><td>Uygulama içi satın alma (isteğe bağlı)</td><td class="wrap">Satın alma belirteci ve durumu</td><td class="wrap">Google Play Billing. Ödeme verilerini Google işler.</td></tr>
+      <tr><td>Yapay zekâ modeli</td><td class="wrap">İndirme sırasında ağ bilgileri (ör. IP)</td><td class="wrap">Hugging Face'ten yalnızca model <b>indirme</b>. Kullanıcı verisi yüklenmez.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Uygulamada kayıt, giriş veya hesap yoktur; adınızı, telefonunuzu veya e-postanızı doğrudan toplamaz (bizimle iletişime geçerken verdiğiniz e-posta hariç).</p>
+
+  <h2>2. İşleme amaçları</h2>
+  <ol>
+    <li>Bildirim saklama ve yönetimi: otomatik yakalama, şifreli saklama, yinelenenleri ayıklama, genel bakış</li>
+    <li>Sınıflandırma ve arama: otomatik/manuel sınıflandırma, anahtar kelime ve doğal dil araması</li>
+    <li>Özetler, içgörüler ve hatırlatıcılar: cihazda yapay zekâ özetleri, kategori/yorgunluk içgörüleri, okunmamış önemli bildirimler için yeniden uyarı</li>
+    <li>Spam kontrolü: anahtar kelime/öğrenilmiş gönderene göre sınıflandırma ve izin/engelleme</li>
+    <li>Veri kontrolü: dışa aktarma (taşınabilirlik), saklama yönetimi, silme</li>
+    <li>Kalite ve güvenlik: isteğe bağlı istatistik tabanlı iyileştirme, root/kurcalama tespiti</li>
+    <li>Para kazanma (isteğe bağlı): reklam ve reklamı kaldırma satın alması</li>
+  </ol>
+
+  <h2>3. Saklama ve silme</h2>
+  <ol>
+    <li><b>Cihazdaki bildirim verileri</b> yalnızca cihazınızda saklanır ve şunlarda silinir: silmeniz (tek tek, döneme göre veya tamamen), kategoriye göre saklama süresinin dolması veya <b>Uygulamayı kaldırma</b> (şifreleme anahtarı yok edilir, veriler kurtarılamaz).</li>
+    <li><b>Kullanım istatistikleri (isteğe bağlı)</b> devre dışı bırakınca hemen durur; önceki veriler işleyenin (Google) politikasına tabidir.</li>
+    <li>Destek için verdiğiniz e-posta, işlendikten sonra gecikmeksizin silinir.</li>
+    <li>Şirket, bildirim içeriğine erişebilen bir sunucu işletmez; sunucu tarafında kopya yoktur.</li>
+  </ol>
+
+  <h2>4. Üçüncü taraflarla paylaşım</h2>
+  <p>Belirtilen amaçların ötesinde kişisel verileri üçüncü taraflarla paylaşmayız; ancak (i) önceden onayınızla veya (ii) yasa gereği ya da yetkililerin yasal talebi durumunda paylaşılabilir. Bildirim içeriği asla iletilmediğinden asla paylaşılmaz.</p>
+
+  <h2>5. Hizmet sağlayıcılar (veri işleyenler)</h2>
+  <p>Hizmetin işleyişi için işlemenin bir kısmı aşağıdaki üçüncü taraf SDK'lara devredilir. Her sağlayıcı veriyi kendi politikasına göre işler.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Sağlayıcı</th><th>Görev</th><th>Veri</th><th>Politika</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Reklam sunma</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Onay yönetimi</td><td class="wrap">Onay durumu</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Kullanım istatistikleri</td><td class="wrap">Olaylar, örnek kimliği, cihaz/olay bilgisi</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Bütünlük denetimi</td><td class="wrap">Bütünlük belirteci</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>Uygulama içi satın alma</td><td class="wrap">Satın alma belirteci ve durumu</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>Yapay zekâ modeli dağıtımı</td><td class="wrap">İndirmede ağ bilgisi (IP vb.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. Uluslararası aktarımlar</h2>
+  <p>Yukarıdaki sağlayıcılar yurt dışındadır; bu nedenle bu işlevleri kullandığınızda bazı veriler uluslararası olarak aktarılabilir.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Alıcı</th><th>Ülke</th><th>Öğeler</th><th>Ne zaman/Nasıl</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">ABD vb.</td><td class="wrap">Reklam kimliği ve cihaz bilgisi, istatistikler, bütünlük belirteci, satın alma bilgisi</td><td class="wrap">İşlev çalışırken ağ üzerinden</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>ABD</td><td class="wrap">İndirme isteğinin ağ bilgisi</td><td class="wrap">İlk model indirmesinde</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">İstatistikleri kapatarak, reklam onayını geri çekerek veya reklam kaldırmayı satın alarak aktarım içeren bazı işlemeleri reddedebilir veya durdurabilirsiniz.</p>
+
+  <h2>7. Haklarınız</h2>
+  <p>Hakların çoğu Uygulama içinde anında kullanılabilir.</p>
+  <ol>
+    <li>Erişim ve arama: kayıtlı bildirimleri Uygulamada görüntüleme ve arama</li>
+    <li>Düzeltme ve silme: tek tek, döneme göre veya tamamen silme (görseller dahil)</li>
+    <li>Taşınabilirlik (dışa aktarma): verilerinizi JSON veya CSV olarak dışa aktarma</li>
+    <li>İşlemeyi durdurma / onayı geri çekme: uygulama bazında toplamayı engelleme, istatistikleri kapatma, reklam onayını geri çekme</li>
+    <li>Etkinlik günlüğü: Uygulamadaki gizlilik (denetim) günlüğünü inceleme</li>
+  </ol>
+  <p class="small muted">Hakları kullanmak veya bize ulaşmak için: Uygulama ayarları veya Bölüm 12'deki iletişim. Yasal süreler içinde yanıt veririz.</p>
+
+  <h2>8. Otomatik toplama ve devre dışı bırakma</h2>
+  <ul>
+    <li><b>Reklam</b>: varsayılan olarak kişiselleştirilmemiş; AEA/Birleşik Krallık ve bazı ABD eyaletlerinde UMP onayı. Cihazın «reklam kimliğini sıfırla/sil» ile izlemeyi sınırlayın.</li>
+    <li><b>İstatistikler</b>: Ayarlar → Kullanım İstatistikleri'nden istediğiniz zaman kapatın (varsayılan açık).</li>
+    <li><b>Reklam kaldırma</b>: uygulama içi satın alma ile kaldırın.</li>
+  </ul>
+
+  <h2>9. Güvenlik önlemleri</h2>
+  <ol>
+    <li>Saklanan verilerin tam şifrelenmesi (SQLCipher); anahtar Android Keystore (varsa StrongBox) ile korunur.</li>
+    <li>Kaldırma/yeniden kurmada anahtar yok edilir, önceki veriler kurtarılamaz.</li>
+    <li>Root/kurcalama tespitinde kasa kilitlenir; Play Integrity bütünlüğü doğrular.</li>
+    <li>Üretim sürümlerinde hassas ekranların görüntüsü/kaydı engellenir.</li>
+    <li>Bildirim içeriği Şirket sunucularında saklanmaz; ayarlar ayrı saklanır.</li>
+  </ol>
+
+  <h2>10. Cihaz izinleri</h2>
+  <div class="tw"><table>
+    <thead><tr><th>İzin</th><th>Amaç</th><th>Tür</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Bildirim erişimi</td><td class="wrap">Yakalama ve saklama (temel)</td><td>Onayınız gerekir</td></tr>
+      <tr><td class="wrap">Bildirim gösterme</td><td class="wrap">Hatırlatıcılar, genel bakış, durum çubuğu paneli</td><td>İsteğe bağlı</td></tr>
+      <tr><td class="wrap">İnternet ve ağ durumu</td><td class="wrap">Reklam, istatistik, bütünlük, model indirme</td><td>İsteğe bağlı</td></tr>
+      <tr><td class="wrap">Ön plan hizmeti (özel kullanım)</td><td class="wrap">Kayıpsız güvenilir yakalama</td><td>Gerekli</td></tr>
+      <tr><td class="wrap">Önyükleme tamamlandı</td><td class="wrap">Yeniden başlatma sonrası hatırlatıcıları yeniden planlama</td><td>İsteğe bağlı</td></tr>
+      <tr><td class="wrap">Wake lock / görevleri yeniden sıralama</td><td class="wrap">Kararlı arka plan yakalama/planlama</td><td>İsteğe bağlı</td></tr>
+      <tr><td class="wrap">Reklam kimliği / faturalandırma</td><td class="wrap">Reklam ve kaldırma satın alması</td><td>İsteğe bağlı</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">İzinleri cihaz ayarlarından istediğiniz zaman geri alabilirsiniz; ilgili işlevler kısıtlanabilir.</p>
+
+  <h2>11. 18 yaş altı çocuklar</h2>
+  <p>NotiVault 18 yaş ve üzeri kişilere yöneliktir. Çocukları hedeflemez ve bilerek verilerini toplamayız. Öğrenirsek gecikmeksizin sileriz.</p>
+
+  <h2>12. Veri koruma sorumlusu ve iletişim</h2>
+  <div class="contact">
+    <div><b>Şirket</b> Lumiora</div>
+    <div><b>Sorumlu / Temsilci</b> Sungjin Park</div>
+    <div><b>E-posta</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Telefon</b> +82 10-3262-8946</div>
+    <div><b>Adres</b> 119 Gireum-ro, Seongbuk-gu, Seul, Kore Cumhuriyeti</div>
+    <div><b>Ticaret sicil no</b> 376-09-03284 · <b>E-ticaret kaydı</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Web</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Başvuru yolları (Kore Cumhuriyeti)</h2>
+  <ul>
+    <li>Kişisel Veri Uyuşmazlıkları Arabuluculuk Komitesi: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Gizlilik İhbar Merkezi (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Yüksek Savcılık, Siber Suç: 1301 (spo.go.kr)</li>
+    <li>Ulusal Polis, Siber Büro: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. Uluslararası kullanıcılar — GDPR/CCPA</h2>
+  <ul>
+    <li><b>AEA/Birleşik Krallık (GDPR/UK GDPR)</b>: erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve itiraz haklarına sahipsiniz. Reklam onayı UMP ile yönetilir ve istediğiniz zaman geri çekilebilir. Hukuki dayanaklar onay ve meşru menfaattir.</li>
+    <li><b>Kaliforniya (CCPA/CPRA)</b>: kişisel verileri para karşılığı «satmayız». İstatistikleri kapatabilir ve reklam izlemeyi sınırlayabilirsiniz.</li>
+  </ul>
+
+  <h2>15. Değişiklikler</h2>
+  <p>Yasalar veya hizmet değiştikçe bu Politikayı güncelleyebiliriz. Değişiklikleri ve yürürlük tarihini Uygulamada ve yayımlanan URL'de önceden bildiririz.</p>
+  <p><b>Yürürlük tarihi: 12 Haziran 2026</b></p>
+</main>
+<footer>Bu belge, NotiVault'taki Ayarlar → Hakkında → Gizlilik Politikası ile aynıdır. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="tr",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

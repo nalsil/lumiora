@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>명경 (MyungKyung) - AI 사주 분석 서비스</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans+KR:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1754cf",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Top Navigation Bar -->
+        <header
+            class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="text-primary">
+                        <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-black tracking-tight text-slate-900 dark:text-white font-display"><a
+                            href="index.html">루미오라</a></h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html">홈</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#services">서비스</a>
+                    <a class="text-sm font-bold text-primary" href="myungkyung.html" aria-current="page">명경</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="notivault.html">NotiVault</a>
+                    <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#about">회사소개</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.location.href='../en/myungkyung.html'"
+                        class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">language</span>
+                        EN
+                    </button>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <section class="relative w-full overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 md:px-20 py-16 md:py-28 flex flex-col items-center text-center">
+                    <div class="absolute inset-0 -z-10 opacity-20 dark:opacity-10 pointer-events-none">
+                        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/30 blur-3xl rounded-full"></div>
+                        <div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 blur-3xl rounded-full"></div>
+                    </div>
+                    <div
+                        class="mb-6 flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20">
+                        <span class="material-symbols-outlined text-sm">auto_awesome</span>
+                        <span class="text-xs font-bold tracking-wider uppercase">Lumiora AI Platform</span>
+                    </div>
+                    <h2
+                        class="text-4xl md:text-6xl font-black text-slate-900 dark:text-white leading-tight mb-6 max-w-4xl">
+                        명경: AI로 읽는 <br class="md:hidden" />당신의 푸른 운명
+                    </h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed">
+                        자연의 지혜와 첨단 인공지능이 만났습니다.
+                        Lumiora의 독자적인 AI 엔진이 당신의 사주와 기운을 분석하여 더 나은 내일을 제안합니다.
+                    </p>
+                    <div
+                        class="mt-16 w-full max-w-5xl aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative border border-white/20">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-background-light/80 dark:from-background-dark/80 to-transparent z-10">
+                        </div>
+                        <div class="w-full h-full bg-cover bg-center"
+                            data-alt="Peaceful forest canopy with sunlight streaming through leaves"
+                            style="background-image: url('../images/myungkyung_bg.jpg');">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Interactive Services Section -->
+            <section class="py-24 px-6 md:px-20 bg-white dark:bg-slate-900/50" id="services-interactive">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-16">
+                        <h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Interactive Showcase</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">명경의 20가지 프리미엄 서비스</h2>
+                        <p class="mt-4 text-slate-600 dark:text-slate-400">마우스를 서비스 카드 위에 올리면 실제 명경 앱의 화면을 모바일 목업에서 바로 확인하실 수 있습니다.</p>
+                    </div>
+                    
+                    <div class="flex flex-col lg:flex-row gap-16 items-start">
+                        <!-- Services List (Left Column) -->
+                        <div class="w-full lg:w-2/3 space-y-12">
+                            
+                            <!-- Category 1 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">person_search</span>
+                                    운세와 나를 이해하고자 할 때
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 1 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/02오늘의운세.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">wb_sunny</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">운세</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">오늘, 이번 달, 올해의 운세를 점수와 키워드로 한눈에 분석합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 2 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/03.AI사주상세분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">psychology</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI 분석 사주</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">인공지능이 복잡하고 깊은 내 사주의 풀이를 명쾌하게 설명해 줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 3 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/04.대운.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">trending_up</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">대운 분석</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">10년 단위로 흐르는 인생의 거대한 변화와 기회의 흐름을 보여줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 4 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/05.나에대하여.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">fingerprint</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">나에 대하여</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">본인의 성격, 타고난 강점과 약점, 숨은 재능을 자세히 진단합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 5 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/06.토정비결.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">auto_stories</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">토정비결</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">올 한 해의 신수를 월별로 꼼꼼하게 짚어주는 전통 방식의 풀이입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Category 2 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">diversity_1</span>
+                                    관계와 인생의 일의 도움이 필요할 때
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 6 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/07.궁합분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">favorite</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">궁합</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">연인, 부부, 친구, 파트너 간의 사주가 어떻게 어우러지는지 진단합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 7 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/08.작명개명태명.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">draw</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">작명 / 개명 / 태명</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">사주의 오행과 흐름에 맞춘 가장 잘 어울리는 좋은 이름들을 추천합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 8 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/09.진로직업적성분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">work</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">진로·직업 분석</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">본인의 천성적인 강점을 분석하여 가장 알맞은 직무와 진로를 제시합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 9 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/10.꿈해몽.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">nights_stay</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">꿈해몽</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">간밤에 꾼 복잡하고 생생한 꿈이 담고 있는 메시지를 해석해 줍니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Category 3 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">calendar_month</span>
+                                    좋은 기회를 찾고자 할 때
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 10 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/11.운세캘린더.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">calendar_today</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">운세 캘린더</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">한 달의 날짜별 세부 운세 점수를 달력에 시각화해 줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 11 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/12.길일캘린더.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">event_available</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">길일 캘린더</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">이사, 계약, 시험, 결혼 등 중요 행사를 치르기에 행운이 따르는 날을 계산해 줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 12 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/13.오늘의행동추천.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">recommend</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">오늘의 행동 추천</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">오늘 하면 긍정적인 행동과 가급적 피하는 것이 좋은 행동을 알려드립니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 13 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/14.운에너지현황.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">bolt</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">운 에너지 현황</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">현재 활성화된 다양한 운들의 비중과 세기를 대시보드로 시각화합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 14 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/15.인생전환기.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">change_circle</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">인생 전환기</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">평생 중 기류가 바뀌는 거대한 터닝 포인트를 미리 짚어드립니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 15 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/16.이벤트예측.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">event</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">이벤트 예측</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">가까운 미래에 생길 수 있는 크고 작은 주변 변화나 기회를 포착합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 16 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/17.주간사주로또.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">confirmation_number</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">로또 운세</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">이번 주 나의 기운과 재물운 상승 주기에 맞춘 행운의 번호를 계산합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Category 4 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                                    인생을 더 깊이 들여다 볼 때
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 17 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/18.AI고민상담(인생코치).png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">forum</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI 고민상담</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">연애, 이사, 금전, 건강 등 무거운 고민들을 사주 관점에서 상담해 줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 18 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/19.AI전략분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">ads_click</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI 전략 분석</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">큰 결단을 내리기 전에 필요한 단계별 행동 요령과 극복 전략을 세워줍니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 19 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/20.AI명리상담.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">smart_toy</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI 명리상담</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">내 사주 데이터를 텍스트로 요약 및 복사하여 외부 AI(ChatGPT 등)에 활용할 수 있게 합니다.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 20 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/21.운보정.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">tune</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">운 보정</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">나에게 부족한 오행 기운을 일상(색상, 방향, 음식 등)에서 채울 처방을 제안합니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Sticky Mobile Frame (Right Column) -->
+                        <div class="w-full lg:w-1/3 sticky top-28 flex justify-center pb-12">
+                            <div class="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/19] bg-slate-800 rounded-[3rem] border-[8px] border-slate-700 shadow-2xl overflow-hidden">
+                                <img id="phone-preview" alt="MyungKyung Service Preview" class="w-full h-full object-cover transition-opacity duration-200" src="../images/myungkyung/01.홈.png" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Nature Visualization Section (Alternative Content) -->
+            <section class="py-24 px-6 md:px-20 overflow-hidden">
+                <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                    <div class="w-full md:w-1/2 relative">
+                        <div
+                            class="relative z-20 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
+                            <img class="w-full h-[500px] object-cover"
+                                data-alt="Sunbeams filtering through a lush green forest canopy"
+                                src="../images/myungkyung_img.jpg" />
+                        </div>
+                        <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl -z-10">
+                        </div>
+                        <div
+                            class="absolute -bottom-10 -right-10 w-60 h-60 bg-green-500/10 rounded-full blur-3xl -z-10">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900 dark:text-white leading-snug">자연의
+                            리듬을 거스르지 않는 <br />지혜로운 삶</h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg mb-8 leading-relaxed">
+                            명경은 단순히 미래를 예언하지 않습니다. 우리는 당신이 가진 기운의 패턴을 읽어내고, 계절이 바뀌듯 자연스럽게 다가오는 기회를 포착하도록 돕습니다. 인공지능이
+                            제공하는 정교한 데이터는 당신의 직관을 깨우는 도구가 될 것입니다.
+                        </p>
+                        <ul class="space-y-4 mb-10">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">Lumiora의 고성능 신경망 연산 엔진 탑재</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">수만 건의 실제 사주 데이터 기반 정밀 학습</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">check_circle</span>
+                                <span class="text-slate-700 dark:text-slate-300">개인정보 보호를 위한 강력한 암호화 프로토콜</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact & Inquiry Section -->
+        </main>
+        <!-- Footer -->
+        <footer class="bg-slate-50 dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="text-primary">
+                                <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-black tracking-tight font-display">Lumiora</h2>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                            루미오라는 AI 기술과 데이터 기반의 디지털 솔루션을 통해 더 나은 내일을 설계합니다. 기술의 따뜻한 혁신을 지향합니다.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg">public</span>
+                            </a>
+                            <a class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+                                href="#">
+                                <span class="material-symbols-outlined text-lg">alternate_email</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 dark:text-white mb-6">서비스</h5>
+                        <ul class="space-y-4 text-slate-500 dark:text-slate-400 text-sm">
+                            <li><a class="hover:text-primary" href="index.html#services">모바일 앱 개발</a></li>
+                            <li><a class="hover:text-primary" href="index.html#services">웹사이트 구축</a></li>
+                            <li><a class="hover:text-primary" href="myungkyung.html">명경 서비스</a></li>
+                            <li><a class="hover:text-primary" href="notivault.html">NotiVault 서비스</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-12 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-8 text-xs text-slate-500 dark:text-slate-400"
+                    id="about">
+                    <div class="space-y-2">
+                        <p><span class="font-bold">주식회사 루미오라 (Lumiora)</span></p>
+                        <p>대표자: 박성진</p>
+                        <p>사업자 등록번호: 376-09-03284 | 통신판매업 신고번호: 제2026-서울성북-0319호</p>
+                        <p>주소: 서울특별시 성북구 길음로 119</p>
+                        <p>Tel: 010-3262-8946 | Email: contact@lumiora.co.kr</p>
+                    </div>
+                    <div class="flex flex-col md:items-end justify-end">
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 font-medium text-xs">
+                            <a href="https://saju.lumiora.co.kr/terms/terms-of-service" target="_blank"
+                                class="hover:text-primary transition-colors">명경 이용약관</a>
+                            <a href="https://saju.lumiora.co.kr/terms/privacy-policy" target="_blank"
+                                class="hover:text-primary transition-colors font-bold text-slate-700 dark:text-slate-300">명경 개인정보처리방침</a>
+                            <a href="../notivault/privacy/privacy-ko.html" target="_blank"
+                                class="hover:text-primary transition-colors font-bold text-indigo-600">NotiVault 개인정보처리방침</a>
+                        </div>
+                        <p>© 2026 Lumiora All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+        function changePreview(src) {
+            const preview = document.getElementById('phone-preview');
+            if (preview) {
+                preview.style.opacity = '0.3';
+                setTimeout(() => {
+                    preview.src = src;
+                    preview.style.opacity = '1';
+                }, 150);
+            }
+        }
+    </script>
+</body>
+
+</html>

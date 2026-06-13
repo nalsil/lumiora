@@ -42,21 +42,25 @@
         <header
             class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
             <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">
                     <div class="text-primary">
-                        <span class="material-symbols-outlined text-4xl">diamond</span>
+                        <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                        </svg>
                     </div>
-                    <h2 class="text-xl font-bold tracking-tight">MyungKyung</h2>
+                    <h2 class="text-xl font-bold tracking-tight"><a href="index.html">Lumiora</a></h2>
                 </div>
                 <nav class="hidden md:flex items-center gap-10">
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="/en/index.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
                     <a class="text-sm font-medium hover:text-primary transition-colors"
-                        href="/en/index.html#services">Services</a>
+                        href="index.html#services">Services</a>
+                    <a class="text-sm font-bold text-primary" href="myungkyung.html" aria-current="page">MyungKyung</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="notivault.html">NotiVault</a>
                     <a class="text-sm font-medium hover:text-primary transition-colors"
-                        href="/en/index.html#about">About</a>
+                        href="index.html#about">About</a>
                 </nav>
                 <div class="flex items-center gap-4">
-                    <button onclick="window.location.href='../myungkyung.html'"
+                    <button onclick="window.location.href='../ko/myungkyung.html'"
                         class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors cursor-pointer">
                         <span class="material-symbols-outlined text-sm">language</span>KO
                     </button>
@@ -90,169 +94,247 @@
                     </div>
                 </div>
             </section>
-            <section class="py-20 bg-white dark:bg-slate-900/50">
-                <div class="max-w-7xl mx-auto px-6">
-                    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-                        <div class="max-w-xl">
-                            <h2 class="text-3xl font-bold mb-4">Detailed Services</h2>
-                            <p class="text-slate-600 dark:text-slate-400">Discover our comprehensive suite of
-                                astrological and personality analysis tools powered by modern technology.</p>
-                        </div>
-                        <div class="flex items-center gap-2 text-primary font-semibold text-sm">
-                            <span>15 Services Available</span>
-                            <span class="material-symbols-outlined">analytics</span>
-                        </div>
+            <!-- Interactive Services Section -->
+            <section class="py-24 px-6 md:px-20 bg-white dark:bg-slate-900/50" id="services-interactive">
+                <div class="max-w-7xl mx-auto">
+                    <div class="mb-16">
+                        <h3 class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Interactive Showcase</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">20 Premium AI Services of MyungKyung</h2>
+                        <p class="mt-4 text-slate-600 dark:text-slate-400">Hover over any service card to view its actual app interface inside the mobile mockup.</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">account_circle</span>
+                    
+                    <div class="flex flex-col lg:flex-row gap-16 items-start">
+                        <!-- Services List (Left Column) -->
+                        <div class="w-full lg:w-2/3 space-y-12">
+                            
+                            <!-- Category 1 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">person_search</span>
+                                    Understanding Fortune &amp; Yourself
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 1 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/02오늘의운세.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">wb_sunny</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Daily Fortune</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Check daily, monthly, and yearly fortunes with scores and keywords.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 2 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/03.AI사주상세분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">psychology</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI Deep Saju Analysis</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Artificial intelligence decodes your birth chart (Saju) in depth.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 3 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/04.대운.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">trending_up</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Great Fortune Analysis</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Explores the 10-year cycles and long-term trends of your life's destiny.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 4 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/05.나에대하여.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">fingerprint</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">About Me</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">A comprehensive summary of your personality, strengths, and talents.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 5 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/06.토정비결.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">auto_stories</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Tojeongbigyeol</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Traditional monthly guide for the entire year based on classic texts.</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-bold mb-2">My Archetype</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Simple emoji and
-                                score-based core traits to understand your fundamental nature.</p>
+                            
+                            <!-- Category 2 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">diversity_1</span>
+                                    Relationships &amp; Life's Work
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 6 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/07.궁합분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">favorite</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Compatibility</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Analyzes how well two birth charts harmonize in love, friendship, or business.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 7 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/08.작명개명태명.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">draw</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Naming / Renaming</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Recommends auspicious names based on traditional name-creation methods.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 8 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/09.진로직업적성분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">work</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Career &amp; Aptitude</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Guides you to jobs and career paths matching your natural strengths.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 9 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/10.꿈해몽.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">nights_stay</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Dream Interpretation</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Unlocks the hidden meanings and guidance behind your vivid dreams.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Category 3 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">calendar_month</span>
+                                    Finding Good Opportunities
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 10 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/11.운세캘린더.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">calendar_today</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Fortune Calendar</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">A monthly view mapping out daily fortune scores for easy planning.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 11 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/12.길일캘린더.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">event_available</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Lucky Day Calendar</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Finds ideal dates for moving, contracts, exams, or weddings.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 12 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/13.오늘의행동추천.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">recommend</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Today's Action Guide</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Provides customized recommendations on what to do and avoid today.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 13 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/14.운에너지현황.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">bolt</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Fortune Energy Status</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">A real-time dashboard visualizing your current fortune parameters.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 14 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/15.인생전환기.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">change_circle</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Life Transition</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Pinpoints critical shifting phases and milestones in your lifespan.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 15 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/16.이벤트예측.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">event</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Event Prediction</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Forecasts upcoming events and external developments near you.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 16 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/17.주간사주로또.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">confirmation_number</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Lotto Fortune</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Generates lucky numbers based on your financial energy levels.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Category 4 -->
+                            <div class="space-y-6">
+                                <h3 class="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
+                                    <span class="material-symbols-outlined text-primary">auto_awesome</span>
+                                    Looking Deeper into Life
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <!-- Service 17 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/18.AI고민상담(인생코치).png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">forum</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI Trouble Counseling</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Personalized Saju guidance on love, career, finance, and health.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 18 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/19.AI전략분석.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">ads_click</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI Strategic Analysis</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Formulates action strategies and contingency plans for key decisions.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 19 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/20.AI명리상담.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">smart_toy</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">AI Myeongri Counseling</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Exports Saju summary text to feed into external AI assistants.</p>
+                                        </div>
+                                    </div>
+                                    <!-- Service 20 -->
+                                    <div onmouseover="changePreview('../images/myungkyung/21.운보정.png')"
+                                         class="group flex items-start gap-4 p-5 rounded-2xl bg-background-light dark:bg-slate-800/50 hover:bg-primary/5 dark:hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300 cursor-pointer">
+                                        <span class="material-symbols-outlined text-primary bg-primary/10 p-2.5 rounded-xl">tune</span>
+                                        <div>
+                                            <h4 class="font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors">Energy Calibration</h4>
+                                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Suggests colors, directions, or food to supplement deficient elements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">fingerprint</span>
+                        
+                        <!-- Sticky Mobile Frame (Right Column) -->
+                        <div class="w-full lg:w-1/3 sticky top-28 flex justify-center pb-12">
+                            <div class="relative w-full max-w-[280px] md:max-w-[320px] aspect-[9/19] bg-slate-800 rounded-[3rem] border-[8px] border-slate-700 shadow-2xl overflow-hidden">
+                                <img id="phone-preview" alt="MyungKyung Service Preview" class="w-full h-full object-cover transition-opacity duration-200" src="../images/myungkyung/01.홈.png" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
                             </div>
-                            <h3 class="text-xl font-bold mb-2">Saju MBTI</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Modern personality
-                                analysis using 4 key indicators derived from traditional Saju principles.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">trending_up</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Fortune</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Daily updates on
-                                wealth and love luck with personalized advice for your current energy.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">history_toggle_off</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Great Fortune Analysis</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Strategic 10-year
-                                cycle analysis for long-term planning and major life decisions.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">auto_awesome</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Expert Analysis</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Detailed breakdown of
-                                complex astrological elements for advanced practitioners.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">workspace_premium</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Premium Saju</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">LLM-based deep dive
-                                into specific life areas including health, career, or marriage.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">calendar_today</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Tojeongbigyeol</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Modern interpretation
-                                of traditional annual monthly fortunes for the current year.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">nights_stay</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Horoscope</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Western
-                                astrology-based analysis of planets and stars alignment for your sign.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">show_chart</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Biorhythm</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Action guidelines
-                                based on emotional, physical, and intellectual energy cycles.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">favorite</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Compatibility</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">AI-powered
-                                relationship balance (Gung-hap) and advice for couples or partners.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">bloodtype</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Blood Type</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Personality insights
-                                and relationship harmony based on cultural blood type theories.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">match_word</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Naming</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Traditional naming
-                                principles meet AI for lucky and meaningful name suggestions.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">confirmation_number</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Lotto Fortune</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Lucky colors and
-                                numbers calculated based on your daily energetic resonance.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">work</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Career &amp; Job</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">LLM consulting for
-                                optimal job positioning and professional path alignment.</p>
-                        </div>
-                        <div
-                            class="group p-6 bg-background-light dark:bg-background-dark rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/50 dark:hover:border-primary/50 transition-all">
-                            <div
-                                class="w-12 h-12 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                                <span class="material-symbols-outlined">event_available</span>
-                            </div>
-                            <h3 class="text-xl font-bold mb-2">Lucky Day Calendar</h3>
-                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Monthly calendar
-                                showing the best days for 10 key activities based on your energy.</p>
                         </div>
                     </div>
                 </div>
@@ -281,15 +363,17 @@
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div class="col-span-1 md:col-span-2">
-                        <div class="flex items-center gap-3 mb-6">
+                        <div class="flex items-center gap-2 mb-6">
                             <div class="text-primary">
-                                <span class="material-symbols-outlined text-4xl">diamond</span>
+                                <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                                </svg>
                             </div>
-                            <h2 class="text-2xl font-bold tracking-tight">MyungKyung</h2>
+                            <h2 class="text-2xl font-bold tracking-tight"><a href="index.html">Lumiora</a></h2>
                         </div>
                         <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-8">
-                            A harmonious blend of ancient Eastern wisdom and cutting-edge artificial intelligence.
-                            Guided by Lumiora
+                            MyungKyung is a harmonious blend of ancient Eastern wisdom and cutting-edge artificial
+                            intelligence, guided by Lumiora.
                         </p>
                         <div class="flex gap-4">
                             <a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
@@ -303,20 +387,18 @@
                         </div>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-6">Explore</h4>
+                        <h4 class="font-bold mb-6">Products</h4>
                         <ul class="flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">Daily Fortune</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">AI Analysis</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Compatibility</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Premium Insights</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="myungkyung.html">MyungKyung Saju</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="notivault.html">NotiVault Archive</a></li>
+                            <li><a class="hover:text-indigo-600 font-bold transition-colors" href="../notivault/privacy/privacy-en.html" target="_blank">NotiVault Privacy Policy</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4 class="font-bold mb-6">Company</h4>
                         <ul class="flex flex-col gap-4 text-sm text-slate-600 dark:text-slate-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">About Lumiora</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="index.html#about">About Lumiora</a></li>
+                            <li><a class="hover:text-primary" href="https://saju.lumiora.co.kr/terms/privacy-policy" target="_blank">MyungKyung Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -332,6 +414,18 @@
             </div>
         </footer>
     </div>
+    <script>
+        function changePreview(src) {
+            const preview = document.getElementById('phone-preview');
+            if (preview) {
+                preview.style.opacity = '0.3';
+                setTimeout(() => {
+                    preview.src = src;
+                    preview.style.opacity = '1';
+                }, 150);
+            }
+        }
+    </script>
 </body>
 
 </html>

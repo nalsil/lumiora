@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Política de Privacidade</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Idioma"></select>
+</header>
+<main>
+  <h1>Política de Privacidade</h1>
+  <div class="eff">Em vigor desde 12 de junho de 2026 · Última atualização: 12 de junho de 2026</div>
+  <p>A Lumiora (a «Empresa») respeita sua privacidade e cumpre as leis de proteção de dados aplicáveis. Esta Política se aplica ao aplicativo móvel <b>NotiVault</b> (o «App»). O NotiVault é um app <b>local-first</b> que coleta, classifica, pesquisa, resume e armazena as notificações do seu dispositivo <b>inteiramente no seu dispositivo</b>.</p>
+  <div class="principle"><strong>Princípio central</strong> — O <b>conteúdo das suas notificações (remetente, título, corpo, imagens etc.) nunca é enviado aos servidores da Empresa nem a terceiros</b>. Toda classificação, pesquisa, resumo e inferência de IA ocorre no seu dispositivo. Apenas certos dados não relacionados às notificações são enviados aos serviços de terceiros da Seção 5, para anúncios, análises de uso, verificação de integridade, compras no app e download de modelos de IA.</div>
+
+  <h2>1. Informações que tratamos</h2>
+  <h3>1.1 Tratadas apenas no seu dispositivo (nunca enviadas aos nossos servidores)</h3>
+  <p class="small muted">O App coleta notificações somente após você conceder o <b>Acesso às notificações</b>, e as armazena em um banco de dados criptografado no dispositivo (SQLCipher).</p>
+  <div class="tw"><table>
+    <thead><tr><th>Categoria</th><th>Itens</th></tr></thead>
+    <tbody>
+      <tr><td>Conteúdo da notificação</td><td class="wrap">Corpo, título, remetente (como exibido pelo app de origem), horário de recebimento, pacote do app de origem, imagens e payload original. <b>O corpo é armazenado na íntegra</b> e pode conter dados sensíveis como códigos de uso único ou dados financeiros.</td></tr>
+      <tr><td>Dados extraídos</td><td class="wrap">Itens baseados em regras (valor, data, n.º do pedido, links). <b>Códigos de uso único (OTP) não são armazenados como valor; apenas o fato da detecção é registrado (mascarado como <code>******</code>)</b>.</td></tr>
+      <tr><td>Metadados de análise</td><td class="wrap">Categoria, importância, estado de leitura, idioma, hash de conteúdo para deduplicação.</td></tr>
+      <tr><td>Dados de pesquisa</td><td class="wrap">Vetores de incorporação para busca semântica (linguagem natural), cache de resumos.</td></tr>
+      <tr><td>Suas configurações</td><td class="wrap">Categorias personalizadas, regras manuais, remetentes permitidos/bloqueados de spam, remetentes aprendidos, apps bloqueados, lembretes.</td></tr>
+      <tr><td>Identificador local</td><td class="wrap">Um identificador de instalação aleatório gerado no dispositivo (nunca transmitido).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 Pode ser tratado/transmitido por serviços de terceiros</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Finalidade</th><th>Dados</th><th>Observações</th></tr></thead>
+    <tbody>
+      <tr><td>Anúncios (opcional)</td><td class="wrap">ID de publicidade, informações do dispositivo e da rede</td><td class="wrap">Google AdMob. <b>Atualmente desativado no lançamento.</b> Quando ativado, aplica-se o consentimento UMP; não personalizado por padrão.</td></tr>
+      <tr><td>Análises de uso (opcional)</td><td class="wrap">Eventos do app (nomes de tela/botão), ID de instância, informações de dispositivo/evento</td><td class="wrap">Firebase Analytics. Você pode <b>desativar</b> em Configurações. Conteúdo e remetentes nunca são enviados.</td></tr>
+      <tr><td>Verificação de integridade</td><td class="wrap">Token de integridade do app/dispositivo</td><td class="wrap">Google Play Integrity. Sem conteúdo pessoal.</td></tr>
+      <tr><td>Compra no app (opcional)</td><td class="wrap">Token e estado da compra</td><td class="wrap">Google Play Billing. Os dados de pagamento são tratados pelo Google.</td></tr>
+      <tr><td>Modelo de IA</td><td class="wrap">Informações de rede no download (ex.: IP)</td><td class="wrap"><b>Apenas download</b> do modelo no Hugging Face. Nenhum dado do usuário é enviado.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">O App não possui cadastro, login ou conta e não coleta diretamente seu nome, telefone ou e-mail (exceto o e-mail que você fornecer ao nos contatar).</p>
+
+  <h2>2. Finalidades do tratamento</h2>
+  <ol>
+    <li>Armazenamento e gestão de notificações: captura automática, armazenamento criptografado, deduplicação, visão geral</li>
+    <li>Classificação e pesquisa: classificação automática/manual, busca por palavra-chave e linguagem natural</li>
+    <li>Resumos, insights e lembretes: resumos com IA no dispositivo, insights por categoria/fadiga, reavisos de notificações importantes não lidas</li>
+    <li>Controle de spam: classificação por palavras-chave/remetentes aprendidos e permitir/bloquear</li>
+    <li>Controle de dados: exportação (portabilidade), gestão de retenção, exclusão</li>
+    <li>Qualidade e segurança: melhoria opcional baseada em análises, detecção de root/adulteração</li>
+    <li>Monetização (opcional): anúncios e compra para remover anúncios</li>
+  </ol>
+
+  <h2>3. Retenção e exclusão</h2>
+  <ol>
+    <li>Os <b>dados de notificações no dispositivo</b> ficam apenas no seu dispositivo e são excluídos quando você os apaga (individualmente, por período ou totalmente), quando a retenção por categoria expira, ou ao <b>desinstalar o App</b> (a chave de criptografia é destruída, tornando os dados irrecuperáveis).</li>
+    <li>As <b>análises de uso (opcionais)</b> param imediatamente ao desativar; dados anteriores seguem a política do operador (Google).</li>
+    <li>Qualquer e-mail fornecido para suporte é excluído sem demora após o atendimento.</li>
+    <li>A Empresa não opera servidor que possa acessar o conteúdo das notificações, portanto não há cópia no servidor.</li>
+  </ol>
+
+  <h2>4. Compartilhamento com terceiros</h2>
+  <p>Não compartilhamos dados pessoais com terceiros além das finalidades indicadas, exceto (i) com seu consentimento prévio, ou (ii) quando exigido por lei ou solicitação legal das autoridades. Como o conteúdo das notificações nunca é transmitido, nunca é compartilhado com terceiros.</p>
+
+  <h2>5. Provedores (Operadores)</h2>
+  <p>Para operar o serviço, parte do tratamento é delegada aos SDKs de terceiros abaixo. Cada provedor trata os dados conforme sua própria política.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Provedor</th><th>Tarefa</th><th>Dados</th><th>Política</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Veicular anúncios</td><td class="wrap">ID de publicidade, info de dispositivo/rede</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Gestão de consentimento</td><td class="wrap">Estado de consentimento</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Análises de uso</td><td class="wrap">Eventos, ID de instância, info dispositivo/evento</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Verificação de integridade</td><td class="wrap">Token de integridade</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>Compra no app</td><td class="wrap">Token e estado da compra</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>Distribuição de modelos de IA</td><td class="wrap">Info de rede no download (IP, etc.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. Transferências internacionais</h2>
+  <p>Os provedores acima ficam no exterior, então alguns dados podem ser transferidos internacionalmente ao usar essas funções.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Destinatário</th><th>País</th><th>Itens</th><th>Quando/Como</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">EUA, etc.</td><td class="wrap">ID de publicidade e info do dispositivo, análises, token de integridade, dados de compra</td><td class="wrap">Pela rede quando a função é executada</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>EUA</td><td class="wrap">Info de rede da solicitação de download</td><td class="wrap">No primeiro download do modelo</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Você pode recusar ou interromper parte do tratamento com transferências desativando as análises, retirando o consentimento de anúncios ou comprando a remoção de anúncios.</p>
+
+  <h2>7. Seus direitos</h2>
+  <p>A maioria dos direitos pode ser exercida instantaneamente no App.</p>
+  <ol>
+    <li>Acesso e pesquisa: ver e pesquisar as notificações salvas no App</li>
+    <li>Correção e exclusão: excluir individualmente, por período ou totalmente (incluindo imagens)</li>
+    <li>Portabilidade (exportar): exportar seus dados como JSON ou CSV</li>
+    <li>Interromper tratamento / retirar consentimento: bloquear coleta por app, desativar análises, retirar consentimento de anúncios</li>
+    <li>Registro de atividade: revisar o registro de privacidade (auditoria) no App</li>
+  </ol>
+  <p class="small muted">Para exercer direitos ou nos contatar: configurações do App ou o contato da Seção 12. Respondemos nos prazos legais.</p>
+
+  <h2>8. Coleta automática e exclusão</h2>
+  <ul>
+    <li><b>Anúncios</b>: não personalizados por padrão; consentimento UMP no EEE/Reino Unido e em certos estados dos EUA. Limite o rastreamento com «redefinir/excluir o ID de publicidade» do dispositivo.</li>
+    <li><b>Análises</b>: desative quando quiser em Configurações → Estatísticas de uso (ativadas por padrão).</li>
+    <li><b>Remover anúncios</b>: remova-os por compra no app.</li>
+  </ul>
+
+  <h2>9. Medidas de segurança</h2>
+  <ol>
+    <li>Criptografia total dos dados armazenados (SQLCipher); a chave é protegida pelo Android Keystore (StrongBox quando disponível).</li>
+    <li>Ao desinstalar/reinstalar, a chave é destruída, tornando os dados anteriores irrecuperáveis.</li>
+    <li>Na detecção de root/adulteração, o cofre é bloqueado; o Play Integrity verifica a integridade.</li>
+    <li>Em builds de produção, a captura/gravação de telas sensíveis é bloqueada.</li>
+    <li>Nenhum conteúdo de notificação é armazenado em servidores da Empresa; as configurações ficam separadas dos dados de notificação.</li>
+  </ol>
+
+  <h2>10. Permissões do dispositivo</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Permissão</th><th>Finalidade</th><th>Tipo</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Acesso a notificações</td><td class="wrap">Captura e armazenamento (essencial)</td><td>Requer seu consentimento</td></tr>
+      <tr><td class="wrap">Exibir notificações</td><td class="wrap">Lembretes, visão geral, painel da barra</td><td>Opcional</td></tr>
+      <tr><td class="wrap">Internet e estado da rede</td><td class="wrap">Anúncios, análises, integridade, download de modelos</td><td>Opcional</td></tr>
+      <tr><td class="wrap">Serviço em primeiro plano (uso especial)</td><td class="wrap">Captura confiável sem perdas</td><td>Necessário</td></tr>
+      <tr><td class="wrap">Inicialização concluída</td><td class="wrap">Reagendar lembretes após reiniciar</td><td>Opcional</td></tr>
+      <tr><td class="wrap">Wake lock / reordenar tarefas</td><td class="wrap">Captura/agendamento estável em segundo plano</td><td>Opcional</td></tr>
+      <tr><td class="wrap">ID de publicidade / faturamento</td><td class="wrap">Anúncios e compra para removê-los</td><td>Opcional</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Você pode revogar permissões nas configurações do dispositivo a qualquer momento; as funções relacionadas podem ficar limitadas.</p>
+
+  <h2>11. Crianças menores de 18 anos</h2>
+  <p>O NotiVault destina-se a maiores de 18 anos. Não direcionamos a crianças nem coletamos conscientemente seus dados pessoais. Se identificarmos, excluímos sem demora.</p>
+
+  <h2>12. Encarregado de dados e contato</h2>
+  <div class="contact">
+    <div><b>Empresa</b> Lumiora</div>
+    <div><b>Encarregado / Representante</b> Sungjin Park</div>
+    <div><b>E-mail</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Telefone</b> +82 10-3262-8946</div>
+    <div><b>Endereço</b> 119 Gireum-ro, Seongbuk-gu, Seul, República da Coreia</div>
+    <div><b>Reg. comercial</b> 376-09-03284 · <b>Reg. e-commerce</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Site</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Vias de reparação (República da Coreia)</h2>
+  <ul>
+    <li>Comitê de Mediação de Disputas de Dados Pessoais: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Central de Denúncias de Privacidade (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Procuradoria-Geral, Cibercrime: 1301 (spo.go.kr)</li>
+    <li>Agência Nacional de Polícia, Cibernético: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. Usuários internacionais — GDPR/CCPA</h2>
+  <ul>
+    <li><b>EEE/Reino Unido (GDPR/UK GDPR)</b>: você tem direitos de acesso, retificação, exclusão, limitação, portabilidade e oposição. O consentimento de anúncios é gerido pelo UMP e pode ser retirado a qualquer momento. As bases legais são o consentimento e o legítimo interesse.</li>
+    <li><b>Califórnia (CCPA/CPRA)</b>: não «vendemos» dados pessoais por dinheiro. Você pode desativar as análises e limitar o rastreamento de anúncios.</li>
+  </ul>
+
+  <h2>15. Alterações</h2>
+  <p>Podemos atualizar esta Política conforme mudem as leis ou o serviço. Avisaremos sobre as alterações e a data de vigência no App e na URL publicada.</p>
+  <p><b>Data de vigência: 12 de junho de 2026</b></p>
+</main>
+<footer>Este documento reflete a política exibida no NotiVault em Configurações → Sobre → Política de Privacidade. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="pt-BR",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>

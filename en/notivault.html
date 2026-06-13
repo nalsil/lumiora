@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NotiVault - Secure Notification Archive App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4f46e5", /* Indigo theme for NotiVault */
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0f111a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col">
+        <!-- Top Navigation Bar -->
+        <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4">
+            <div class="max-w-7xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <div class="text-primary">
+                        <svg class="w-8 h-8" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                        </svg>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"><a href="index.html">Lumiora</a></h1>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#services">Services</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="myungkyung.html">MyungKyung</a>
+                    <a class="text-sm font-bold text-primary" href="notivault.html" aria-current="page">NotiVault</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#about">About</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.location.href='../ko/notivault.html'"
+                        class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-sm">language</span>
+                        KO
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <!-- Hero Section -->
+            <section class="relative w-full overflow-hidden py-20 lg:py-32">
+                <div class="absolute inset-0 -z-10 opacity-20 dark:opacity-10 pointer-events-none">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-primary/30 blur-3xl rounded-full"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                </div>
+                <div class="max-w-7xl mx-auto px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="flex flex-col gap-6 max-w-2xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold w-fit border border-primary/20">
+                            <span class="material-symbols-outlined text-xs">verified_user</span>
+                            100% On-Device Security
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <img src="../images/notivault/ic_launcher-playstore.png" alt="NotiVault Icon" class="w-20 h-20 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800" />
+                            <div>
+                                <h1 class="text-4xl md:text-6xl font-bold text-slate-900 dark:text-white leading-none">NotiVault</h1>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-2 font-semibold">Secure Notification Archive App</p>
+                            </div>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mt-2 leading-snug">
+                            "Securely vault and organize your smartphone notifications"
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            Accidentally swiped away a verification code, a chat message, or a critical update?
+                            NotiVault automatically collects and encrypts incoming notifications on your device. Powered by intelligent on-device AI, it categorizes, cleans, and summarizes them local-first.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                            <button class="flex items-center justify-center gap-3 px-8 py-4 bg-primary text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all transform hover:-translate-y-1">
+                                <span class="material-symbols-outlined">download</span>
+                                <span>Get it on Google Play</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex justify-center relative">
+                        <!-- Background Glow behind phone -->
+                        <div class="absolute w-72 h-72 bg-primary/20 blur-3xl rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-10"></div>
+                        
+                        <!-- Interactive Phone Screenshot Carousel -->
+                        <div class="flex flex-col items-center">
+                            <div class="relative w-[280px] md:w-[320px] aspect-[9/19] bg-slate-800 rounded-[3rem] border-[8px] border-slate-700 shadow-2xl overflow-hidden">
+                                <img id="carousel-image" alt="NotiVault Screenshot" class="w-full h-full object-cover transition-opacity duration-200" src="../images/notivault/Screenshot_20260612_182307.png" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
+                            </div>
+                            
+                            <!-- Slider Controls -->
+                            <div class="flex items-center gap-6 mt-6 bg-white dark:bg-slate-900 px-6 py-2.5 rounded-full shadow-md border border-slate-100 dark:border-slate-800">
+                                <button onclick="setSlide(currentSlide - 1)" class="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center">
+                                    <span class="material-symbols-outlined">chevron_left</span>
+                                </button>
+                                <span id="slide-indicator" class="text-sm font-bold tracking-wider text-slate-500 font-mono">1 / 7</span>
+                                <button onclick="setSlide(currentSlide + 1)" class="p-1.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center">
+                                    <span class="material-symbols-outlined">chevron_right</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Values -->
+            <section class="py-20 bg-white dark:bg-slate-900/50">
+                <div class="max-w-7xl mx-auto px-6 md:px-20 text-center">
+                    <h3 class="text-primary font-bold text-sm tracking-widest uppercase mb-4">Core Strengths</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-16">Three Core Values of NotiVault</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700/50 flex flex-col items-center">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 text-primary flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-4xl">shield</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Complete Privacy (Local-First)</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                                All notification gathering, processing, AI summary, and semantic search happen 100% locally on your device. Zero data is sent to external servers, and your local storage is fully encrypted using SQLCipher.
+                            </p>
+                        </div>
+                        
+                        <div class="p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700/50 flex flex-col items-center">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 text-primary flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-4xl">category</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Intelligent Automation</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                                Automatically categorizes finance, OTP codes, shipments, business chats, or spam alerts via offline rules. Hide spam advertisements and customize your category layout with easy drag-and-drop settings.
+                            </p>
+                        </div>
+
+                        <div class="p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700/50 flex flex-col items-center">
+                            <div class="w-16 h-16 rounded-2xl bg-indigo-600/10 text-primary flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-4xl">history_toggle_off</span>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Productive Reflection</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                                Review your past notification flows on a chronological timeline. Reconstruct memories easily via AI-generated one-line summaries of your daily alerts. Advanced full-text search and semantic queries are supported.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Features List -->
+            <section class="py-24 px-6 md:px-20" id="features">
+                <div class="max-w-7xl mx-auto">
+                    <div class="text-center mb-20">
+                        <h3 class="text-primary font-bold text-sm tracking-widest uppercase mb-4">Features</h3>
+                        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">11 Core Features of NotiVault</h2>
+                        <p class="mt-4 text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Integrating cutting-edge on-device AI and security frameworks to elevate your notification workflow.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Feature 1 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">cloud_sync</span></div>
+                            <h4 class="text-lg font-bold mb-2">1. Auto Archiving</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Saves sender, body text, time, app icon, and attached images of incoming notifications. Automatically dedupes and encrypts data on-device.</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">forum</span></div>
+                            <h4 class="text-lg font-bold mb-2">2. Chat-style Messages View</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Groups alerts from the same sender into an intuitive chat thread. Shows unread message count and redirects you to the original app in one click.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">category</span></div>
+                            <h4 class="text-lg font-bold mb-2">3. Auto &amp; Custom Categories</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Sorts finance, OTP codes, shipments, and advertisements using offline rules. Supports reordering and adding custom categories with custom colors.</p>
+                        </div>
+                        <!-- Feature 4 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">phonelink_erase</span></div>
+                            <h4 class="text-lg font-bold mb-2">4. Spam Cleanup</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Auto-filters advertisement spam based on keywords and block learning. Easily whitelists accidentally blocked senders with a single toggle.</p>
+                        </div>
+                        <!-- Feature 5 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">manage_search</span></div>
+                            <h4 class="text-lg font-bold mb-2">5. Keyword &amp; Semantic AI Search</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Fast full-text keyword indexing search. If local AI is supported, you can type conversational queries ("show my shipment alert from last week").</p>
+                        </div>
+                        <!-- Feature 6 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">bar_chart</span></div>
+                            <h4 class="text-lg font-bold mb-2">6. Insights &amp; Action Needed</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Aggregates unread important notifications in one screen. Displays diagnostic graphs of daily alerts fatigue and category distribution.</p>
+                        </div>
+                        <!-- Feature 7 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">history</span></div>
+                            <h4 class="text-lg font-bold mb-2">7. Time Machine Timeline</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Browse history chronologically by selecting any date. On devices with on-device LLMs, it summarizes your entire day's alerts in a single line.</p>
+                        </div>
+                        <!-- Feature 8 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">notifications_active</span></div>
+                            <h4 class="text-lg font-bold mb-2">8. Smart Reminders</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Reminds you of critical unread notifications after a set time. Extracts dates and times from notification texts to schedule calendar appointments.</p>
+                        </div>
+                        <!-- Feature 9 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">memory</span></div>
+                            <h4 class="text-lg font-bold mb-2">9. On-device AI Engine</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Utilizes system AICore (Gemini Nano) or downloaded Gemma LLMs to summarize or search. Safely falls back to non-LLM text extraction if models are absent.</p>
+                        </div>
+                        <!-- Feature 10 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">block</span></div>
+                            <h4 class="text-lg font-bold mb-2">10. App-level Exclusion Control</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Toggle archiving off for sensitive bank apps or private messengers. Gives you absolute control over what is kept inside the local vault.</p>
+                        </div>
+                        <!-- Feature 6 -->
+                        <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg transition-shadow border border-slate-100 dark:border-slate-800">
+                            <div class="text-primary mb-4"><span class="material-symbols-outlined text-3xl">database</span></div>
+                            <h4 class="text-lg font-bold mb-2">11. Data Portability</h4>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Review overall database file size and cache. Export entire archives to standard JSON or CSV files, and set automatic data expiration rules.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Video Demo Section -->
+            <section class="py-20 bg-slate-100 dark:bg-slate-900/30">
+                <div class="max-w-7xl mx-auto px-6 md:px-20 text-center">
+                    <h3 class="text-primary font-bold text-sm tracking-widest uppercase mb-4">Video Demo</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8">NotiVault in Action</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-16 max-w-xl mx-auto">Watch our video demo to see how notification storage, categorizing chips, and semantic AI search run seamlessly.</p>
+                    
+                    <div class="flex justify-center">
+                        <!-- Mobile Device Frame for Video -->
+                        <div class="relative w-[280px] md:w-[320px] aspect-[9/19] bg-slate-900 rounded-[3rem] border-[10px] border-slate-800 shadow-2xl overflow-hidden">
+                            <video src="../images/notivault/Screen_recording_20260612_182435.webm" controls autoplay muted loop class="w-full h-full object-cover"></video>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-12">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="text-primary">
+                                <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z"></path>
+                                </svg>
+                            </div>
+                            <h2 class="text-lg font-bold tracking-tight">Lumiora</h2>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
+                            Lumiora designs a better tomorrow through AI-driven data systems and digital innovations.
+                        </p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-slate-900 dark:text-white mb-6">Services</h5>
+                        <ul class="space-y-4 text-slate-500 dark:text-slate-400 text-sm">
+                            <li><a class="hover:text-primary" href="index.html#services">Mobile App Development</a></li>
+                            <li><a class="hover:text-primary" href="index.html#services">Website Development</a></li>
+                            <li><a class="hover:text-primary" href="myungkyung.html">MyungKyung Saju</a></li>
+                            <li><a class="hover:text-primary" href="notivault.html">NotiVault Archive</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pt-12 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between gap-8 text-xs text-slate-500 dark:text-slate-400" id="about">
+                    <div class="space-y-2">
+                        <p><span class="font-bold">Lumiora Co., Ltd.</span></p>
+                        <p>CEO: Sungjin Park</p>
+                        <p>Business Registration Number: 376-09-03284 | Mail-order Business Report No: 2026-SeoulSeongbuk-0319</p>
+                        <p>Address: 119 Gileum-ro, Seongbuk-gu, Seoul, Republic of Korea</p>
+                    </div>
+                    <div class="flex flex-col md:items-end justify-end">
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 mb-4 font-medium text-xs">
+                            <a href="../notivault/privacy/privacy-en.html" target="_blank" class="hover:text-primary transition-colors font-bold text-slate-700 dark:text-slate-300">NotiVault Privacy Policy</a>
+                        </div>
+                        <p>© 2026 Lumiora All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Carousel Javascript -->
+    <script>
+        let currentSlide = 0;
+        const screenshots = [
+            '../images/notivault/Screenshot_20260612_182307.png',
+            '../images/notivault/Screenshot_20260612_182320.png',
+            '../images/notivault/Screenshot_20260612_182329.png',
+            '../images/notivault/Screenshot_20260612_182336.png',
+            '../images/notivault/Screenshot_20260612_182346.png',
+            '../images/notivault/Screenshot_20260612_182354.png',
+            '../images/notivault/Screenshot_20260612_182424.png'
+        ];
+
+        function setSlide(index) {
+            currentSlide = (index + screenshots.length) % screenshots.length;
+            const carouselImg = document.getElementById('carousel-image');
+            const indicator = document.getElementById('slide-indicator');
+            if (carouselImg && indicator) {
+                carouselImg.style.opacity = '0.3';
+                setTimeout(() => {
+                    carouselImg.src = screenshots[currentSlide];
+                    carouselImg.style.opacity = '1';
+                    indicator.innerText = (currentSlide + 1) + ' / ' + screenshots.length;
+                }, 150);
+            }
+        }
+    </script>
+</body>
+</html>

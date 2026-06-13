@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault — Datenschutzerklärung</title>
+<link rel="stylesheet" href="privacy.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Sprache"></select>
+</header>
+<main>
+  <h1>Datenschutzerklärung</h1>
+  <div class="eff">Gültig ab 12. Juni 2026 · Zuletzt aktualisiert: 12. Juni 2026</div>
+  <p>Lumiora (das „Unternehmen“) respektiert Ihre Privatsphäre und hält die geltenden Datenschutzgesetze ein. Diese Erklärung gilt für die mobile App <b>NotiVault</b> (die „App“). NotiVault ist eine <b>Local-First</b>-App, die Ihre Gerätebenachrichtigungen <b>vollständig auf Ihrem Gerät</b> erfasst, klassifiziert, durchsucht, zusammenfasst und speichert.</p>
+  <div class="principle"><strong>Grundprinzip</strong> — Der <b>Inhalt Ihrer Benachrichtigungen (Absender, Titel, Text, Bilder usw.) wird niemals an Server des Unternehmens oder an Dritte gesendet</b>. Klassifizierung, Suche, Zusammenfassung und KI-Inferenz erfolgen auf Ihrem Gerät. Nur bestimmte nicht-benachrichtigungsbezogene Daten werden an die Drittanbieterdienste in Abschnitt 5 gesendet — für Werbung, Nutzungsstatistik, Integritätsprüfung, In-App-Käufe und KI-Modell-Downloads.</div>
+
+  <h2>1. Verarbeitete Informationen</h2>
+  <h3>1.1 Nur auf Ihrem Gerät verarbeitet (nie an unsere Server gesendet)</h3>
+  <p class="small muted">Die App erfasst Benachrichtigungen erst nach Ihrer Erteilung des <b>Benachrichtigungszugriffs</b> und speichert sie in einer verschlüsselten Datenbank auf dem Gerät (SQLCipher).</p>
+  <div class="tw"><table>
+    <thead><tr><th>Kategorie</th><th>Elemente</th></tr></thead>
+    <tbody>
+      <tr><td>Benachrichtigungsinhalt</td><td class="wrap">Text, Titel, Absender (wie von der Quell-App angezeigt), Empfangszeit, Paketname der Quell-App, Bilder und Original-Payload. <b>Der Text wird wortgetreu gespeichert</b> und kann sensible Daten wie Einmalcodes oder Finanzdaten enthalten.</td></tr>
+      <tr><td>Extrahierte Daten</td><td class="wrap">Regelbasierte Elemente (Betrag, Datum, Bestellnummer, Links). <b>Einmalcodes (OTP) werden nicht als Wert gespeichert; nur die Erkennung wird vermerkt (maskiert als <code>******</code>)</b>.</td></tr>
+      <tr><td>Analyse-Metadaten</td><td class="wrap">Kategorie, Wichtigkeit, Lesestatus, Sprache, Inhalts-Hash zur Deduplizierung.</td></tr>
+      <tr><td>Suchdaten</td><td class="wrap">Embedding-Vektoren für semantische (natürlichsprachliche) Suche, Zusammenfassungs-Cache.</td></tr>
+      <tr><td>Ihre Einstellungen</td><td class="wrap">Eigene Kategorien, manuelle Regeln, Spam-Zulassungs-/Sperrabsender, gelernte Absender, gesperrte Apps, Erinnerungen.</td></tr>
+      <tr><td>Lokale Kennung</td><td class="wrap">Eine zufällige, auf dem Gerät erzeugte Installations-Kennung (wird nie übertragen).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>1.2 Kann über Drittanbieterdienste verarbeitet/übertragen werden</h3>
+  <div class="tw"><table>
+    <thead><tr><th>Zweck</th><th>Daten</th><th>Hinweise</th></tr></thead>
+    <tbody>
+      <tr><td>Werbung (optional)</td><td class="wrap">Werbe-ID, Geräte- und Netzwerkinfo</td><td class="wrap">Google AdMob. <b>Beim Produktionsstart derzeit deaktiviert.</b> Bei Aktivierung gilt UMP-Einwilligung; standardmäßig nicht personalisiert.</td></tr>
+      <tr><td>Nutzungsstatistik (optional)</td><td class="wrap">App-Ereignisse (Bildschirm-/Buttonnamen), Instanz-ID, Geräte-/Ereignisinfo</td><td class="wrap">Firebase Analytics. In den Einstellungen <b>abschaltbar</b>. Inhalt/Absender werden nie gesendet.</td></tr>
+      <tr><td>Integritätsprüfung</td><td class="wrap">Integritätstoken der App/des Geräts</td><td class="wrap">Google Play Integrity. Keine persönlichen Inhalte.</td></tr>
+      <tr><td>In-App-Kauf (optional)</td><td class="wrap">Kauftoken und -status</td><td class="wrap">Google Play Billing. Zahlungsdaten verarbeitet Google.</td></tr>
+      <tr><td>KI-Modell</td><td class="wrap">Netzwerkinfo beim Download (z. B. IP)</td><td class="wrap"><b>Nur Download</b> des Modells von Hugging Face. Keine Nutzerdaten hochgeladen.</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Die App hat keine Registrierung, Anmeldung oder Konto und erhebt nicht direkt Ihren Namen, Ihre Telefonnummer oder E-Mail (außer der E-Mail, die Sie bei einer Kontaktaufnahme angeben).</p>
+
+  <h2>2. Zwecke der Verarbeitung</h2>
+  <ol>
+    <li>Speichern und Verwalten von Benachrichtigungen: automatische Erfassung, verschlüsselte Speicherung, Deduplizierung, Übersicht</li>
+    <li>Klassifizierung und Suche: automatische/manuelle Klassifizierung, Stichwort- und natürlichsprachliche Suche</li>
+    <li>Zusammenfassungen, Insights und Erinnerungen: KI-Zusammenfassungen auf dem Gerät, Kategorie-/Ermüdungs-Insights, erneute Hinweise auf ungelesene wichtige Benachrichtigungen</li>
+    <li>Spam-Kontrolle: Klassifizierung nach Stichwörtern/gelernten Absendern und Zulassen/Sperren</li>
+    <li>Datenkontrolle: Export (Portabilität), Aufbewahrungsverwaltung, Löschung</li>
+    <li>Qualität und Sicherheit: optionale statistikbasierte Verbesserung, Root-/Manipulationserkennung</li>
+    <li>Monetarisierung (optional): Werbung und Kauf zur Werbeentfernung</li>
+  </ol>
+
+  <h2>3. Aufbewahrung und Löschung</h2>
+  <ol>
+    <li><b>Benachrichtigungsdaten auf dem Gerät</b> werden nur auf Ihrem Gerät gespeichert und gelöscht, wenn Sie sie löschen (einzeln, nach Zeitraum oder vollständig), bei Ablauf der kategoriebasierten Aufbewahrung oder bei <b>Deinstallation der App</b> (der Schlüssel wird zerstört, die Daten sind nicht wiederherstellbar).</li>
+    <li>Die <b>Nutzungsstatistik (optional)</b> stoppt sofort bei Abschaltung; frühere Daten unterliegen der Richtlinie des Auftragsverarbeiters (Google).</li>
+    <li>Jede für den Support angegebene E-Mail wird nach Bearbeitung unverzüglich gelöscht.</li>
+    <li>Das Unternehmen betreibt keinen Server mit Zugriff auf Benachrichtigungsinhalte; es gibt keine serverseitige Kopie.</li>
+  </ol>
+
+  <h2>4. Weitergabe an Dritte</h2>
+  <p>Wir geben personenbezogene Daten nicht über die genannten Zwecke hinaus an Dritte weiter, außer (i) mit Ihrer vorherigen Einwilligung oder (ii) wenn gesetzlich vorgeschrieben oder auf rechtmäßiges Ersuchen von Behörden. Da Benachrichtigungsinhalte nie übertragen werden, werden sie nie weitergegeben.</p>
+
+  <h2>5. Dienstleister (Auftragsverarbeiter)</h2>
+  <p>Zum Betrieb des Dienstes wird ein Teil der Verarbeitung an die folgenden Drittanbieter-SDKs übertragen. Jeder Anbieter verarbeitet Daten nach seiner eigenen Richtlinie.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Anbieter</th><th>Aufgabe</th><th>Daten</th><th>Richtlinie</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC (AdMob)</td><td>Werbeauslieferung</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (UMP)</td><td>Einwilligungsverwaltung</td><td class="wrap">Einwilligungsstatus</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase)</td><td>Nutzungsstatistik</td><td class="wrap">Ereignisse, Instanz-ID, Geräte-/Ereignisinfo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Integritätsprüfung</td><td class="wrap">Integritätstoken</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-App-Kauf</td><td class="wrap">Kauftoken und -status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>KI-Modellverteilung</td><td class="wrap">Netzwerkinfo beim Download (IP usw.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>6. Internationale Übermittlungen</h2>
+  <p>Die obigen Anbieter befinden sich im Ausland; daher können bei Nutzung dieser Funktionen einige Daten international übermittelt werden.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Empfänger</th><th>Land</th><th>Elemente</th><th>Wann/Wie</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Google LLC</td><td class="wrap">USA usw.</td><td class="wrap">Werbe-ID und Geräteinfo, Statistik, Integritätstoken, Kaufinfo</td><td class="wrap">Über das Netzwerk bei Ausführung der Funktion</td></tr>
+      <tr><td class="wrap">Hugging Face, Inc.</td><td>USA</td><td class="wrap">Netzwerkinfo der Download-Anfrage</td><td class="wrap">Beim ersten Modell-Download</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Sie können einen Teil der mit Übermittlungen verbundenen Verarbeitung ablehnen oder stoppen, indem Sie die Statistik abschalten, die Werbe-Einwilligung widerrufen oder die Werbeentfernung kaufen.</p>
+
+  <h2>7. Ihre Rechte</h2>
+  <p>Die meisten Rechte können Sie sofort in der App ausüben.</p>
+  <ol>
+    <li>Auskunft und Suche: gespeicherte Benachrichtigungen in der App ansehen und durchsuchen</li>
+    <li>Berichtigung und Löschung: einzeln, nach Zeitraum oder vollständig löschen (inkl. Bilder)</li>
+    <li>Portabilität (Export): Ihre Daten als JSON oder CSV exportieren</li>
+    <li>Verarbeitung stoppen / Einwilligung widerrufen: Erfassung je App sperren, Statistik abschalten, Werbe-Einwilligung widerrufen</li>
+    <li>Aktivitätsprotokoll: das Datenschutz-(Audit-)Protokoll in der App einsehen</li>
+  </ol>
+  <p class="small muted">Zur Ausübung von Rechten oder Kontaktaufnahme: App-Einstellungen oder Kontakt in Abschnitt 12. Wir antworten innerhalb der gesetzlichen Fristen.</p>
+
+  <h2>8. Automatisierte Erfassung und Widerspruch</h2>
+  <ul>
+    <li><b>Werbung</b>: standardmäßig nicht personalisiert; UMP-Einwilligung im EWR/UK und bestimmten US-Bundesstaaten. Tracking über „Werbe-ID zurücksetzen/löschen“ des Geräts einschränken.</li>
+    <li><b>Statistik</b>: jederzeit unter Einstellungen → Nutzungsstatistik abschaltbar (standardmäßig an).</li>
+    <li><b>Werbeentfernung</b>: per In-App-Kauf entfernen.</li>
+  </ul>
+
+  <h2>9. Sicherheitsmaßnahmen</h2>
+  <ol>
+    <li>Vollständige Verschlüsselung der gespeicherten Daten (SQLCipher); der Schlüssel wird durch Android Keystore (StrongBox, falls verfügbar) geschützt.</li>
+    <li>Bei Deinstallation/Neuinstallation wird der Schlüssel zerstört, frühere Daten sind nicht wiederherstellbar.</li>
+    <li>Bei Root-/Manipulationserkennung wird der Tresor gesperrt; Play Integrity prüft die Integrität.</li>
+    <li>In Produktions-Builds werden Screenshots/Aufnahmen sensibler Bildschirme blockiert.</li>
+    <li>Keine Benachrichtigungsinhalte auf Servern des Unternehmens; Einstellungen werden getrennt gespeichert.</li>
+  </ol>
+
+  <h2>10. Geräteberechtigungen</h2>
+  <div class="tw"><table>
+    <thead><tr><th>Berechtigung</th><th>Zweck</th><th>Typ</th></tr></thead>
+    <tbody>
+      <tr><td class="wrap">Benachrichtigungszugriff</td><td class="wrap">Erfassung und Speicherung (Kern)</td><td>Erfordert Ihre Einwilligung</td></tr>
+      <tr><td class="wrap">Benachrichtigungen anzeigen</td><td class="wrap">Erinnerungen, Übersicht, Statusleisten-Panel</td><td>Optional</td></tr>
+      <tr><td class="wrap">Internet und Netzwerkstatus</td><td class="wrap">Werbung, Statistik, Integrität, Modell-Download</td><td>Optional</td></tr>
+      <tr><td class="wrap">Vordergrunddienst (Sondernutzung)</td><td class="wrap">Zuverlässige, verlustfreie Erfassung</td><td>Erforderlich</td></tr>
+      <tr><td class="wrap">Bootvorgang abgeschlossen</td><td class="wrap">Erinnerungen nach Neustart neu planen</td><td>Optional</td></tr>
+      <tr><td class="wrap">Wake-Lock / Tasks neu ordnen</td><td class="wrap">Stabile Hintergrunderfassung/-planung</td><td>Optional</td></tr>
+      <tr><td class="wrap">Werbe-ID / Abrechnung</td><td class="wrap">Werbung und Kauf zur Entfernung</td><td>Optional</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">Sie können Berechtigungen jederzeit in den Geräteeinstellungen widerrufen; zugehörige Funktionen können dann eingeschränkt sein.</p>
+
+  <h2>11. Kinder unter 18 Jahren</h2>
+  <p>NotiVault richtet sich an Personen ab 18 Jahren. Wir richten uns nicht an Kinder und erheben nicht wissentlich deren personenbezogene Daten. Werden wir darauf aufmerksam, löschen wir sie unverzüglich.</p>
+
+  <h2>12. Datenschutzbeauftragter und Kontakt</h2>
+  <div class="contact">
+    <div><b>Unternehmen</b> Lumiora</div>
+    <div><b>Beauftragter / Vertreter</b> Sungjin Park</div>
+    <div><b>E-Mail</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Telefon</b> +82 10-3262-8946</div>
+    <div><b>Adresse</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republik Korea</div>
+    <div><b>Handelsreg.-Nr.</b> 376-09-03284 · <b>E-Commerce-Reg.</b> 2026-Seoul-Seongbuk-0319</div>
+    <div><b>Website</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+
+  <h2>13. Rechtsbehelfe (Republik Korea)</h2>
+  <ul>
+    <li>Schlichtungsausschuss für Streitigkeiten über personenbezogene Daten: +82-1833-6972 (kopico.go.kr)</li>
+    <li>Meldezentrum für Datenschutz (KISA): 118 (privacy.kisa.or.kr)</li>
+    <li>Oberste Staatsanwaltschaft, Cyberkriminalität: 1301 (spo.go.kr)</li>
+    <li>Nationale Polizeibehörde, Cyber: 182 (ecrm.police.go.kr)</li>
+  </ul>
+
+  <h2>14. Internationale Nutzer — DSGVO/CCPA</h2>
+  <ul>
+    <li><b>EWR/UK (DSGVO/UK GDPR)</b>: Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Portabilität und Widerspruch. Die Werbe-Einwilligung wird über UMP verwaltet und ist jederzeit widerrufbar. Rechtsgrundlagen sind Einwilligung und berechtigtes Interesse.</li>
+    <li><b>Kalifornien (CCPA/CPRA)</b>: Wir „verkaufen“ keine personenbezogenen Daten gegen Geld. Sie können die Statistik abschalten und Werbe-Tracking einschränken.</li>
+  </ul>
+
+  <h2>15. Änderungen</h2>
+  <p>Wir können diese Erklärung bei Änderungen von Gesetzen oder Dienst aktualisieren. Wir informieren über Änderungen und das Gültigkeitsdatum in der App und unter der veröffentlichten URL.</p>
+  <p><b>Gültig ab: 12. Juni 2026</b></p>
+</main>
+<footer>Dieses Dokument entspricht der in NotiVault unter Einstellungen → Info → Datenschutzerklärung angezeigten Richtlinie. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="de",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="privacy-"+sel.value+".html";});
+</script>
+</body>
+</html>
