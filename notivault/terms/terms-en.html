@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NotiVault AI — Terms of Service</title>
+<link rel="stylesheet" href="terms.css">
+</head>
+<body>
+<header class="bar">
+  <span class="logo" aria-hidden="true">N</span>
+  <span class="brand">NotiVault AI</span>
+  <span class="spacer"></span>
+  <select id="lang" class="lang" aria-label="Language"></select>
+</header>
+<main>
+  <h1>Terms of Service</h1>
+  <div class="eff">Effective 29 June 2026</div>
+  <p>These Terms of Service (the “Terms”) govern your use of the <b>NotiVault AI</b> mobile application (the “App”) provided by Lumiora (the “Company”), and set out the rights, obligations and responsibilities between the Company and users. By installing or using the App, you agree to these Terms.</p>
+  <h2>1. Purpose</h2>
+  <p>These Terms set out the rights, obligations and responsibilities between the Company and users in connection with the use of the App and the paid services it offers.</p>
+  <h2>2. Definitions</h2>
+  <ul><li>“App” means the NotiVault AI mobile application provided by the Company.</li><li>“User” means anyone who installs or uses the App.</li><li>“Paid Service” means the ad-removal subscription offered within the App.</li><li>“Google Play” means the app marketplace and billing system operated by Google.</li></ul>
+  <h2>3. Effect and Amendment of the Terms</h2>
+  <p>The Company may amend these Terms within the limits of applicable law. Material changes will be announced in the App or at the posting URL before they take effect. If you continue to use the App after the effective date of the changes, you are deemed to have accepted them.</p>
+  <h2>4. The Service</h2>
+  <p>The App is a local-first service that collects, classifies, searches, summarizes and stores device notifications on the device. Notification content is not transmitted to the Company’s servers. Certain non-notification data may be sent to the third-party services described in the Privacy Policy (advertising, usage analytics, app integrity, in-app purchases, AI model download).</p>
+  <h2>5. Formation of the Contract</h2>
+  <p>The App does not require sign-up, login or an account. The contract for use is formed when you install and use the App in accordance with these Terms.</p>
+  <h2>6. Paid Service — Ad-Removal Subscription</h2>
+  <p>The Company offers an ad-removal subscription as a Paid Service. The price and billing cycle are shown in the App and on Google Play. The subscription is billed through Google Play and renews automatically each billing cycle until cancelled. Payment method information is processed by Google, not the Company.</p>
+  <h2>7. Withdrawal and Refunds</h2>
+  <p>The Paid Service is digital content. Under applicable law, the right of withdrawal may be restricted once provision of the digital content has begun. Refunds for purchases made through Google Play are handled in accordance with Google Play’s refund policy. This clause does not limit any consumer rights guaranteed by law.</p>
+  <h2>8. Cancellation</h2>
+  <p>You can cancel the subscription at any time via Google Play &gt; Subscriptions, which can also be reached from the App. After cancellation, ad removal remains in effect until the end of the current billing cycle, after which auto-renewal stops.</p>
+  <h2>9. User Obligations</h2>
+  <p>You must use the App lawfully and must not interfere with its normal operation, attempt to reverse engineer or circumvent its security, or use it in violation of applicable law or the rights of third parties.</p>
+  <h2>10. Disclaimer</h2>
+  <p>The App is provided on an “as is” basis. As a local-first app, its operation depends on your device and operating system environment. The Company is not liable for service interruptions caused by force majeure, your device or network environment, or other causes not attributable to the Company.</p>
+  <h2>11. Limitation of Liability</h2>
+  <p>The Company is liable for damages caused to users by its intent or gross negligence to the extent required by applicable law. To the extent permitted by law, the Company is not liable for indirect or incidental damages.</p>
+  <h2>12. Intellectual Property</h2>
+  <p>All intellectual property rights in the App belong to the Company or its rightful licensors. Open-source components are governed by their respective licenses; see the licenses screen in the App for details.</p>
+  <h2>13. Minimum Age</h2>
+  <p>The App is intended for users aged 18 and over, consistent with the Privacy Policy.</p>
+  <h2>14. Governing Law and Jurisdiction</h2>
+  <p>These Terms are governed by and construed in accordance with the laws of the Republic of Korea. Any lawsuit shall be brought before the competent court under the Civil Procedure Act.</p>
+  <h2>15. Dispute Resolution</h2>
+  <p>For consumer disputes, you may seek mediation from bodies such as the Korea Consumer Agency or the Electronic Commerce Dispute Mediation Committee.</p>
+  <h2>16. Contact</h2>
+  <div class="contact">
+    <div><b>Company</b> Lumiora</div>
+    <div><b>Representative</b> Sungjin Park</div>
+    <div><b>Email</b> <a href="mailto:contact@lumiora.co.kr">contact@lumiora.co.kr</a></div>
+    <div><b>Phone</b> +82 10-3262-8946</div>
+    <div><b>Address</b> 119 Gireum-ro, Seongbuk-gu, Seoul, Republic of Korea</div>
+    <div><b>Business Reg. No.</b> 376-09-03284 · <b>Mail-Order Reg.</b> 2026-Seoul Seongbuk-0319</div>
+    <div><b>Website</b> <a href="https://lumiora.co.kr" target="_blank" rel="noopener">https://lumiora.co.kr</a></div>
+  </div>
+  <p><b>These Terms are effective as of 29 June 2026.</b></p>
+</main>
+<footer>This document matches Settings → About → Terms of Service in the NotiVault AI app. © Lumiora.</footer>
+<script>
+var LANGS=[["en","English"],["ko","한국어"],["ja","日本語"],["zh-CN","简体中文"],["zh-TW","繁體中文"],["es","Español"],["pt-BR","Português (BR)"],["fr","Français"],["de","Deutsch"],["it","Italiano"],["nl","Nederlands"],["pl","Polski"],["ru","Русский"],["uk","Українська"],["tr","Türkçe"],["ar","العربية"],["fa","فارسی"],["he","עברית"],["hi","हिन्दी"],["th","ไทย"],["vi","Tiếng Việt"],["id","Bahasa Indonesia"],["ms","Bahasa Melayu"],["fil","Filipino"]];
+var cur="en",sel=document.getElementById("lang");
+for(var i=0;i<LANGS.length;i++){var o=document.createElement("option");o.value=LANGS[i][0];o.textContent=LANGS[i][1];if(LANGS[i][0]===cur)o.selected=true;sel.appendChild(o);}
+sel.addEventListener("change",function(){location.href="terms-"+sel.value+".html";});
+</script>
+</body>
+</html>

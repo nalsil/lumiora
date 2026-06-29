@@ -1,16 +1,16 @@
 <!doctype html>
 <!--
-  NotiVault AI Privacy Policy — language dispatcher.
+  NotiVault AI Terms of Service — language dispatcher.
   Detects the visitor's browser language and redirects to the matching
-  per-language file (privacy-<code>.html). Default: English (privacy-en.html).
+  per-language file (terms-<code>.html). Default: English (terms-en.html).
   Override with ?lang=ko or #ko. No external dependencies.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NotiVault AI — Privacy Policy</title>
-<link rel="canonical" href="privacy-en.html">
+<title>NotiVault AI — Terms of Service</title>
+<link rel="canonical" href="terms-en.html">
 <style>
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
        background:#fff;color:#1A1A1A;display:grid;place-items:center;height:100vh}
@@ -48,15 +48,15 @@
     for(var i=0;i<cands.length;i++){ var r = resolve(cands[i]); if(r) return r; }
     return "en";
   }
-  try{ location.replace("privacy-" + pick() + ".html"); }
-  catch(e){ location.href = "privacy-en.html"; }
+  try{ location.replace("terms-" + pick() + ".html"); }
+  catch(e){ location.href = "terms-en.html"; }
 })();
 </script>
 </head>
 <body>
   <div class="box">
     <div class="sp" aria-hidden="true"></div>
-    <p>Redirecting to the privacy policy… <a href="privacy-en.html">Continue in English</a></p>
+    <p>Redirecting to the terms of service… <a href="terms-en.html">Continue in English</a></p>
   </div>
 </body>
 </html>

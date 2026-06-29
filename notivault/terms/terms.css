@@ -1,8 +1,9 @@
 /* ============================================================
-   NotiVault AI Privacy Policy — shared design-system stylesheet.
+   NotiVault AI Terms of Service — shared design-system stylesheet.
    Reflects the app theme (Indigo #4C5FD5). Light/dark auto.
-   Used by all privacy-<lang>.html files. Host this file in the
+   Used by all terms-<lang>.html files. Host this file in the
    same folder so external viewing keeps the style intact.
+   (Same design system as privacy.css.)
    ============================================================ */
 :root{
   --accent:#4C5FD5; --on-accent:#FFFFFF; --accent-weak:#EEF0FB;
