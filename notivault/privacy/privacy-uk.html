@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Політика конфіденційності</h1>
-  <div class="eff">Чинна з 12 червня 2026 р. · Останнє оновлення: 12 червня 2026 р.</div>
+  <div class="eff">Чинна з 5 липня 2026 р. · Останнє змінення: 5 липня 2026 р.</div>
   <p>Lumiora («Компанія») поважає вашу конфіденційність і дотримується застосовних законів про захист даних. Ця Політика застосовується до мобільного застосунку <b>NotiVault AI</b> («Застосунок»). NotiVault AI — це застосунок <b>local-first</b>, який збирає, класифікує, шукає, узагальнює та зберігає сповіщення вашого пристрою <b>повністю на вашому пристрої</b>.</p>
   <div class="principle"><strong>Основний принцип</strong> — <b>Вміст ваших сповіщень (відправник, заголовок, текст, зображення тощо) ніколи не надсилається на сервери Компанії чи третім особам</b>. Уся класифікація, пошук, узагальнення та ШІ-висновок виконуються на вашому пристрої. Лише деякі дані, не пов'язані зі сповіщеннями, надсилаються стороннім сервісам із Розділу 5 — для реклами, статистики використання, перевірки цілісності, покупок у застосунку та завантаження ШІ-моделей.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Вміст сповіщень</td><td class="wrap">Текст, заголовок, відправник (як його показує застосунок-джерело), час отримання, ім'я пакета застосунку-джерела, зображення та вихідний payload. <b>Текст зберігається дослівно</b> і може містити чутливі дані, як-от одноразові коди чи фінансову інформацію.</td></tr>
       <tr><td>Видобуті дані</td><td class="wrap">Елементи на основі правил (сума, дата, номер замовлення, посилання). <b>Одноразові коди (OTP) не зберігаються як значення; фіксується лише факт виявлення (маскується як <code>******</code>)</b>.</td></tr>
       <tr><td>Метадані аналізу</td><td class="wrap">Категорія, важливість, статус прочитання, мова, хеш вмісту для дедуплікації.</td></tr>
-      <tr><td>Дані пошуку</td><td class="wrap">Вектори вкладень для семантичного (природною мовою) пошуку, кеш узагальнень.</td></tr>
+      <tr><td>Дані пошуку</td><td class="wrap">Індекс пошуку за ключовими словами (заголовок, текст, відправник) та локальний кеш AI-резюме. Обидва зберігаються лише на пристрої.</td></tr>
       <tr><td>Ваші налаштування</td><td class="wrap">Власні категорії, ручні правила, дозволені/заблоковані відправники спаму, вивчені відправники, заблоковані застосунки, нагадування.</td></tr>
       <tr><td>Локальний ідентифікатор</td><td class="wrap">Випадковий ідентифікатор встановлення, що створюється на пристрої (ніколи не передається).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Мета</th><th>Дані</th><th>Примітки</th></tr></thead>
     <tbody>
-      <tr><td>Реклама (необов'язково)</td><td class="wrap">Рекламний ідентифікатор, відомості про пристрій і мережу</td><td class="wrap">Google AdMob. <b>Наразі вимкнено на етапі запуску.</b> У разі ввімкнення застосовується згода UMP; типово без персоналізації.</td></tr>
+      <tr><td>Реклама (необов'язково)</td><td class="wrap">Рекламний ідентифікатор, відомості про пристрій і мережу</td><td class="wrap">Google AdMob (хост медіації) з Meta Audience Network і Pangle. Коли активні, показуються за згодою UMP і за замовчуванням неперсоналізовані. Вміст сповіщень ніколи не надсилається.</td></tr>
       <tr><td>Статистика використання (необов'язково)</td><td class="wrap">Події застосунку (назви екранів/кнопок), ID екземпляра, відомості про пристрій/подію</td><td class="wrap">Firebase Analytics. Можна <b>вимкнути</b> в Налаштуваннях. Вміст/відправники ніколи не надсилаються.</td></tr>
       <tr><td>Перевірка цілісності</td><td class="wrap">Токен цілісності застосунку/пристрою</td><td class="wrap">Google Play Integrity. Без особистого вмісту.</td></tr>
       <tr><td>Покупка в застосунку (необов'язково)</td><td class="wrap">Токен і статус покупки</td><td class="wrap">Google Play Billing. Платіжні дані обробляє Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Постачальник</th><th>Завдання</th><th>Дані</th><th>Політика</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Показ реклами</td><td class="wrap">Рекламний ID, відомості про пристрій/мережу</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Показ реклами (медіація)</td><td class="wrap">Рекламний ID, відомості про пристрій/мережу</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Посилання</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Показ реклами (медіація)</td><td class="wrap">Рекламний ID, відомості про пристрій/мережу</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Посилання</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Керування згодою</td><td class="wrap">Статус згоди</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Статистика використання</td><td class="wrap">Події, ID екземпляра, відомості про пристрій/подію</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Діагностика збоїв</td><td class="wrap">Журнали збоїв, ідентифікатор екземпляра, стан пристрою</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Віддалене налаштування рекламної політики</td><td class="wrap">Ідентифікатор екземпляра застосунку, базові дані пристрою</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Перевірка цілісності</td><td class="wrap">Токен цілісності</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Покупка в застосунку</td><td class="wrap">Токен і статус покупки</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Розповсюдження ШІ-моделей</td><td class="wrap">Мережеві відомості під час завантаження (IP тощо)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Посилання</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Отримувач</th><th>Країна</th><th>Елементи</th><th>Коли/Як</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">США та ін.</td><td class="wrap">Рекламний ID і відомості про пристрій, статистика, токен цілісності, дані про покупку</td><td class="wrap">Через мережу під час виконання функції</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">США, Ірландія тощо</td><td class="wrap">Рекламний ID, відомості про пристрій/мережу</td><td class="wrap">Коли реклама активна / при виграші медіації</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Сінгапур, США тощо</td><td class="wrap">Рекламний ID, відомості про пристрій/мережу</td><td class="wrap">Коли реклама активна / при виграші медіації</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>США</td><td class="wrap">Мережеві відомості запиту на завантаження</td><td class="wrap">Під час першого завантаження моделі</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Зміни</h2>
   <p>Ми можемо оновлювати цю Політику зі зміною законів або сервісу. Про зміни та дату набрання чинності ми повідомимо в Застосунку та за опублікованим URL.</p>
-  <p><b>Дата набрання чинності: 12 червня 2026 р.</b></p>
+  <p><b>Ця політика набирає чинності 5 липня 2026 р.</b></p>
 </main>
 <footer>Цей документ відповідає політиці в NotiVault AI: Налаштування → Про застосунок → Політика конфіденційності. © Lumiora.</footer>
 <script>

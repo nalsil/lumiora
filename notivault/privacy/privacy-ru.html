@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Политика конфиденциальности</h1>
-  <div class="eff">Действует с 12 июня 2026 г. · Обновлено: 12 июня 2026 г.</div>
+  <div class="eff">Действует с 5 июля 2026 г. · Последнее изменение: 5 июля 2026 г.</div>
   <p>Lumiora («Компания») уважает вашу конфиденциальность и соблюдает применимые законы о защите данных. Настоящая Политика применяется к мобильному приложению <b>NotiVault AI</b> («Приложение»). NotiVault AI — это приложение <b>local-first</b>, которое собирает, классифицирует, ищет, резюмирует и хранит уведомления вашего устройства <b>полностью на вашем устройстве</b>.</p>
   <div class="principle"><strong>Основной принцип</strong> — <b>Содержимое ваших уведомлений (отправитель, заголовок, текст, изображения и т. п.) никогда не отправляется на серверы Компании или третьим лицам</b>. Вся классификация, поиск, резюмирование и ИИ-вывод выполняются на вашем устройстве. Только некоторые данные, не относящиеся к уведомлениям, отправляются сторонним сервисам из Раздела 5 — для рекламы, статистики использования, проверки целостности, покупок в приложении и загрузки ИИ-моделей.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Содержимое уведомлений</td><td class="wrap">Текст, заголовок, отправитель (как его показывает исходное приложение), время получения, имя пакета исходного приложения, изображения и исходный payload. <b>Текст хранится дословно</b> и может содержать конфиденциальные данные, например одноразовые коды или финансовую информацию.</td></tr>
       <tr><td>Извлечённые данные</td><td class="wrap">Элементы на основе правил (сумма, дата, номер заказа, ссылки). <b>Одноразовые коды (OTP) не сохраняются как значение; фиксируется только факт обнаружения (маскируется как <code>******</code>)</b>.</td></tr>
       <tr><td>Метаданные анализа</td><td class="wrap">Категория, важность, статус прочтения, язык, хеш содержимого для дедупликации.</td></tr>
-      <tr><td>Данные поиска</td><td class="wrap">Векторы эмбеддингов для семантического (на естественном языке) поиска, кэш резюме.</td></tr>
+      <tr><td>Данные поиска</td><td class="wrap">Индекс поиска по ключевым словам (заголовок, текст, отправитель) и локальный кэш AI-резюме. Оба хранятся только на устройстве.</td></tr>
       <tr><td>Ваши настройки</td><td class="wrap">Пользовательские категории, ручные правила, разрешённые/заблокированные отправители спама, выученные отправители, заблокированные приложения, напоминания.</td></tr>
       <tr><td>Локальный идентификатор</td><td class="wrap">Случайный идентификатор установки, создаваемый на устройстве (никогда не передаётся).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Цель</th><th>Данные</th><th>Примечания</th></tr></thead>
     <tbody>
-      <tr><td>Реклама (опционально)</td><td class="wrap">Рекламный идентификатор, сведения об устройстве и сети</td><td class="wrap">Google AdMob. <b>Сейчас отключено на этапе запуска.</b> При включении применяется согласие UMP; по умолчанию без персонализации.</td></tr>
+      <tr><td>Реклама (опционально)</td><td class="wrap">Рекламный идентификатор, сведения об устройстве и сети</td><td class="wrap">Google AdMob (хост медиации) с Meta Audience Network и Pangle. При активации показываются с согласия UMP и по умолчанию неперсонализированы. Содержимое уведомлений никогда не передаётся.</td></tr>
       <tr><td>Статистика использования (опционально)</td><td class="wrap">События приложения (названия экранов/кнопок), ID экземпляра, сведения об устройстве/событии</td><td class="wrap">Firebase Analytics. Можно <b>отключить</b> в Настройках. Содержимое/отправители никогда не отправляются.</td></tr>
       <tr><td>Проверка целостности</td><td class="wrap">Токен целостности приложения/устройства</td><td class="wrap">Google Play Integrity. Без личного содержимого.</td></tr>
       <tr><td>Покупка в приложении (опционально)</td><td class="wrap">Токен и статус покупки</td><td class="wrap">Google Play Billing. Платёжные данные обрабатывает Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Поставщик</th><th>Задача</th><th>Данные</th><th>Политика</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Показ рекламы</td><td class="wrap">Рекламный ID, сведения об устройстве/сети</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Показ рекламы (медиация)</td><td class="wrap">Рекламный ID, сведения об устройстве/сети</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Ссылка</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Показ рекламы (медиация)</td><td class="wrap">Рекламный ID, сведения об устройстве/сети</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Ссылка</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Управление согласием</td><td class="wrap">Статус согласия</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Статистика использования</td><td class="wrap">События, ID экземпляра, сведения об устройстве/событии</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Диагностика сбоев</td><td class="wrap">Журналы сбоев, идентификатор экземпляра, состояние устройства</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Удалённая настройка рекламной политики</td><td class="wrap">Идентификатор экземпляра приложения, базовые данные устройства</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Проверка целостности</td><td class="wrap">Токен целостности</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Покупка в приложении</td><td class="wrap">Токен и статус покупки</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Распространение ИИ-моделей</td><td class="wrap">Сетевые сведения при загрузке (IP и т. п.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Ссылка</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Получатель</th><th>Страна</th><th>Элементы</th><th>Когда/Как</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">США и др.</td><td class="wrap">Рекламный ID и сведения об устройстве, статистика, токен целостности, данные о покупке</td><td class="wrap">По сети при выполнении функции</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">США, Ирландия и др.</td><td class="wrap">Рекламный ID, сведения об устройстве/сети</td><td class="wrap">При активной рекламе / при выигрыше медиации</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Сингапур, США и др.</td><td class="wrap">Рекламный ID, сведения об устройстве/сети</td><td class="wrap">При активной рекламе / при выигрыше медиации</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>США</td><td class="wrap">Сетевые сведения запроса на загрузку</td><td class="wrap">При первой загрузке модели</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Изменения</h2>
   <p>Мы можем обновлять настоящую Политику при изменении законов или сервиса. Об изменениях и дате вступления в силу мы сообщим в Приложении и по опубликованному URL.</p>
-  <p><b>Дата вступления в силу: 12 июня 2026 г.</b></p>
+  <p><b>Настоящая политика вступает в силу 5 июля 2026 г.</b></p>
 </main>
 <footer>Этот документ соответствует политике в NotiVault AI: Настройки → О приложении → Политика конфиденциальности. © Lumiora.</footer>
 <script>

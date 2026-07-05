@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>プライバシーポリシー</h1>
-  <div class="eff">施行日 2026年6月12日 · 最終更新 2026年6月12日</div>
+  <div class="eff">施行日 2026年7月5日 · 最終改定 2026年7月5日</div>
   <p>Lumiora(以下「当社」)は、適用される個人情報保護法令を遵守し、利用者のプライバシーを保護します。本ポリシーはモバイルアプリ <b>NotiVault AI</b>(以下「本アプリ」)に適用されます。NotiVault AI は、端末に届く<b>通知を端末内</b>で収集・分類・検索・要約・保存する、ローカルファーストのアプリです。</p>
   <div class="principle"><strong>基本原則</strong> — 通知の<b>原文(送信者・タイトル・本文・画像など)は当社サーバーや外部へ送信されません</b>。分類・検索・要約・AI 推論はすべて端末内で行われます。広告・利用統計・アプリ整合性チェック・アプリ内課金・AI モデルのダウンロードのため、一部の非通知データのみが第5条の第三者サービスへ送信される場合があります。</div>
 
@@ -28,7 +28,7 @@
       <tr><td>通知の原文</td><td class="wrap">本文・タイトル・送信者(元アプリの表示名)・受信時刻・送信元アプリのパッケージ名・通知画像・元の通知ペイロード。<b>本文は受信したまま保存</b>され、ワンタイムコードや金融情報など機微な内容を含む場合があります。</td></tr>
       <tr><td>抽出データ</td><td class="wrap">ルールベースの項目(金額・日付・注文番号・リンク)。<b>ワンタイムパスコード(OTP)は値を保存せず、検出の事実のみ記録(<code>******</code> でマスク)</b>します。</td></tr>
       <tr><td>分析メタデータ</td><td class="wrap">カテゴリ・重要度・既読状態・言語・重複排除用のコンテンツハッシュ。</td></tr>
-      <tr><td>検索用データ</td><td class="wrap">意味(自然言語)検索のための埋め込みベクトル、要約キャッシュ。</td></tr>
+      <tr><td>検索用データ</td><td class="wrap">キーワード検索インデックス（件名・本文・送信者が対象）とオンデバイスAI要約キャッシュ。いずれも端末内のみ。</td></tr>
       <tr><td>利用者設定</td><td class="wrap">カスタム分類・手動ルール・スパム許可/ブロック送信者・学習済み送信者・ブロックアプリ・リマインダー設定。</td></tr>
       <tr><td>ローカル識別子</td><td class="wrap">端末内で生成されるランダムなインストール識別子(送信しません)。</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>目的</th><th>データ</th><th>備考</th></tr></thead>
     <tbody>
-      <tr><td>広告(任意)</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td class="wrap">Google AdMob。<b>正式リリース時は現在無効</b>。有効時は UMP 同意を適用し、既定で非パーソナライズ。</td></tr>
+      <tr><td>広告(任意)</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td class="wrap">Google AdMob（メディエーションのホスト）と Meta Audience Network・Pangle。有効時は UMP 同意のもとで配信し、既定で非パーソナライズ。通知の原文は送信しません。</td></tr>
       <tr><td>利用統計(任意)</td><td class="wrap">アプリイベント(画面・ボタン名)、アプリインスタンス ID、端末/イベント情報</td><td class="wrap">Firebase Analytics。設定で<b>オプトアウト</b>可能。通知本文・送信者は送信しません。</td></tr>
       <tr><td>整合性チェック</td><td class="wrap">アプリ・端末の整合性トークン</td><td class="wrap">Google Play Integrity。個人コンテンツを含みません。</td></tr>
       <tr><td>アプリ内課金(任意)</td><td class="wrap">購入トークン・状態</td><td class="wrap">Google Play 課金。支払い情報は Google が処理します。</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>委託先</th><th>業務</th><th>データ</th><th>ポリシー</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>広告配信</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>広告配信（メディエーション）</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">リンク</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>広告配信（メディエーション）</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">リンク</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>広告同意の管理</td><td class="wrap">同意状態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>利用統計</td><td class="wrap">アプリイベント、インスタンス ID、端末/イベント情報</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>クラッシュ診断</td><td class="wrap">クラッシュログ、インスタンス識別子、端末状態</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>広告ポリシーの遠隔設定</td><td class="wrap">アプリインスタンス識別子、端末の基本情報</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>整合性チェック</td><td class="wrap">整合性トークン</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
       <tr><td class="wrap">Google LLC (Play 課金)</td><td>アプリ内課金</td><td class="wrap">購入トークン・状態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>AI モデル配布</td><td class="wrap">ダウンロード時のネットワーク情報(IP 等)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">リンク</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>移転先</th><th>国</th><th>項目</th><th>時期・方法</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">米国 ほか</td><td class="wrap">広告 ID・端末情報、利用統計、整合性トークン、購入情報</td><td class="wrap">機能の動作時にネットワーク送信</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">米国・アイルランドなど</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td class="wrap">広告有効時・メディエーション落札時</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">シンガポール・米国など</td><td class="wrap">広告 ID、端末・ネットワーク情報</td><td class="wrap">広告有効時・メディエーション落札時</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>米国</td><td class="wrap">モデルダウンロード要求のネットワーク情報</td><td class="wrap">モデル初回ダウンロード時</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. 変更</h2>
   <p>法令やサービスの変更に応じて本ポリシーを改定する場合があります。変更内容と施行日は、アプリおよび公開 URL で事前に告知します。</p>
-  <p><b>施行日:2026年6月12日</b></p>
+  <p><b>本方針の施行日: 2026年7月5日</b></p>
 </main>
 <footer>本ページは NotiVault AI アプリの「設定 → 情報 → プライバシーポリシー」と同一です。© Lumiora.</footer>
 <script>

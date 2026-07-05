@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Dasar Privasi</h1>
-  <div class="eff">Berkuat kuasa 12 Jun 2026 · Kemas kini terakhir: 12 Jun 2026</div>
+  <div class="eff">Berkuat kuasa 5 Julai 2026 · Semakan terakhir 5 Julai 2026</div>
   <p>Lumiora («Syarikat») menghormati privasi anda dan mematuhi undang-undang perlindungan data yang berkenaan. Dasar ini terpakai untuk aplikasi mudah alih <b>NotiVault AI</b> («Aplikasi»). NotiVault AI ialah aplikasi <b>local-first</b> yang mengumpul, mengelas, mencari, meringkas dan menyimpan pemberitahuan peranti anda <b>sepenuhnya pada peranti anda</b>.</p>
   <div class="principle"><strong>Prinsip teras</strong> — <b>Kandungan pemberitahuan anda (pengirim, tajuk, isi, imej, dll.) tidak pernah dihantar ke pelayan Syarikat atau mana-mana pihak luar</b>. Semua pengelasan, carian, ringkasan dan inferens AI berlaku pada peranti anda. Hanya sebahagian data bukan pemberitahuan dihantar ke perkhidmatan pihak ketiga dalam Bahagian 5, untuk iklan, statistik penggunaan, semakan integriti, pembelian dalam aplikasi dan muat turun model AI.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Kandungan pemberitahuan</td><td class="wrap">Isi, tajuk, pengirim (seperti dipaparkan aplikasi sumber), masa diterima, nama pakej aplikasi sumber, imej dan muatan asal. <b>Isi disimpan seadanya</b> dan mungkin mengandungi data sensitif seperti kod sekali guna atau maklumat kewangan.</td></tr>
       <tr><td>Data diekstrak</td><td class="wrap">Item berasaskan peraturan (jumlah, tarikh, nombor pesanan, pautan). <b>Kod sekali guna (OTP) tidak disimpan sebagai nilai; hanya fakta pengesanan direkod (disamarkan sebagai <code>******</code>)</b>.</td></tr>
       <tr><td>Metadata analisis</td><td class="wrap">Kategori, kepentingan, status dibaca, bahasa, cincangan kandungan untuk penyahduaan.</td></tr>
-      <tr><td>Data carian</td><td class="wrap">Vektor benaman untuk carian semantik (bahasa tabii), cache ringkasan.</td></tr>
+      <tr><td>Data carian</td><td class="wrap">Indeks carian kata kunci (tajuk, kandungan, penghantar) dan cache ringkasan AI pada peranti. Kedua-duanya kekal pada peranti sahaja.</td></tr>
       <tr><td>Tetapan anda</td><td class="wrap">Kategori tersuai, peraturan manual, pengirim spam dibenarkan/disekat, pengirim dipelajari, aplikasi disekat, peringatan.</td></tr>
       <tr><td>Pengecam tempatan</td><td class="wrap">Pengecam pemasangan rawak yang dijana pada peranti (tidak pernah dihantar).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Tujuan</th><th>Data</th><th>Nota</th></tr></thead>
     <tbody>
-      <tr><td>Iklan (pilihan)</td><td class="wrap">ID iklan, maklumat peranti dan rangkaian</td><td class="wrap">Google AdMob. <b>Kini dilumpuhkan semasa pelancaran.</b> Apabila didayakan, persetujuan UMP terpakai; tidak diperibadikan secara lalai.</td></tr>
+      <tr><td>Iklan (pilihan)</td><td class="wrap">ID iklan, maklumat peranti dan rangkaian</td><td class="wrap">Google AdMob (hos mediasi) dengan Meta Audience Network dan Pangle. Apabila aktif, dipaparkan dengan kebenaran UMP dan tidak diperibadikan secara lalai. Kandungan pemberitahuan tidak pernah dihantar.</td></tr>
       <tr><td>Statistik penggunaan (pilihan)</td><td class="wrap">Peristiwa aplikasi (nama skrin/butang), ID tika, maklumat peranti/peristiwa</td><td class="wrap">Firebase Analytics. Anda boleh <b>menolak</b> dalam Tetapan. Kandungan/pengirim tidak pernah dihantar.</td></tr>
       <tr><td>Semakan integriti</td><td class="wrap">Token integriti aplikasi/peranti</td><td class="wrap">Google Play Integrity. Tiada kandungan peribadi.</td></tr>
       <tr><td>Pembelian dalam aplikasi (pilihan)</td><td class="wrap">Token dan status pembelian</td><td class="wrap">Google Play Billing. Data pembayaran dikendalikan oleh Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Penyedia</th><th>Tugas</th><th>Data</th><th>Dasar</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Menyiarkan iklan</td><td class="wrap">ID iklan, maklumat peranti/rangkaian</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Penyampaian iklan (mediasi)</td><td class="wrap">ID iklan, maklumat peranti/rangkaian</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Pautan</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Penyampaian iklan (mediasi)</td><td class="wrap">ID iklan, maklumat peranti/rangkaian</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Pautan</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Pengurusan persetujuan</td><td class="wrap">Status persetujuan</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Statistik penggunaan</td><td class="wrap">Peristiwa, ID tika, maklumat peranti/peristiwa</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Diagnostik ranap</td><td class="wrap">Log ranap, ID contoh, keadaan peranti</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Konfigurasi jauh dasar iklan</td><td class="wrap">ID contoh apl, maklumat asas peranti</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Semakan integriti</td><td class="wrap">Token integriti</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Pembelian dalam aplikasi</td><td class="wrap">Token dan status pembelian</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Pengedaran model AI</td><td class="wrap">Maklumat rangkaian semasa muat turun (IP, dll.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Pautan</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Penerima</th><th>Negara</th><th>Item</th><th>Bila/Bagaimana</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">AS, dll.</td><td class="wrap">ID iklan dan maklumat peranti, statistik, token integriti, maklumat pembelian</td><td class="wrap">Melalui rangkaian apabila ciri berjalan</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Amerika Syarikat, Ireland, dll.</td><td class="wrap">ID iklan, maklumat peranti/rangkaian</td><td class="wrap">Semasa iklan aktif / apabila mediasi menang</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapura, Amerika Syarikat, dll.</td><td class="wrap">ID iklan, maklumat peranti/rangkaian</td><td class="wrap">Semasa iklan aktif / apabila mediasi menang</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>AS</td><td class="wrap">Maklumat rangkaian permintaan muat turun</td><td class="wrap">Pada muat turun model pertama</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Perubahan</h2>
   <p>Kami mungkin mengemas kini Dasar ini apabila undang-undang atau perkhidmatan berubah. Kami akan memberitahu perubahan dan tarikh kuat kuasa lebih awal dalam Aplikasi dan di URL yang diterbitkan.</p>
-  <p><b>Tarikh kuat kuasa: 12 Jun 2026</b></p>
+  <p><b>Dasar ini berkuat kuasa mulai 5 Julai 2026.</b></p>
 </main>
 <footer>Dokumen ini selaras dengan dasar yang dipaparkan dalam NotiVault AI di Tetapan → Perihal → Dasar Privasi. © Lumiora.</footer>
 <script>

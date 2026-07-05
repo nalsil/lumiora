@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>隱私權政策</h1>
-  <div class="eff">生效日 2026年6月12日 · 最近更新 2026年6月12日</div>
+  <div class="eff">生效日期 2026年7月5日 · 最後修訂 2026年7月5日</div>
   <p>Lumiora(「本公司」)尊重您的隱私並遵守適用之資料保護法律。本政策適用於行動應用程式 <b>NotiVault AI</b>(「本應用」)。NotiVault AI 為<b>在地優先</b>應用,<b>於您的裝置本機</b>收集、分類、搜尋、摘要並保存裝置通知。</p>
   <div class="principle"><strong>核心原則</strong> — 通知<b>原文(寄件者、標題、內文、圖片等)絕不會傳送至本公司伺服器或任何外部方</b>。所有分類、搜尋、摘要與 AI 推論皆於裝置本機完成。僅有部分非通知資料會傳送給第 5 條所列第三方服務,用於廣告、使用統計、應用完整性驗證、應用程式內購買及 AI 模型下載。</div>
 
@@ -28,7 +28,7 @@
       <tr><td>通知原文</td><td class="wrap">內文、標題、寄件者(來源應用所顯示)、接收時間、來源應用套件名、通知圖片、原始通知酬載。<b>內文按原樣保存</b>,可能包含一次性驗證碼或金融資訊等敏感內容。</td></tr>
       <tr><td>擷取資料</td><td class="wrap">規則式項目(金額、日期、訂單編號、連結)。<b>一次性驗證碼(OTP)不保存其值,僅記錄偵測事實(以 <code>******</code> 遮罩)</b>。</td></tr>
       <tr><td>分析中繼資料</td><td class="wrap">類別、重要性、已讀狀態、語言、用於去重的內容雜湊。</td></tr>
-      <tr><td>搜尋資料</td><td class="wrap">用於語意(自然語言)搜尋的嵌入向量、摘要快取。</td></tr>
+      <tr><td>搜尋資料</td><td class="wrap">關鍵字搜尋索引（針對標題、內文、寄件者）與裝置端AI摘要快取。兩者僅存於裝置。</td></tr>
       <tr><td>您的設定</td><td class="wrap">自訂分類、手動規則、垃圾訊息允許/封鎖寄件者、已學習寄件者、已封鎖應用、提醒設定。</td></tr>
       <tr><td>本機識別碼</td><td class="wrap">於裝置本機產生的隨機安裝識別碼(不會傳輸)。</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>目的</th><th>資料</th><th>說明</th></tr></thead>
     <tbody>
-      <tr><td>廣告(選用)</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td class="wrap">Google AdMob。<b>正式發布階段目前為停用</b>。啟用時適用 UMP 同意,預設非個人化。</td></tr>
+      <tr><td>廣告(選用)</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td class="wrap">Google AdMob（中介主機）與 Meta Audience Network、Pangle。啟用時在 UMP 同意下投放，預設非個人化。絕不傳送通知內容。</td></tr>
       <tr><td>使用統計(選用)</td><td class="wrap">應用事件(畫面/按鈕名稱)、應用執行個體 ID、裝置/事件資訊</td><td class="wrap">Firebase Analytics。可於設定中<b>選擇退出</b>。絕不傳送通知內文/寄件者。</td></tr>
       <tr><td>完整性驗證</td><td class="wrap">應用/裝置完整性權杖</td><td class="wrap">Google Play Integrity。不含個人內容。</td></tr>
       <tr><td>應用程式內購買(選用)</td><td class="wrap">購買權杖與狀態</td><td class="wrap">Google Play 付款。付款資訊由 Google 處理。</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>服務商</th><th>事項</th><th>資料</th><th>政策</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>投放廣告</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>廣告投放（中介）</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>廣告投放（中介）</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">連結</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>廣告同意管理</td><td class="wrap">同意狀態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>使用統計</td><td class="wrap">應用事件、執行個體 ID、裝置/事件資訊</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>當機診斷</td><td class="wrap">當機記錄、執行個體識別碼、裝置狀態</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">連結</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>廣告政策遠端設定</td><td class="wrap">應用程式執行個體識別碼、裝置基本資訊</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">連結</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>完整性驗證</td><td class="wrap">完整性權杖</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
       <tr><td class="wrap">Google LLC (Play 付款)</td><td>應用程式內購買</td><td class="wrap">購買權杖與狀態</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">連結</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>AI 模型散布</td><td class="wrap">下載時的網路資訊(IP 等)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">連結</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>接收方</th><th>國家</th><th>項目</th><th>時點/方式</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">美國等</td><td class="wrap">廣告 ID 與裝置資訊、統計、完整性權杖、購買資訊</td><td class="wrap">功能運作時經網路傳輸</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">美國、愛爾蘭等</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td class="wrap">廣告啟用／中介得標時</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">新加坡、美國等</td><td class="wrap">廣告 ID、裝置與網路資訊</td><td class="wrap">廣告啟用／中介得標時</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>美國</td><td class="wrap">模型下載請求之網路資訊</td><td class="wrap">首次下載模型時</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. 變更</h2>
   <p>我們可能隨法律或服務變化更新本政策,並將於應用內與公開 URL 提前告知變更內容與生效日。</p>
-  <p><b>生效日:2026年6月12日</b></p>
+  <p><b>本政策自 2026年7月5日 起生效。</b></p>
 </main>
 <footer>本頁面與 NotiVault AI 應用中「設定 → 關於 → 隱私權政策」內容一致。© Lumiora.</footer>
 <script>

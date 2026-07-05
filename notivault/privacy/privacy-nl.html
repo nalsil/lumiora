@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Privacybeleid</h1>
-  <div class="eff">Van kracht op 12 juni 2026 · Laatst bijgewerkt: 12 juni 2026</div>
+  <div class="eff">Van kracht op 5 juli 2026 · Laatst herzien op 5 juli 2026</div>
   <p>Lumiora (het «Bedrijf») respecteert je privacy en voldoet aan de toepasselijke wetgeving inzake gegevensbescherming. Dit beleid geldt voor de mobiele app <b>NotiVault AI</b> (de «App»). NotiVault AI is een <b>local-first</b>-app die je apparaatmeldingen <b>volledig op je apparaat</b> verzamelt, classificeert, doorzoekt, samenvat en bewaart.</p>
   <div class="principle"><strong>Kernprincipe</strong> — De <b>inhoud van je meldingen (afzender, titel, tekst, afbeeldingen enz.) wordt nooit naar servers van het Bedrijf of naar derden verzonden</b>. Alle classificatie, zoekopdrachten, samenvatting en AI-inferentie gebeuren op je apparaat. Alleen bepaalde niet-meldingsgegevens worden naar de externe diensten in Sectie 5 verzonden, voor advertenties, gebruiksstatistieken, integriteitscontrole, in-app-aankopen en het downloaden van AI-modellen.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Meldingsinhoud</td><td class="wrap">Tekst, titel, afzender (zoals getoond door de bron-app), ontvangsttijd, pakketnaam van de bron-app, afbeeldingen en originele payload. <b>De tekst wordt letterlijk bewaard</b> en kan gevoelige gegevens bevatten zoals eenmalige codes of financiële gegevens.</td></tr>
       <tr><td>Geëxtraheerde gegevens</td><td class="wrap">Op regels gebaseerde items (bedrag, datum, bestelnummer, links). <b>Eenmalige codes (OTP) worden niet als waarde opgeslagen; alleen de detectie wordt vastgelegd (gemaskeerd als <code>******</code>)</b>.</td></tr>
       <tr><td>Analysemetadata</td><td class="wrap">Categorie, belang, leesstatus, taal, inhoudshash voor ontdubbeling.</td></tr>
-      <tr><td>Zoekgegevens</td><td class="wrap">Embeddingvectoren voor semantisch (natuurlijke taal) zoeken, samenvattingscache.</td></tr>
+      <tr><td>Zoekgegevens</td><td class="wrap">Zoekindex op trefwoorden (titel, tekst, afzender) en on-device AI-samenvattingscache. Beide blijven alleen op het apparaat.</td></tr>
       <tr><td>Je instellingen</td><td class="wrap">Eigen categorieën, handmatige regels, toegestane/geblokkeerde spamafzenders, geleerde afzenders, geblokkeerde apps, herinneringen.</td></tr>
       <tr><td>Lokale identificator</td><td class="wrap">Een willekeurige installatie-identificator die op het apparaat wordt gegenereerd (nooit verzonden).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Doel</th><th>Gegevens</th><th>Opmerkingen</th></tr></thead>
     <tbody>
-      <tr><td>Advertenties (optioneel)</td><td class="wrap">Advertentie-ID, apparaat- en netwerkinfo</td><td class="wrap">Google AdMob. <b>Momenteel uitgeschakeld bij lancering.</b> Indien ingeschakeld geldt UMP-toestemming; standaard niet-gepersonaliseerd.</td></tr>
+      <tr><td>Advertenties (optioneel)</td><td class="wrap">Advertentie-ID, apparaat- en netwerkinfo</td><td class="wrap">Google AdMob (mediation-host) met Meta Audience Network en Pangle. Indien actief, getoond met UMP-toestemming en standaard niet-gepersonaliseerd. Notificatie-inhoud wordt nooit verzonden.</td></tr>
       <tr><td>Gebruiksstatistieken (optioneel)</td><td class="wrap">App-gebeurtenissen (scherm-/knopnamen), instantie-ID, apparaat-/gebeurtenisinfo</td><td class="wrap">Firebase Analytics. Je kunt je <b>afmelden</b> in Instellingen. Inhoud/afzenders worden nooit verzonden.</td></tr>
       <tr><td>Integriteitscontrole</td><td class="wrap">Integriteitstoken van app/apparaat</td><td class="wrap">Google Play Integrity. Geen persoonlijke inhoud.</td></tr>
       <tr><td>In-app-aankoop (optioneel)</td><td class="wrap">Aankooptoken en -status</td><td class="wrap">Google Play Billing. Betaalgegevens worden door Google verwerkt.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Aanbieder</th><th>Taak</th><th>Gegevens</th><th>Beleid</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Advertenties tonen</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Advertenties tonen (mediation)</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Advertenties tonen (mediation)</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Toestemmingsbeheer</td><td class="wrap">Toestemmingsstatus</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Gebruiksstatistieken</td><td class="wrap">Gebeurtenissen, instantie-ID, apparaat-/gebeurtenisinfo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Crashdiagnostiek</td><td class="wrap">Crashlogs, instantie-ID, apparaatstatus</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Configuratie op afstand van advertentiebeleid</td><td class="wrap">App-instantie-ID, basisapparaatgegevens</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Integriteitscontrole</td><td class="wrap">Integriteitstoken</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-app-aankoop</td><td class="wrap">Aankooptoken en -status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Distributie AI-modellen</td><td class="wrap">Netwerkinfo bij download (IP enz.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Ontvanger</th><th>Land</th><th>Items</th><th>Wanneer/Hoe</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">VS enz.</td><td class="wrap">Advertentie-ID en apparaatinfo, statistieken, integriteitstoken, aankoopinfo</td><td class="wrap">Via het netwerk wanneer de functie wordt uitgevoerd</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Verenigde Staten, Ierland, enz.</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td class="wrap">Wanneer advertenties actief zijn / bij mediation-toewijzing</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapore, Verenigde Staten, enz.</td><td class="wrap">Advertentie-ID, apparaat-/netwerkinfo</td><td class="wrap">Wanneer advertenties actief zijn / bij mediation-toewijzing</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>VS</td><td class="wrap">Netwerkinfo van het downloadverzoek</td><td class="wrap">Bij de eerste modeldownload</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Wijzigingen</h2>
   <p>We kunnen dit beleid bijwerken bij wijziging van wetgeving of dienst. We melden wijzigingen en de ingangsdatum in de App en op de gepubliceerde URL.</p>
-  <p><b>Ingangsdatum: 12 juni 2026</b></p>
+  <p><b>Dit beleid is van kracht vanaf 5 juli 2026.</b></p>
 </main>
 <footer>Dit document komt overeen met het beleid in NotiVault AI onder Instellingen → Over → Privacybeleid. © Lumiora.</footer>
 <script>

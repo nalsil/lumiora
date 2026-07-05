@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Patakaran sa Privacy</h1>
-  <div class="eff">Epektibo simula 12 Hunyo 2026 · Huling na-update: 12 Hunyo 2026</div>
+  <div class="eff">May bisa simula Hulyo 5, 2026 · Huling binago Hulyo 5, 2026</div>
   <p>Iginagalang ng Lumiora («Kompanya») ang iyong privacy at sumusunod sa mga naaangkop na batas sa proteksyon ng data. Nalalapat ang Patakarang ito sa mobile app na <b>NotiVault AI</b> («App»). Ang NotiVault AI ay isang <b>local-first</b> na app na nangongolekta, nag-uuri, naghahanap, nagbubuod, at nag-iimbak ng mga notification ng iyong device <b>nang buo sa iyong device</b>.</p>
   <div class="principle"><strong>Pangunahing prinsipyo</strong> — Ang <b>nilalaman ng iyong mga notification (nagpadala, pamagat, katawan, larawan, atbp.) ay hindi kailanman ipinapadala sa mga server ng Kompanya o sa anumang panlabas na partido</b>. Lahat ng pag-uuri, paghahanap, pagbubuod, at AI inference ay nangyayari sa iyong device. Tanging ilang hindi-notification na data lang ang ipinapadala sa mga third-party na serbisyo sa Seksyon 5, para sa mga ad, istatistika ng paggamit, pagsusuri ng integridad, in-app purchase, at pag-download ng AI model.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Nilalaman ng notification</td><td class="wrap">Katawan, pamagat, nagpadala (ayon sa ipinapakita ng pinagmulang app), oras ng pagtanggap, package name ng pinagmulang app, mga larawan, at orihinal na payload. <b>Iniimbak ang katawan nang buo</b> at maaaring maglaman ng sensitibong data gaya ng one-time code o impormasyong pampinansyal.</td></tr>
       <tr><td>Na-extract na data</td><td class="wrap">Mga item na batay sa panuntunan (halaga, petsa, order number, mga link). <b>Ang mga one-time code (OTP) ay hindi iniimbak bilang halaga; ang katotohanan lamang ng pagkatuklas ang naitatala (nakamaskara bilang <code>******</code>)</b>.</td></tr>
       <tr><td>Metadata ng pagsusuri</td><td class="wrap">Kategorya, kahalagahan, status ng pagkabasa, wika, content hash para sa deduplication.</td></tr>
-      <tr><td>Data sa paghahanap</td><td class="wrap">Mga embedding vector para sa semantic (natural na wika) na paghahanap, cache ng buod.</td></tr>
+      <tr><td>Data sa paghahanap</td><td class="wrap">Keyword search index (sa pamagat, nilalaman, nagpadala) at on-device AI summary cache. Parehong nananatili sa device lang.</td></tr>
       <tr><td>Iyong mga setting</td><td class="wrap">Mga custom na kategorya, manu-manong panuntunan, pinapayagan/hinaharang na spam sender, natutunang sender, hinaharang na app, mga paalala.</td></tr>
       <tr><td>Lokal na identifier</td><td class="wrap">Random na install identifier na nililikha sa device (hindi kailanman ipinapadala).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Layunin</th><th>Data</th><th>Mga tala</th></tr></thead>
     <tbody>
-      <tr><td>Mga ad (opsyonal)</td><td class="wrap">Advertising ID, impormasyon ng device at network</td><td class="wrap">Google AdMob. <b>Kasalukuyang naka-disable sa paglunsad.</b> Kapag pinagana, nalalapat ang UMP consent; hindi personalized bilang default.</td></tr>
+      <tr><td>Mga ad (opsyonal)</td><td class="wrap">Advertising ID, impormasyon ng device at network</td><td class="wrap">Google AdMob (mediation host) kasama ang Meta Audience Network at Pangle. Kapag aktibo, ipinapakita sa ilalim ng pahintulot ng UMP at hindi personalized bilang default. Hindi kailanman ipinapadala ang nilalaman ng notification.</td></tr>
       <tr><td>Istatistika ng paggamit (opsyonal)</td><td class="wrap">Mga event ng app (pangalan ng screen/button), instance ID, impormasyon ng device/event</td><td class="wrap">Firebase Analytics. Maaari kang <b>mag-opt out</b> sa Mga Setting. Hindi kailanman ipinapadala ang nilalaman/nagpadala.</td></tr>
       <tr><td>Pagsusuri ng integridad</td><td class="wrap">Integrity token ng app/device</td><td class="wrap">Google Play Integrity. Walang personal na nilalaman.</td></tr>
       <tr><td>In-app purchase (opsyonal)</td><td class="wrap">Purchase token at status</td><td class="wrap">Google Play Billing. Pinangangasiwaan ng Google ang detalye ng pagbabayad.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Provider</th><th>Gawain</th><th>Data</th><th>Patakaran</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Paghahatid ng ad</td><td class="wrap">Advertising ID, impo ng device/network</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Paghahatid ng ad (mediation)</td><td class="wrap">Advertising ID, impo ng device/network</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Paghahatid ng ad (mediation)</td><td class="wrap">Advertising ID, impo ng device/network</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Pamamahala ng pahintulot</td><td class="wrap">Status ng pahintulot</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Istatistika ng paggamit</td><td class="wrap">Mga event, instance ID, impo ng device/event</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Crash diagnostics</td><td class="wrap">Mga crash log, instance ID, estado ng device</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Malayuang pag-configure ng patakaran sa ad</td><td class="wrap">App instance ID, pangunahing impormasyon ng device</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Pagsusuri ng integridad</td><td class="wrap">Integrity token</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-app purchase</td><td class="wrap">Purchase token at status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Distribusyon ng AI model</td><td class="wrap">Impo ng network sa pag-download (IP, atbp.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Tatanggap</th><th>Bansa</th><th>Mga item</th><th>Kailan/Paano</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">Estados Unidos, atbp.</td><td class="wrap">Advertising ID at impo ng device, istatistika, integrity token, impo ng pagbili</td><td class="wrap">Sa pamamagitan ng network kapag tumakbo ang feature</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Estados Unidos, Ireland, atbp.</td><td class="wrap">Advertising ID, impo ng device/network</td><td class="wrap">Kapag aktibo ang mga ad / kapag nanalo ang mediation</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapore, Estados Unidos, atbp.</td><td class="wrap">Advertising ID, impo ng device/network</td><td class="wrap">Kapag aktibo ang mga ad / kapag nanalo ang mediation</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Estados Unidos</td><td class="wrap">Impo ng network ng kahilingan sa pag-download</td><td class="wrap">Sa unang pag-download ng model</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Mga Pagbabago</h2>
   <p>Maaari naming i-update ang Patakarang ito kapag nagbago ang batas o serbisyo. Magbibigay kami ng paunang abiso sa mga pagbabago at petsa ng bisa sa App at sa nai-publish na URL.</p>
-  <p><b>Petsa ng bisa: 12 Hunyo 2026</b></p>
+  <p><b>Ang patakarang ito ay may bisa simula Hulyo 5, 2026.</b></p>
 </main>
 <footer>Tumutugma ang dokumentong ito sa patakarang ipinapakita sa NotiVault AI sa ilalim ng Mga Setting → Tungkol → Patakaran sa Privacy. © Lumiora.</footer>
 <script>

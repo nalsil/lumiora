@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Datenschutzerklärung</h1>
-  <div class="eff">Gültig ab 12. Juni 2026 · Zuletzt aktualisiert: 12. Juni 2026</div>
+  <div class="eff">Gültig ab 5. Juli 2026 · Zuletzt geändert am 5. Juli 2026</div>
   <p>Lumiora (das „Unternehmen“) respektiert Ihre Privatsphäre und hält die geltenden Datenschutzgesetze ein. Diese Erklärung gilt für die mobile App <b>NotiVault AI</b> (die „App“). NotiVault AI ist eine <b>Local-First</b>-App, die Ihre Gerätebenachrichtigungen <b>vollständig auf Ihrem Gerät</b> erfasst, klassifiziert, durchsucht, zusammenfasst und speichert.</p>
   <div class="principle"><strong>Grundprinzip</strong> — Der <b>Inhalt Ihrer Benachrichtigungen (Absender, Titel, Text, Bilder usw.) wird niemals an Server des Unternehmens oder an Dritte gesendet</b>. Klassifizierung, Suche, Zusammenfassung und KI-Inferenz erfolgen auf Ihrem Gerät. Nur bestimmte nicht-benachrichtigungsbezogene Daten werden an die Drittanbieterdienste in Abschnitt 5 gesendet — für Werbung, Nutzungsstatistik, Integritätsprüfung, In-App-Käufe und KI-Modell-Downloads.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Benachrichtigungsinhalt</td><td class="wrap">Text, Titel, Absender (wie von der Quell-App angezeigt), Empfangszeit, Paketname der Quell-App, Bilder und Original-Payload. <b>Der Text wird wortgetreu gespeichert</b> und kann sensible Daten wie Einmalcodes oder Finanzdaten enthalten.</td></tr>
       <tr><td>Extrahierte Daten</td><td class="wrap">Regelbasierte Elemente (Betrag, Datum, Bestellnummer, Links). <b>Einmalcodes (OTP) werden nicht als Wert gespeichert; nur die Erkennung wird vermerkt (maskiert als <code>******</code>)</b>.</td></tr>
       <tr><td>Analyse-Metadaten</td><td class="wrap">Kategorie, Wichtigkeit, Lesestatus, Sprache, Inhalts-Hash zur Deduplizierung.</td></tr>
-      <tr><td>Suchdaten</td><td class="wrap">Embedding-Vektoren für semantische (natürlichsprachliche) Suche, Zusammenfassungs-Cache.</td></tr>
+      <tr><td>Suchdaten</td><td class="wrap">Stichwort-Suchindex (über Titel, Text, Absender) und geräteinterner KI-Zusammenfassungs-Cache. Beides verbleibt nur auf dem Gerät.</td></tr>
       <tr><td>Ihre Einstellungen</td><td class="wrap">Eigene Kategorien, manuelle Regeln, Spam-Zulassungs-/Sperrabsender, gelernte Absender, gesperrte Apps, Erinnerungen.</td></tr>
       <tr><td>Lokale Kennung</td><td class="wrap">Eine zufällige, auf dem Gerät erzeugte Installations-Kennung (wird nie übertragen).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Zweck</th><th>Daten</th><th>Hinweise</th></tr></thead>
     <tbody>
-      <tr><td>Werbung (optional)</td><td class="wrap">Werbe-ID, Geräte- und Netzwerkinfo</td><td class="wrap">Google AdMob. <b>Beim Produktionsstart derzeit deaktiviert.</b> Bei Aktivierung gilt UMP-Einwilligung; standardmäßig nicht personalisiert.</td></tr>
+      <tr><td>Werbung (optional)</td><td class="wrap">Werbe-ID, Geräte- und Netzwerkinfo</td><td class="wrap">Google AdMob (Mediation-Host) mit Meta Audience Network und Pangle. Bei Aktivierung mit UMP-Einwilligung ausgeliefert, standardmäßig nicht personalisiert. Benachrichtigungsinhalte werden nie gesendet.</td></tr>
       <tr><td>Nutzungsstatistik (optional)</td><td class="wrap">App-Ereignisse (Bildschirm-/Buttonnamen), Instanz-ID, Geräte-/Ereignisinfo</td><td class="wrap">Firebase Analytics. In den Einstellungen <b>abschaltbar</b>. Inhalt/Absender werden nie gesendet.</td></tr>
       <tr><td>Integritätsprüfung</td><td class="wrap">Integritätstoken der App/des Geräts</td><td class="wrap">Google Play Integrity. Keine persönlichen Inhalte.</td></tr>
       <tr><td>In-App-Kauf (optional)</td><td class="wrap">Kauftoken und -status</td><td class="wrap">Google Play Billing. Zahlungsdaten verarbeitet Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Anbieter</th><th>Aufgabe</th><th>Daten</th><th>Richtlinie</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Werbeauslieferung</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Anzeigenauslieferung (Mediation)</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Anzeigenauslieferung (Mediation)</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Einwilligungsverwaltung</td><td class="wrap">Einwilligungsstatus</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Nutzungsstatistik</td><td class="wrap">Ereignisse, Instanz-ID, Geräte-/Ereignisinfo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Absturzdiagnose</td><td class="wrap">Absturzprotokolle, Instanz-ID, Gerätestatus</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Remote-Konfiguration der Anzeigenrichtlinie</td><td class="wrap">App-Instanz-ID, grundlegende Geräteinformationen</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Integritätsprüfung</td><td class="wrap">Integritätstoken</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>In-App-Kauf</td><td class="wrap">Kauftoken und -status</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Link</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>KI-Modellverteilung</td><td class="wrap">Netzwerkinfo beim Download (IP usw.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Link</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Empfänger</th><th>Land</th><th>Elemente</th><th>Wann/Wie</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">USA usw.</td><td class="wrap">Werbe-ID und Geräteinfo, Statistik, Integritätstoken, Kaufinfo</td><td class="wrap">Über das Netzwerk bei Ausführung der Funktion</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">USA, Irland usw.</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td class="wrap">Bei aktiver Anzeige / bei Mediation-Zuschlag</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapur, USA usw.</td><td class="wrap">Werbe-ID, Geräte-/Netzwerkinfo</td><td class="wrap">Bei aktiver Anzeige / bei Mediation-Zuschlag</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>USA</td><td class="wrap">Netzwerkinfo der Download-Anfrage</td><td class="wrap">Beim ersten Modell-Download</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Änderungen</h2>
   <p>Wir können diese Erklärung bei Änderungen von Gesetzen oder Dienst aktualisieren. Wir informieren über Änderungen und das Gültigkeitsdatum in der App und unter der veröffentlichten URL.</p>
-  <p><b>Gültig ab: 12. Juni 2026</b></p>
+  <p><b>Diese Richtlinie tritt am 5. Juli 2026 in Kraft.</b></p>
 </main>
 <footer>Dieses Dokument entspricht der in NotiVault AI unter Einstellungen → Info → Datenschutzerklärung angezeigten Richtlinie. © Lumiora.</footer>
 <script>

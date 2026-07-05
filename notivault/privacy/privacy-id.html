@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Kebijakan Privasi</h1>
-  <div class="eff">Berlaku 12 Juni 2026 · Pembaruan terakhir: 12 Juni 2026</div>
+  <div class="eff">Berlaku 5 Juli 2026 · Terakhir direvisi 5 Juli 2026</div>
   <p>Lumiora («Perusahaan») menghormati privasi Anda dan mematuhi undang-undang perlindungan data yang berlaku. Kebijakan ini berlaku untuk aplikasi seluler <b>NotiVault AI</b> («Aplikasi»). NotiVault AI adalah aplikasi <b>local-first</b> yang mengumpulkan, mengklasifikasikan, mencari, meringkas, dan menyimpan notifikasi perangkat Anda <b>sepenuhnya di perangkat Anda</b>.</p>
   <div class="principle"><strong>Prinsip inti</strong> — <b>Konten notifikasi Anda (pengirim, judul, isi, gambar, dll.) tidak pernah dikirim ke server Perusahaan atau pihak luar mana pun</b>. Semua klasifikasi, pencarian, peringkasan, dan inferensi AI terjadi di perangkat Anda. Hanya sebagian data non-notifikasi yang dikirim ke layanan pihak ketiga pada Bagian 5, untuk iklan, statistik penggunaan, pemeriksaan integritas, pembelian dalam aplikasi, dan pengunduhan model AI.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Konten notifikasi</td><td class="wrap">Isi, judul, pengirim (sebagaimana ditampilkan aplikasi sumber), waktu diterima, nama paket aplikasi sumber, gambar, dan payload asli. <b>Isi disimpan apa adanya</b> dan dapat memuat data sensitif seperti kode sekali pakai atau informasi keuangan.</td></tr>
       <tr><td>Data yang diekstraksi</td><td class="wrap">Item berbasis aturan (jumlah, tanggal, nomor pesanan, tautan). <b>Kode sekali pakai (OTP) tidak disimpan sebagai nilai; hanya fakta deteksi yang dicatat (disamarkan menjadi <code>******</code>)</b>.</td></tr>
       <tr><td>Metadata analisis</td><td class="wrap">Kategori, kepentingan, status dibaca, bahasa, hash konten untuk deduplikasi.</td></tr>
-      <tr><td>Data pencarian</td><td class="wrap">Vektor embedding untuk pencarian semantik (bahasa alami), cache ringkasan.</td></tr>
+      <tr><td>Data pencarian</td><td class="wrap">Indeks pencarian kata kunci (judul, isi, pengirim) dan cache ringkasan AI di perangkat. Keduanya hanya ada di perangkat.</td></tr>
       <tr><td>Pengaturan Anda</td><td class="wrap">Kategori kustom, aturan manual, pengirim spam diizinkan/diblokir, pengirim yang dipelajari, aplikasi diblokir, pengingat.</td></tr>
       <tr><td>Pengenal lokal</td><td class="wrap">Pengenal instalasi acak yang dibuat di perangkat (tidak pernah dikirim).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Tujuan</th><th>Data</th><th>Catatan</th></tr></thead>
     <tbody>
-      <tr><td>Iklan (opsional)</td><td class="wrap">ID iklan, info perangkat dan jaringan</td><td class="wrap">Google AdMob. <b>Saat ini dinonaktifkan saat peluncuran.</b> Jika diaktifkan, persetujuan UMP berlaku; tidak dipersonalisasi secara default.</td></tr>
+      <tr><td>Iklan (opsional)</td><td class="wrap">ID iklan, info perangkat dan jaringan</td><td class="wrap">Google AdMob (host mediasi) dengan Meta Audience Network dan Pangle. Saat aktif, ditayangkan dengan persetujuan UMP dan tidak dipersonalisasi secara default. Konten notifikasi tidak pernah dikirim.</td></tr>
       <tr><td>Statistik penggunaan (opsional)</td><td class="wrap">Peristiwa aplikasi (nama layar/tombol), ID instance, info perangkat/peristiwa</td><td class="wrap">Firebase Analytics. Anda dapat <b>menolak</b> di Pengaturan. Konten/pengirim tidak pernah dikirim.</td></tr>
       <tr><td>Pemeriksaan integritas</td><td class="wrap">Token integritas aplikasi/perangkat</td><td class="wrap">Google Play Integrity. Tanpa konten pribadi.</td></tr>
       <tr><td>Pembelian dalam aplikasi (opsional)</td><td class="wrap">Token dan status pembelian</td><td class="wrap">Google Play Billing. Data pembayaran ditangani oleh Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Penyedia</th><th>Tugas</th><th>Data</th><th>Kebijakan</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Menayangkan iklan</td><td class="wrap">ID iklan, info perangkat/jaringan</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Penayangan iklan (mediasi)</td><td class="wrap">ID iklan, info perangkat/jaringan</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Tautan</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Penayangan iklan (mediasi)</td><td class="wrap">ID iklan, info perangkat/jaringan</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Tautan</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Manajemen persetujuan</td><td class="wrap">Status persetujuan</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Statistik penggunaan</td><td class="wrap">Peristiwa, ID instance, info perangkat/peristiwa</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Diagnostik kerusakan</td><td class="wrap">Log kerusakan, ID instance, status perangkat</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Konfigurasi jarak jauh kebijakan iklan</td><td class="wrap">ID instance aplikasi, informasi dasar perangkat</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Pemeriksaan integritas</td><td class="wrap">Token integritas</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Pembelian dalam aplikasi</td><td class="wrap">Token dan status pembelian</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Distribusi model AI</td><td class="wrap">Info jaringan saat mengunduh (IP, dll.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Tautan</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Penerima</th><th>Negara</th><th>Item</th><th>Kapan/Bagaimana</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">AS, dll.</td><td class="wrap">ID iklan dan info perangkat, statistik, token integritas, info pembelian</td><td class="wrap">Melalui jaringan saat fitur berjalan</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Amerika Serikat, Irlandia, dll.</td><td class="wrap">ID iklan, info perangkat/jaringan</td><td class="wrap">Saat iklan aktif / saat mediasi menang</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapura, Amerika Serikat, dll.</td><td class="wrap">ID iklan, info perangkat/jaringan</td><td class="wrap">Saat iklan aktif / saat mediasi menang</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>AS</td><td class="wrap">Info jaringan permintaan unduhan</td><td class="wrap">Saat unduhan model pertama</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Perubahan</h2>
   <p>Kami dapat memperbarui Kebijakan ini saat hukum atau layanan berubah. Kami akan memberi tahu perubahan dan tanggal berlaku di Aplikasi dan di URL yang dipublikasikan.</p>
-  <p><b>Tanggal berlaku: 12 Juni 2026</b></p>
+  <p><b>Kebijakan ini berlaku mulai 5 Juli 2026.</b></p>
 </main>
 <footer>Dokumen ini mencerminkan kebijakan yang ditampilkan di NotiVault AI pada Pengaturan → Tentang → Kebijakan Privasi. © Lumiora.</footer>
 <script>

@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>गोपनीयता नीति</h1>
-  <div class="eff">12 जून 2026 से प्रभावी · अंतिम अद्यतन: 12 जून 2026</div>
+  <div class="eff">प्रभावी 5 जुलाई 2026 · अंतिम संशोधन 5 जुलाई 2026</div>
   <p>Lumiora («कंपनी») आपकी गोपनीयता का सम्मान करती है और लागू डेटा-संरक्षण कानूनों का पालन करती है। यह नीति मोबाइल ऐप <b>NotiVault AI</b> («ऐप») पर लागू होती है। NotiVault AI एक <b>local-first</b> ऐप है जो आपके डिवाइस की सूचनाओं को <b>पूरी तरह आपके डिवाइस पर</b> एकत्र, वर्गीकृत, खोज, सारांशित और संग्रहीत करता है।</p>
   <div class="principle"><strong>मूल सिद्धांत</strong> — आपकी सूचनाओं की <b>सामग्री (प्रेषक, शीर्षक, मुख्य भाग, चित्र आदि) कभी भी कंपनी के सर्वर या किसी बाहरी पक्ष को नहीं भेजी जाती</b>। सारा वर्गीकरण, खोज, सारांश और AI अनुमान आपके डिवाइस पर होता है। केवल कुछ गैर-सूचना डेटा ही विज्ञापन, उपयोग आँकड़े, अखंडता जाँच, इन-ऐप खरीद और AI मॉडल डाउनलोड हेतु धारा 5 की तृतीय-पक्ष सेवाओं को भेजा जाता है।</div>
 
@@ -28,7 +28,7 @@
       <tr><td>सूचना सामग्री</td><td class="wrap">मुख्य भाग, शीर्षक, प्रेषक (जैसा स्रोत ऐप दिखाता है), प्राप्ति समय, स्रोत ऐप का पैकेज नाम, चित्र और मूल पेलोड। <b>मुख्य भाग ज्यों-का-त्यों संग्रहीत होता है</b> और इसमें वन-टाइम कोड या वित्तीय जानकारी जैसी संवेदनशील सामग्री हो सकती है।</td></tr>
       <tr><td>निकाला गया डेटा</td><td class="wrap">नियम-आधारित मद (राशि, तिथि, ऑर्डर संख्या, लिंक)। <b>वन-टाइम कोड (OTP) मान के रूप में संग्रहीत नहीं होते; केवल पहचान का तथ्य दर्ज होता है (<code>******</code> से छिपाकर)</b>।</td></tr>
       <tr><td>विश्लेषण मेटाडेटा</td><td class="wrap">श्रेणी, महत्व, पठन-स्थिति, भाषा, अपवर्जन हेतु सामग्री हैश।</td></tr>
-      <tr><td>खोज डेटा</td><td class="wrap">सिमेंटिक (प्राकृतिक भाषा) खोज हेतु एम्बेडिंग वेक्टर, सारांश कैश।</td></tr>
+      <tr><td>खोज डेटा</td><td class="wrap">कीवर्ड खोज इंडेक्स (शीर्षक, मुख्य पाठ, प्रेषक पर) और ऑन-डिवाइस AI सारांश कैश। दोनों केवल डिवाइस पर रहते हैं।</td></tr>
       <tr><td>आपकी सेटिंग्स</td><td class="wrap">कस्टम श्रेणियाँ, मैन्युअल नियम, स्पैम अनुमत/अवरुद्ध प्रेषक, सीखे गए प्रेषक, अवरुद्ध ऐप, अनुस्मारक।</td></tr>
       <tr><td>स्थानीय पहचानकर्ता</td><td class="wrap">डिवाइस पर उत्पन्न यादृच्छिक इंस्टॉल पहचानकर्ता (कभी प्रेषित नहीं)।</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>उद्देश्य</th><th>डेटा</th><th>टिप्पणी</th></tr></thead>
     <tbody>
-      <tr><td>विज्ञापन (वैकल्पिक)</td><td class="wrap">विज्ञापन आईडी, डिवाइस व नेटवर्क जानकारी</td><td class="wrap">Google AdMob. <b>लॉन्च पर अभी निष्क्रिय।</b> सक्षम होने पर UMP सहमति लागू; डिफ़ॉल्ट रूप से गैर-वैयक्तिकृत।</td></tr>
+      <tr><td>विज्ञापन (वैकल्पिक)</td><td class="wrap">विज्ञापन आईडी, डिवाइस व नेटवर्क जानकारी</td><td class="wrap">Google AdMob (मध्यस्थता होस्ट) के साथ Meta Audience Network और Pangle। सक्रिय होने पर UMP सहमति के तहत दिखाए जाते हैं और डिफ़ॉल्ट रूप से गैर-वैयक्तिकृत। सूचना सामग्री कभी नहीं भेजी जाती।</td></tr>
       <tr><td>उपयोग आँकड़े (वैकल्पिक)</td><td class="wrap">ऐप इवेंट (स्क्रीन/बटन नाम), इंस्टेंस आईडी, डिवाइस/इवेंट जानकारी</td><td class="wrap">Firebase Analytics. आप सेटिंग्स में <b>ऑप्ट-आउट</b> कर सकते हैं। सामग्री/प्रेषक कभी नहीं भेजे जाते।</td></tr>
       <tr><td>अखंडता जाँच</td><td class="wrap">ऐप/डिवाइस अखंडता टोकन</td><td class="wrap">Google Play Integrity. कोई व्यक्तिगत सामग्री नहीं।</td></tr>
       <tr><td>इन-ऐप खरीद (वैकल्पिक)</td><td class="wrap">खरीद टोकन व स्थिति</td><td class="wrap">Google Play Billing. भुगतान विवरण Google द्वारा संसाधित।</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>प्रदाता</th><th>कार्य</th><th>डेटा</th><th>नीति</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>विज्ञापन दिखाना</td><td class="wrap">विज्ञापन आईडी, डिवाइस/नेटवर्क जानकारी</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>विज्ञापन प्रस्तुति (मध्यस्थता)</td><td class="wrap">विज्ञापन आईडी, डिवाइस/नेटवर्क जानकारी</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">लिंक</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>विज्ञापन प्रस्तुति (मध्यस्थता)</td><td class="wrap">विज्ञापन आईडी, डिवाइस/नेटवर्क जानकारी</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">लिंक</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>सहमति प्रबंधन</td><td class="wrap">सहमति स्थिति</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>उपयोग आँकड़े</td><td class="wrap">इवेंट, इंस्टेंस आईडी, डिवाइस/इवेंट जानकारी</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>क्रैश निदान</td><td class="wrap">क्रैश लॉग, इंस्टेंस आईडी, डिवाइस स्थिति</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>विज्ञापन नीति का दूरस्थ कॉन्फ़िगरेशन</td><td class="wrap">ऐप इंस्टेंस आईडी, बुनियादी डिवाइस जानकारी</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>अखंडता जाँच</td><td class="wrap">अखंडता टोकन</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>इन-ऐप खरीद</td><td class="wrap">खरीद टोकन व स्थिति</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>AI मॉडल वितरण</td><td class="wrap">डाउनलोड पर नेटवर्क जानकारी (IP आदि)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">लिंक</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>प्राप्तकर्ता</th><th>देश</th><th>मद</th><th>कब/कैसे</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">अमेरिका आदि</td><td class="wrap">विज्ञापन आईडी व डिवाइस जानकारी, आँकड़े, अखंडता टोकन, खरीद जानकारी</td><td class="wrap">सुविधा चलने पर नेटवर्क के माध्यम से</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">संयुक्त राज्य अमेरिका, आयरलैंड आदि</td><td class="wrap">विज्ञापन आईडी, डिवाइस/नेटवर्क जानकारी</td><td class="wrap">विज्ञापन सक्रिय होने पर / मध्यस्थता जीतने पर</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">सिंगापुर, संयुक्त राज्य अमेरिका आदि</td><td class="wrap">विज्ञापन आईडी, डिवाइस/नेटवर्क जानकारी</td><td class="wrap">विज्ञापन सक्रिय होने पर / मध्यस्थता जीतने पर</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>अमेरिका</td><td class="wrap">डाउनलोड अनुरोध की नेटवर्क जानकारी</td><td class="wrap">पहली मॉडल डाउनलोड पर</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. परिवर्तन</h2>
   <p>कानून या सेवा बदलने पर हम यह नीति अद्यतन कर सकते हैं। परिवर्तन व प्रभावी तिथि की पूर्व सूचना ऐप में व प्रकाशित URL पर देंगे।</p>
-  <p><b>प्रभावी तिथि: 12 जून 2026</b></p>
+  <p><b>यह नीति 5 जुलाई 2026 से प्रभावी है।</b></p>
 </main>
 <footer>यह दस्तावेज़ NotiVault AI में सेटिंग्स → परिचय → गोपनीयता नीति में दिखाई गई नीति के समान है। © Lumiora.</footer>
 <script>

@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Política de Privacidad</h1>
-  <div class="eff">Vigente desde el 12 de junio de 2026 · Última actualización: 12 de junio de 2026</div>
+  <div class="eff">Vigente desde el 5 de julio de 2026 · Última revisión: 5 de julio de 2026</div>
   <p>Lumiora (la «Empresa») respeta tu privacidad y cumple las leyes de protección de datos aplicables. Esta Política se aplica a la aplicación móvil <b>NotiVault AI</b> (la «App»). NotiVault AI es una app <b>local-first</b> que recopila, clasifica, busca, resume y almacena las notificaciones de tu dispositivo <b>íntegramente en tu dispositivo</b>.</p>
   <div class="principle"><strong>Principio fundamental</strong> — El <b>contenido de tus notificaciones (remitente, título, cuerpo, imágenes, etc.) nunca se envía a los servidores de la Empresa ni a terceros</b>. Toda clasificación, búsqueda, resumen e inferencia de IA ocurre en tu dispositivo. Solo se envían ciertos datos no relacionados con las notificaciones a los servicios de terceros de la Sección 5, para anuncios, analíticas de uso, comprobación de integridad, compras dentro de la app y descarga de modelos de IA.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Contenido de notificaciones</td><td class="wrap">Cuerpo, título, remitente (según lo muestra la app de origen), hora de recepción, paquete de la app de origen, imágenes y carga útil original. <b>El cuerpo se guarda literalmente</b> y puede contener datos sensibles como códigos de un solo uso o datos financieros.</td></tr>
       <tr><td>Datos extraídos</td><td class="wrap">Elementos basados en reglas (importe, fecha, n.º de pedido, enlaces). <b>Los códigos de un solo uso (OTP) no se guardan como valor; solo se registra el hecho de su detección (enmascarado como <code>******</code>)</b>.</td></tr>
       <tr><td>Metadatos de análisis</td><td class="wrap">Categoría, importancia, estado de lectura, idioma, hash de contenido para deduplicación.</td></tr>
-      <tr><td>Datos de búsqueda</td><td class="wrap">Vectores de incrustación para búsqueda semántica (lenguaje natural), caché de resúmenes.</td></tr>
+      <tr><td>Datos de búsqueda</td><td class="wrap">Índice de búsqueda por palabras clave (título, cuerpo, remitente) y caché de resúmenes de IA en el dispositivo. Ambos permanecen solo en el dispositivo.</td></tr>
       <tr><td>Tus ajustes</td><td class="wrap">Categorías personalizadas, reglas manuales, remitentes permitidos/bloqueados de spam, remitentes aprendidos, apps bloqueadas, recordatorios.</td></tr>
       <tr><td>Identificador local</td><td class="wrap">Un identificador de instalación aleatorio generado en el dispositivo (nunca se transmite).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Finalidad</th><th>Datos</th><th>Notas</th></tr></thead>
     <tbody>
-      <tr><td>Anuncios (opcional)</td><td class="wrap">ID de publicidad, información del dispositivo y de la red</td><td class="wrap">Google AdMob. <b>Actualmente desactivado en el lanzamiento.</b> Si se activa, se aplica el consentimiento UMP; no personalizado por defecto.</td></tr>
+      <tr><td>Anuncios (opcional)</td><td class="wrap">ID de publicidad, información del dispositivo y de la red</td><td class="wrap">Google AdMob (host de mediación) con Meta Audience Network y Pangle. Cuando están activos, se muestran con consentimiento de UMP y sin personalizar de forma predeterminada. El contenido de las notificaciones nunca se envía.</td></tr>
       <tr><td>Analíticas de uso (opcional)</td><td class="wrap">Eventos de la app (nombres de pantalla/botón), ID de instancia, información de dispositivo/evento</td><td class="wrap">Firebase Analytics. Puedes <b>desactivarlo</b> en Ajustes. El contenido y los remitentes nunca se envían.</td></tr>
       <tr><td>Comprobación de integridad</td><td class="wrap">Token de integridad de app/dispositivo</td><td class="wrap">Google Play Integrity. Sin contenido personal.</td></tr>
       <tr><td>Compra in-app (opcional)</td><td class="wrap">Token y estado de compra</td><td class="wrap">Google Play Billing. Los datos de pago los gestiona Google.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Proveedor</th><th>Tarea</th><th>Datos</th><th>Política</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Servir anuncios</td><td class="wrap">ID de publicidad, info de dispositivo/red</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Publicación de anuncios (mediación)</td><td class="wrap">ID de publicidad, info de dispositivo/red</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Enlace</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Publicación de anuncios (mediación)</td><td class="wrap">ID de publicidad, info de dispositivo/red</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Enlace</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Gestión del consentimiento</td><td class="wrap">Estado de consentimiento</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Analíticas de uso</td><td class="wrap">Eventos, ID de instancia, info dispositivo/evento</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Diagnóstico de fallos</td><td class="wrap">Registros de fallos, ID de instancia, estado del dispositivo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Configuración remota de la política de anuncios</td><td class="wrap">ID de instancia de la app, información básica del dispositivo</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Comprobación de integridad</td><td class="wrap">Token de integridad</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Compra in-app</td><td class="wrap">Token y estado de compra</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Distribución de modelos de IA</td><td class="wrap">Info de red en la descarga (IP, etc.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Enlace</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Destinatario</th><th>País</th><th>Elementos</th><th>Cuándo/Cómo</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">EE. UU., etc.</td><td class="wrap">ID de publicidad e info del dispositivo, analíticas, token de integridad, datos de compra</td><td class="wrap">Por red al ejecutarse la función</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Estados Unidos, Irlanda, etc.</td><td class="wrap">ID de publicidad, info de dispositivo/red</td><td class="wrap">Al activar anuncios / al ganar la mediación</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapur, Estados Unidos, etc.</td><td class="wrap">ID de publicidad, info de dispositivo/red</td><td class="wrap">Al activar anuncios / al ganar la mediación</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>EE. UU.</td><td class="wrap">Info de red de la solicitud de descarga</td><td class="wrap">En la primera descarga del modelo</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Cambios</h2>
   <p>Podemos actualizar esta Política cuando cambien las leyes o el servicio. Avisaremos de los cambios y de la fecha de vigencia en la App y en la URL publicada.</p>
-  <p><b>Fecha de vigencia: 12 de junio de 2026</b></p>
+  <p><b>Esta política entra en vigor el 5 de julio de 2026.</b></p>
 </main>
 <footer>Este documento refleja la política mostrada en NotiVault AI en Ajustes → Acerca de → Política de Privacidad. © Lumiora.</footer>
 <script>

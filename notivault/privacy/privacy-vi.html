@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Chính sách quyền riêng tư</h1>
-  <div class="eff">Có hiệu lực từ 12 tháng 6 năm 2026 · Cập nhật lần cuối: 12 tháng 6 năm 2026</div>
+  <div class="eff">Có hiệu lực ngày 5 tháng 7 năm 2026 · Sửa đổi lần cuối ngày 5 tháng 7 năm 2026</div>
   <p>Lumiora («Công ty») tôn trọng quyền riêng tư của bạn và tuân thủ các luật bảo vệ dữ liệu hiện hành. Chính sách này áp dụng cho ứng dụng di động <b>NotiVault AI</b> («Ứng dụng»). NotiVault AI là ứng dụng <b>local-first</b> thu thập, phân loại, tìm kiếm, tóm tắt và lưu trữ thông báo của thiết bị <b>hoàn toàn trên thiết bị của bạn</b>.</p>
   <div class="principle"><strong>Nguyên tắc cốt lõi</strong> — <b>Nội dung thông báo của bạn (người gửi, tiêu đề, nội dung, hình ảnh, v.v.) không bao giờ được gửi đến máy chủ của Công ty hay bất kỳ bên thứ ba nào</b>. Mọi việc phân loại, tìm kiếm, tóm tắt và suy luận AI đều diễn ra trên thiết bị của bạn. Chỉ một số dữ liệu không liên quan đến thông báo được gửi tới các dịch vụ bên thứ ba ở Mục 5, phục vụ quảng cáo, thống kê sử dụng, kiểm tra tính toàn vẹn, mua hàng trong ứng dụng và tải mô hình AI.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Nội dung thông báo</td><td class="wrap">Nội dung, tiêu đề, người gửi (như ứng dụng nguồn hiển thị), thời điểm nhận, tên gói ứng dụng nguồn, hình ảnh và payload gốc. <b>Nội dung được lưu nguyên văn</b> và có thể chứa dữ liệu nhạy cảm như mã một lần hoặc thông tin tài chính.</td></tr>
       <tr><td>Dữ liệu trích xuất</td><td class="wrap">Các mục theo quy tắc (số tiền, ngày, số đơn hàng, liên kết). <b>Mã một lần (OTP) không được lưu dưới dạng giá trị; chỉ ghi nhận việc phát hiện (che thành <code>******</code>)</b>.</td></tr>
       <tr><td>Siêu dữ liệu phân tích</td><td class="wrap">Danh mục, mức quan trọng, trạng thái đã đọc, ngôn ngữ, hash nội dung để khử trùng lặp.</td></tr>
-      <tr><td>Dữ liệu tìm kiếm</td><td class="wrap">Vector nhúng cho tìm kiếm ngữ nghĩa (ngôn ngữ tự nhiên), bộ nhớ đệm tóm tắt.</td></tr>
+      <tr><td>Dữ liệu tìm kiếm</td><td class="wrap">Chỉ mục tìm kiếm từ khóa (tiêu đề, nội dung, người gửi) và bộ nhớ đệm tóm tắt AI trên thiết bị. Cả hai chỉ nằm trên thiết bị.</td></tr>
       <tr><td>Cài đặt của bạn</td><td class="wrap">Danh mục tùy chỉnh, quy tắc thủ công, người gửi spam được phép/chặn, người gửi đã học, ứng dụng bị chặn, lời nhắc.</td></tr>
       <tr><td>Mã định danh cục bộ</td><td class="wrap">Mã định danh cài đặt ngẫu nhiên tạo trên thiết bị (không bao giờ truyền đi).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Mục đích</th><th>Dữ liệu</th><th>Ghi chú</th></tr></thead>
     <tbody>
-      <tr><td>Quảng cáo (tùy chọn)</td><td class="wrap">ID quảng cáo, thông tin thiết bị và mạng</td><td class="wrap">Google AdMob. <b>Hiện đang tắt khi ra mắt.</b> Khi bật sẽ áp dụng sự đồng ý UMP; mặc định không cá nhân hóa.</td></tr>
+      <tr><td>Quảng cáo (tùy chọn)</td><td class="wrap">ID quảng cáo, thông tin thiết bị và mạng</td><td class="wrap">Google AdMob (máy chủ trung gian) cùng Meta Audience Network và Pangle. Khi hoạt động, hiển thị theo sự đồng ý UMP và mặc định không cá nhân hóa. Không bao giờ gửi nội dung thông báo.</td></tr>
       <tr><td>Thống kê sử dụng (tùy chọn)</td><td class="wrap">Sự kiện ứng dụng (tên màn hình/nút), ID phiên bản, thông tin thiết bị/sự kiện</td><td class="wrap">Firebase Analytics. Bạn có thể <b>chọn không tham gia</b> trong Cài đặt. Nội dung/người gửi không bao giờ được gửi.</td></tr>
       <tr><td>Kiểm tra tính toàn vẹn</td><td class="wrap">Mã thông báo tính toàn vẹn ứng dụng/thiết bị</td><td class="wrap">Google Play Integrity. Không có nội dung cá nhân.</td></tr>
       <tr><td>Mua trong ứng dụng (tùy chọn)</td><td class="wrap">Mã thông báo và trạng thái mua</td><td class="wrap">Google Play Billing. Dữ liệu thanh toán do Google xử lý.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Nhà cung cấp</th><th>Nhiệm vụ</th><th>Dữ liệu</th><th>Chính sách</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Phân phối quảng cáo</td><td class="wrap">ID quảng cáo, thông tin thiết bị/mạng</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Phân phối quảng cáo (trung gian)</td><td class="wrap">ID quảng cáo, thông tin thiết bị/mạng</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Liên kết</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Phân phối quảng cáo (trung gian)</td><td class="wrap">ID quảng cáo, thông tin thiết bị/mạng</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Liên kết</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Quản lý sự đồng ý</td><td class="wrap">Trạng thái đồng ý</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Thống kê sử dụng</td><td class="wrap">Sự kiện, ID phiên bản, thông tin thiết bị/sự kiện</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Chẩn đoán sự cố</td><td class="wrap">Nhật ký sự cố, ID phiên bản, trạng thái thiết bị</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Cấu hình từ xa chính sách quảng cáo</td><td class="wrap">ID phiên bản ứng dụng, thông tin cơ bản của thiết bị</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Kiểm tra tính toàn vẹn</td><td class="wrap">Mã thông báo tính toàn vẹn</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Mua trong ứng dụng</td><td class="wrap">Mã thông báo và trạng thái mua</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Phân phối mô hình AI</td><td class="wrap">Thông tin mạng khi tải (IP, v.v.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Liên kết</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Bên nhận</th><th>Quốc gia</th><th>Mục</th><th>Khi nào/Cách nào</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">Hoa Kỳ, v.v.</td><td class="wrap">ID quảng cáo và thông tin thiết bị, thống kê, mã toàn vẹn, thông tin mua</td><td class="wrap">Qua mạng khi tính năng chạy</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">Hoa Kỳ, Ireland, v.v.</td><td class="wrap">ID quảng cáo, thông tin thiết bị/mạng</td><td class="wrap">Khi quảng cáo hoạt động / khi trung gian thắng</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapore, Hoa Kỳ, v.v.</td><td class="wrap">ID quảng cáo, thông tin thiết bị/mạng</td><td class="wrap">Khi quảng cáo hoạt động / khi trung gian thắng</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Hoa Kỳ</td><td class="wrap">Thông tin mạng của yêu cầu tải</td><td class="wrap">Khi tải mô hình lần đầu</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Thay đổi</h2>
   <p>Chúng tôi có thể cập nhật Chính sách này khi luật hoặc dịch vụ thay đổi. Chúng tôi sẽ thông báo trước về thay đổi và ngày hiệu lực trong Ứng dụng và tại URL đã công bố.</p>
-  <p><b>Ngày hiệu lực: 12 tháng 6 năm 2026</b></p>
+  <p><b>Chính sách này có hiệu lực từ ngày 5 tháng 7 năm 2026.</b></p>
 </main>
 <footer>Tài liệu này khớp với chính sách hiển thị trong NotiVault AI tại Cài đặt → Giới thiệu → Chính sách quyền riêng tư. © Lumiora.</footer>
 <script>

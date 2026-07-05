@@ -15,7 +15,7 @@
 </header>
 <main>
   <h1>Gizlilik Politikası</h1>
-  <div class="eff">Yürürlük: 12 Haziran 2026 · Son güncelleme: 12 Haziran 2026</div>
+  <div class="eff">Yürürlük tarihi 5 Temmuz 2026 · Son revizyon 5 Temmuz 2026</div>
   <p>Lumiora («Şirket») gizliliğinize saygı duyar ve geçerli veri koruma yasalarına uyar. Bu Politika, mobil uygulama <b>NotiVault AI</b> («Uygulama») için geçerlidir. NotiVault AI, cihazınıza gelen bildirimleri <b>tamamen cihazınızda</b> toplayan, sınıflandıran, arayan, özetleyen ve saklayan bir <b>local-first</b> uygulamadır.</p>
   <div class="principle"><strong>Temel ilke</strong> — Bildirimlerinizin <b>içeriği (gönderen, başlık, gövde, görseller vb.) asla Şirket sunucularına veya üçüncü taraflara gönderilmez</b>. Tüm sınıflandırma, arama, özetleme ve yapay zekâ çıkarımı cihazınızda gerçekleşir. Yalnızca bildirimle ilgili olmayan bazı veriler, reklam, kullanım istatistikleri, bütünlük denetimi, uygulama içi satın alma ve yapay zekâ modeli indirme için Bölüm 5'teki üçüncü taraf hizmetlerine gönderilir.</div>
 
@@ -28,7 +28,7 @@
       <tr><td>Bildirim içeriği</td><td class="wrap">Gövde, başlık, gönderen (kaynak uygulamanın gösterdiği şekilde), alınma zamanı, kaynak uygulama paket adı, görseller ve ham bildirim yükü. <b>Gövde olduğu gibi saklanır</b> ve tek kullanımlık kodlar veya finansal bilgiler gibi hassas veriler içerebilir.</td></tr>
       <tr><td>Çıkarılan veriler</td><td class="wrap">Kurallara dayalı öğeler (tutar, tarih, sipariş no, bağlantılar). <b>Tek kullanımlık kodlar (OTP) değer olarak saklanmaz; yalnızca algılandığı kaydedilir (<code>******</code> ile maskelenir)</b>.</td></tr>
       <tr><td>Analiz meta verileri</td><td class="wrap">Kategori, önem, okundu durumu, dil, yinelenenleri ayıklamak için içerik özeti (hash).</td></tr>
-      <tr><td>Arama verileri</td><td class="wrap">Anlamsal (doğal dil) arama için gömme vektörleri, özet önbelleği.</td></tr>
+      <tr><td>Arama verileri</td><td class="wrap">Anahtar kelime arama dizini (başlık, gövde, gönderen) ve cihaz üzerinde AI özet önbelleği. İkisi de yalnızca cihazda kalır.</td></tr>
       <tr><td>Ayarlarınız</td><td class="wrap">Özel kategoriler, manuel kurallar, izin verilen/engellenen spam gönderenler, öğrenilmiş gönderenler, engellenen uygulamalar, hatırlatıcılar.</td></tr>
       <tr><td>Yerel tanımlayıcı</td><td class="wrap">Cihazda oluşturulan rastgele bir kurulum tanımlayıcısı (asla iletilmez).</td></tr>
     </tbody>
@@ -38,7 +38,7 @@
   <div class="tw"><table>
     <thead><tr><th>Amaç</th><th>Veri</th><th>Notlar</th></tr></thead>
     <tbody>
-      <tr><td>Reklam (isteğe bağlı)</td><td class="wrap">Reklam kimliği, cihaz ve ağ bilgileri</td><td class="wrap">Google AdMob. <b>Yayın aşamasında şu an devre dışı.</b> Etkinleştirilirse UMP onayı uygulanır; varsayılan olarak kişiselleştirilmemiş.</td></tr>
+      <tr><td>Reklam (isteğe bağlı)</td><td class="wrap">Reklam kimliği, cihaz ve ağ bilgileri</td><td class="wrap">Meta Audience Network ve Pangle ile Google AdMob (mediation ana makinesi). Etkin olduğunda UMP onayıyla ve varsayılan olarak kişiselleştirilmeden gösterilir. Bildirim içeriği asla gönderilmez.</td></tr>
       <tr><td>Kullanım istatistikleri (isteğe bağlı)</td><td class="wrap">Uygulama olayları (ekran/düğme adları), örnek kimliği, cihaz/olay bilgileri</td><td class="wrap">Firebase Analytics. Ayarlar'dan <b>devre dışı bırakabilirsiniz</b>. İçerik/gönderenler asla gönderilmez.</td></tr>
       <tr><td>Bütünlük denetimi</td><td class="wrap">Uygulama/cihaz bütünlük belirteci</td><td class="wrap">Google Play Integrity. Kişisel içerik yok.</td></tr>
       <tr><td>Uygulama içi satın alma (isteğe bağlı)</td><td class="wrap">Satın alma belirteci ve durumu</td><td class="wrap">Google Play Billing. Ödeme verilerini Google işler.</td></tr>
@@ -75,8 +75,12 @@
     <thead><tr><th>Sağlayıcı</th><th>Görev</th><th>Veri</th><th>Politika</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC (AdMob)</td><td>Reklam sunma</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Meta Platforms, Inc. (Audience Network)</td><td>Reklam yayını (mediation)</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td>Reklam yayını (mediation)</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td><a href="https://www.pangleglobal.com/privacy/enterprise-partner-terms" target="_blank" rel="noopener">Bağlantı</a></td></tr>
       <tr><td class="wrap">Google LLC (UMP)</td><td>Onay yönetimi</td><td class="wrap">Onay durumu</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
       <tr><td class="wrap">Google LLC (Firebase)</td><td>Kullanım istatistikleri</td><td class="wrap">Olaylar, örnek kimliği, cihaz/olay bilgisi</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Crashlytics)</td><td>Çökme tanılaması</td><td class="wrap">Çökme günlükleri, örnek kimliği, cihaz durumu</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
+      <tr><td class="wrap">Google LLC (Firebase Remote Config)</td><td>Reklam politikasının uzaktan yapılandırılması</td><td class="wrap">Uygulama örneği kimliği, temel cihaz bilgileri</td><td><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Integrity)</td><td>Bütünlük denetimi</td><td class="wrap">Bütünlük belirteci</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
       <tr><td class="wrap">Google LLC (Play Billing)</td><td>Uygulama içi satın alma</td><td class="wrap">Satın alma belirteci ve durumu</td><td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>Yapay zekâ modeli dağıtımı</td><td class="wrap">İndirmede ağ bilgisi (IP vb.)</td><td><a href="https://huggingface.co/privacy" target="_blank" rel="noopener">Bağlantı</a></td></tr>
@@ -89,6 +93,8 @@
     <thead><tr><th>Alıcı</th><th>Ülke</th><th>Öğeler</th><th>Ne zaman/Nasıl</th></tr></thead>
     <tbody>
       <tr><td class="wrap">Google LLC</td><td class="wrap">ABD vb.</td><td class="wrap">Reklam kimliği ve cihaz bilgisi, istatistikler, bütünlük belirteci, satın alma bilgisi</td><td class="wrap">İşlev çalışırken ağ üzerinden</td></tr>
+            <tr><td class="wrap">Meta Platforms, Inc.</td><td class="wrap">ABD, İrlanda vb.</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td class="wrap">Reklamlar etkinken / mediation kazanıldığında</td></tr>
+      <tr><td class="wrap">ByteDance Pte. Ltd. (Pangle)</td><td class="wrap">Singapur, ABD vb.</td><td class="wrap">Reklam kimliği, cihaz/ağ bilgisi</td><td class="wrap">Reklamlar etkinken / mediation kazanıldığında</td></tr>
       <tr><td class="wrap">Hugging Face, Inc.</td><td>ABD</td><td class="wrap">İndirme isteğinin ağ bilgisi</td><td class="wrap">İlk model indirmesinde</td></tr>
     </tbody>
   </table></div>
@@ -166,7 +172,7 @@
 
   <h2>15. Değişiklikler</h2>
   <p>Yasalar veya hizmet değiştikçe bu Politikayı güncelleyebiliriz. Değişiklikleri ve yürürlük tarihini Uygulamada ve yayımlanan URL'de önceden bildiririz.</p>
-  <p><b>Yürürlük tarihi: 12 Haziran 2026</b></p>
+  <p><b>Bu politika 5 Temmuz 2026 tarihinde yürürlüğe girer.</b></p>
 </main>
 <footer>Bu belge, NotiVault AI'taki Ayarlar → Hakkında → Gizlilik Politikası ile aynıdır. © Lumiora.</footer>
 <script>
